@@ -1,5 +1,6 @@
 ﻿using Android.Content;
 using Android.Widget;
+using Java.IO;
 using Soulseek;
 using System;
 using System.Collections.Generic;
@@ -10,52 +11,16 @@ namespace AndriodApp1.Helpers
 {
     public class SearchTabHelper
     {
-        public static void SaveStateToSharedPreferencesFullLegacy()
-        {
-            var sw = System.Diagnostics.Stopwatch.StartNew();
-            string stringToSave = string.Empty;
-            //we should only save things we need for the wishlist searches.
-            List<int> tabsToSave = SearchTabDialog.GetWishesTabIds();
-            if (tabsToSave.Count == 0)
-            {
-                MainActivity.LogDebug("Nothing to Save");
-            }
-            else
-            {
-                Dictionary<int, SavedStateSearchTab> savedStates = new Dictionary<int, SavedStateSearchTab>();
-                foreach (int tabIndex in tabsToSave)
-                {
-                    savedStates.Add(tabIndex, SavedStateSearchTab.GetSavedStateFromTab(SearchTabHelper.SearchTabCollection[tabIndex]));
-                }
-                using (System.IO.MemoryStream savedStateStream = new System.IO.MemoryStream())
-                {
-                    BinaryFormatter formatter = new BinaryFormatter();
-                    formatter.Serialize(savedStateStream, savedStates);
-                    stringToSave = Convert.ToBase64String(savedStateStream.ToArray());
-                }
-            }
-
-            lock (MainActivity.SHARED_PREF_LOCK)
-            {
-                var editor = SoulSeekState.SharedPreferences.Edit();
-                editor.PutString(SoulSeekState.M_SearchTabsState_LEGACY, stringToSave);
-                editor.Commit();
-            }
-
-            sw.Stop();
-            MainActivity.LogDebug("OLD STYLE: " + sw.ElapsedMilliseconds);
-        }
-
-        public static void RemoveTabFromSharedPrefs(int wishlistSearchResultsToRemove, Context c)
+        public static void RemoveTabFromSharedPrefs(int wishlistSearchResultsToRemove, Context c, bool legacy = false)
         {
             var sw = System.Diagnostics.Stopwatch.StartNew();
 
-            Java.IO.File wishlist_dir = new Java.IO.File(c.FilesDir, "wishlist_dir");
+            Java.IO.File wishlist_dir = new Java.IO.File(c.FilesDir, SoulSeekState.M_wishlist_directory);
             if (!wishlist_dir.Exists())
             {
                 wishlist_dir.Mkdir();
             }
-            string name = System.Math.Abs(wishlistSearchResultsToRemove) + "_wishlist_tab";
+            string name = System.Math.Abs(wishlistSearchResultsToRemove) + (legacy ? SoulSeekState.M_wishlist_tab_legacy : SoulSeekState.M_wishlist_tab);
             Java.IO.File fileForOurInternalStorage = new Java.IO.File(wishlist_dir, name);
             if (!fileForOurInternalStorage.Delete())
             {
@@ -94,7 +59,7 @@ namespace AndriodApp1.Helpers
         /// So this method probably isnt needed.
         /// </summary>
         /// <param name="c"></param>
-        public static void RestoreAllSearchTabsFromDisk(Context c)
+        public static void MigrateAllSearchTabsFromDisk(Context c)
         {
             var sw = System.Diagnostics.Stopwatch.StartNew();
             string stringToSave = string.Empty;
@@ -108,59 +73,95 @@ namespace AndriodApp1.Helpers
             {
                 foreach (int tabIndex in tabsToSave)
                 {
-                    RestoreSearchResultsFromDisk(tabIndex, c);
+                    List<SearchResponse> results = null;
+                    try
+                    {
+                        results = RestoreSearchResultsFromDisk_Imp(tabIndex, c, true);
+                    }
+                    catch (Exception ex)
+                    {
+                        MainActivity.LogFirebase("Error Migrating Seach Tabs: " + ex.Message + ex.StackTrace);
+                        RemoveTabFromSharedPrefs(tabIndex, c, true);
+                    }
+
+                    if (results != null)
+                    {
+                        RemoveTabFromSharedPrefs(tabIndex, c, true);
+                        SaveSearchResultsToDisk_Imp(tabIndex, c, results);
+                    }
                 }
             }
             sw.Stop();
             MainActivity.LogDebug("HEADERS - Restore ALL Search Results: " + sw.ElapsedMilliseconds);
         }
 
-
-        public static void SaveSearchResultsToDisk(int wishlistSearchResultsToSave, Context c)
+        public static void SaveSearchResultsToDisk_Imp(int wishlistSearchResultsToSave, Context c, List<SearchResponse> searchResultsToSave)
         {
             var sw = System.Diagnostics.Stopwatch.StartNew();
 
-            Java.IO.File wishlist_dir = new Java.IO.File(c.FilesDir, "wishlist_dir");
+            Java.IO.File wishlist_dir = new Java.IO.File(c.FilesDir, SoulSeekState.M_wishlist_directory);
             if (!wishlist_dir.Exists())
             {
                 wishlist_dir.Mkdir();
             }
-            string name = System.Math.Abs(wishlistSearchResultsToSave) + "_wishlist_tab";
-            Java.IO.File fileForOurInternalStorage = new Java.IO.File(wishlist_dir, name);
-            System.IO.Stream outputStream = c.ContentResolver.OpenOutputStream(AndroidX.DocumentFile.Provider.DocumentFile.FromFile(fileForOurInternalStorage).Uri, "w");
+            string name = System.Math.Abs(wishlistSearchResultsToSave) + SoulSeekState.M_wishlist_tab;
 
-
-            using (System.IO.MemoryStream searchRes = new System.IO.MemoryStream())
+            using (Java.IO.File fileForOurInternalStorage = new Java.IO.File(wishlist_dir, name))
             {
-                BinaryFormatter formatter = new BinaryFormatter();
-                formatter.Serialize(searchRes, SearchTabHelper.SearchTabCollection[wishlistSearchResultsToSave].SearchResponses);
-                byte[] arr = searchRes.ToArray();
-                outputStream.Write(arr, 0, arr.Length);
-                outputStream.Flush();
-                outputStream.Close();
+                using (System.IO.Stream outputStream = c.ContentResolver.OpenOutputStream(AndroidX.DocumentFile.Provider.DocumentFile.FromFile(fileForOurInternalStorage).Uri, "w"))
+                {
+                    var arr = SerializationHelper.SaveSearchResponsesToByteArray(searchResultsToSave);
+                    outputStream.Write(arr, 0, arr.Length);
+                    outputStream.Flush();
+                    outputStream.Close();
+                    sw.Stop();
+                }
             }
-
-            sw.Stop();
-            MainActivity.LogDebug("HEADERS - Save Search Results: " + sw.ElapsedMilliseconds + " count " + SearchTabHelper.SearchTabCollection[wishlistSearchResultsToSave].SearchResponses.Count);
         }
 
 
-        public static void RestoreSearchResultsFromDisk(int wishlistSearchResultsToRestore, Context c)
+        public static void SaveSearchResultsToDisk(int wishlistSearchResultsToSave, Context c)
+        {
+            var searchResultsToSave = SearchTabHelper.SearchTabCollection[wishlistSearchResultsToSave].SearchResponses;
+            SaveSearchResultsToDisk_Imp(wishlistSearchResultsToSave, c, searchResultsToSave);
+        }
+
+        public static List<SearchResponse> RestoreSearchResultsFromDisk_Imp(int wishlistSearchResultsToRestore, Context c, bool legacy = false)
         {
             var sw = System.Diagnostics.Stopwatch.StartNew();
 
-            Java.IO.File wishlist_dir = new Java.IO.File(c.FilesDir, "wishlist_dir");
+            Java.IO.File wishlist_dir = new Java.IO.File(c.FilesDir, SoulSeekState.M_wishlist_directory);
             //if (!wishlist_dir.Exists())
             //{
             //    wishlist_dir.Mkdir();
             //}
-            string name = System.Math.Abs(wishlistSearchResultsToRestore) + "_wishlist_tab";
+            string name = System.Math.Abs(wishlistSearchResultsToRestore) + (legacy ? SoulSeekState.M_wishlist_tab_legacy : SoulSeekState.M_wishlist_tab);
             Java.IO.File fileForOurInternalStorage = new Java.IO.File(wishlist_dir, name);
+
+            if (!fileForOurInternalStorage.Exists())
+            {
+                return null;
+            }
+
+            using (System.IO.Stream inputStream = c.ContentResolver.OpenInputStream(AndroidX.DocumentFile.Provider.DocumentFile.FromFile(fileForOurInternalStorage).Uri))
+            {
+                MainActivity.LogDebug("HEADERS - get file: " + sw.ElapsedMilliseconds);
+
+                MainActivity.LogDebug("HEADERS - read file: " + sw.ElapsedMilliseconds);
+
+                var restoredSearchResponses = SerializationHelper.RestoreSearchResponsesFromStream(inputStream, legacy);
+                return restoredSearchResponses;
+            }
+        }
+
+        public static void RestoreSearchResultsFromDisk(int wishlistSearchResultsToRestore, Context c)
+        {
+            var restoredSearchResults = RestoreSearchResultsFromDisk_Imp(wishlistSearchResultsToRestore, c);
 
             //there are two cases.
             //  1) we imported the term.  In that case there are no results yet as it hasnt been ran.  Which is fine.  
             //  2) its a bug.
-            if (!fileForOurInternalStorage.Exists())
+            if (restoredSearchResults == null)
             {
                 if (SearchTabHelper.SearchTabCollection[wishlistSearchResultsToRestore].LastSearchResultsCount == 0 || SearchTabHelper.SearchTabCollection[wishlistSearchResultsToRestore].LastRanTime == DateTime.MinValue)
                 {
@@ -187,30 +188,13 @@ namespace AndriodApp1.Helpers
                 SavedStateSearchTab tab = new SavedStateSearchTab();
                 tab.searchResponses = new List<SearchResponse>();
                 SearchTabHelper.SearchTabCollection[wishlistSearchResultsToRestore] = SavedStateSearchTab.GetTabFromSavedState(tab, true, SearchTabHelper.SearchTabCollection[wishlistSearchResultsToRestore]);
-                return;
             }
-
-            using (System.IO.Stream inputStream = c.ContentResolver.OpenInputStream(AndroidX.DocumentFile.Provider.DocumentFile.FromFile(fileForOurInternalStorage).Uri))
+            else
             {
-                MainActivity.LogDebug("HEADERS - get file: " + sw.ElapsedMilliseconds);
-
-                using (System.IO.MemoryStream ms = new System.IO.MemoryStream())
-                {
-                    inputStream.CopyTo(ms);
-                    ms.Position = 0;
-                    MainActivity.LogDebug("HEADERS - read file: " + sw.ElapsedMilliseconds);
-                    BinaryFormatter formatter = new BinaryFormatter();
-                    //SearchTabHelper.SearchTabCollection[wishlistSearchResultsToRestore].SearchResponses = formatter.Deserialize(ms) as List<SearchResponse>;
-                    SavedStateSearchTab tab = new SavedStateSearchTab();
-                    tab.searchResponses = formatter.Deserialize(ms) as List<SearchResponse>;
-                    SearchTabHelper.SearchTabCollection[wishlistSearchResultsToRestore] = SavedStateSearchTab.GetTabFromSavedState(tab, true, SearchTabHelper.SearchTabCollection[wishlistSearchResultsToRestore]);
-
-                    //SearchTabCollection[pair.Key] = SavedStateSearchTab.GetTabFromSavedState(pair.Value);
-                }
+                SavedStateSearchTab tab = new SavedStateSearchTab();
+                tab.searchResponses = restoredSearchResults;
+                SearchTabHelper.SearchTabCollection[wishlistSearchResultsToRestore] = SavedStateSearchTab.GetTabFromSavedState(tab, true, SearchTabHelper.SearchTabCollection[wishlistSearchResultsToRestore]);
             }
-
-            sw.Stop();
-            MainActivity.LogDebug("HEADERS - Restore Search Results: " + sw.ElapsedMilliseconds + " count " + SearchTabHelper.SearchTabCollection[wishlistSearchResultsToRestore].SearchResponses.Count);
         }
 
 
@@ -233,12 +217,8 @@ namespace AndriodApp1.Helpers
                 {
                     savedStates.Add(tabIndex, SavedStateSearchTabHeader.GetSavedStateHeaderFromTab(SearchTabHelper.SearchTabCollection[tabIndex]));
                 }
-                using (System.IO.MemoryStream savedStateStream = new System.IO.MemoryStream())
-                {
-                    BinaryFormatter formatter = new BinaryFormatter();
-                    formatter.Serialize(savedStateStream, savedStates);
-                    stringToSave = Convert.ToBase64String(savedStateStream.ToArray());
-                }
+
+                stringToSave = SerializationHelper.SerializeToString(savedStates);
             }
 
             lock (MainActivity.SHARED_PREF_LOCK)
@@ -285,24 +265,22 @@ namespace AndriodApp1.Helpers
 
                 MainActivity.LogDebug("HEADERS - base64 string length: " + sw.ElapsedMilliseconds);
 
-                using (System.IO.MemoryStream memStream = new System.IO.MemoryStream(Convert.FromBase64String(savedState)))
+                Dictionary<int, SavedStateSearchTabHeader> savedStateDict = SerializationHelper.RestoreSavedStateHeaderDictFromString(savedState);
+
+                int lowestID = int.MaxValue;
+                foreach (var pair in savedStateDict)
                 {
-                    BinaryFormatter formatter = new BinaryFormatter();
-                    var savedStateDict = formatter.Deserialize(memStream) as Dictionary<int, SavedStateSearchTabHeader>;
-                    int lowestID = int.MaxValue;
-                    foreach (var pair in savedStateDict)
+                    if (pair.Key < lowestID)
                     {
-                        if (pair.Key < lowestID)
-                        {
-                            lowestID = pair.Key;
-                        }
-                        SearchTabCollection[pair.Key] = SavedStateSearchTabHeader.GetTabFromSavedState(pair.Value, null);
+                        lowestID = pair.Key;
                     }
-                    if (lowestID != int.MaxValue)
-                    {
-                        lastWishlistID = lowestID;
-                    }
+                    SearchTabCollection[pair.Key] = SavedStateSearchTabHeader.GetTabFromSavedState(pair.Value, null);
                 }
+                if (lowestID != int.MaxValue)
+                {
+                    lastWishlistID = lowestID;
+                }
+
                 sw.Stop();
                 MainActivity.LogDebug("HEADERS - RestoreStateFromSharedPreferences: wishlist: " + sw.ElapsedMilliseconds);
             }
