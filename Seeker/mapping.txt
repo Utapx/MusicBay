@@ -3,8 +3,8 @@
 # min_api: 19
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: b39d15b
-# pg_map_hash: SHA-256 b39d15b7dd4c96fd42b384ad1aa4fe98ac76b5b6fa7e5921090db0a5fec258b9
+# pg_map_id: 683bbac
+# pg_map_hash: SHA-256 683bbac916365550065132368bdba59289cd2853f4c3e59fab76dc1859bbdeb2
 _COROUTINE.ArtificialStackFrames -> _COROUTINE.ArtificialStackFrames:
 # {"id":"sourceFile","fileName":"CoroutineDebugging.kt"}
     21:21:void <init>() -> <init>
@@ -27858,20 +27858,20 @@ com.companyname.andriodapp1.R$interpolator -> com.companyname.andriodapp1.R$inte
 com.companyname.andriodapp1.R$layout -> com.companyname.andriodapp1.R$layout:
     12909:12909:void <init>() -> <init>
 com.companyname.andriodapp1.R$menu -> com.companyname.andriodapp1.R$menu:
-    13122:13122:void <init>() -> <init>
+    13121:13121:void <init>() -> <init>
 com.companyname.andriodapp1.R$mipmap -> com.companyname.andriodapp1.R$mipmap:
-    13144:13144:void <init>() -> <init>
+    13143:13143:void <init>() -> <init>
 com.companyname.andriodapp1.R$plurals -> com.companyname.andriodapp1.R$plurals:
-    13151:13151:void <init>() -> <init>
+    13150:13150:void <init>() -> <init>
 com.companyname.andriodapp1.R$string -> com.companyname.andriodapp1.R$string:
-    13154:13154:void <init>() -> <init>
+    13153:13153:void <init>() -> <init>
 com.companyname.andriodapp1.R$style -> com.companyname.andriodapp1.R$style:
-    14228:14228:void <init>() -> <init>
+    14236:14236:void <init>() -> <init>
 com.companyname.andriodapp1.R$styleable -> com.companyname.andriodapp1.R$styleable:
-    15450:46691:void <clinit>() -> <clinit>
-    15382:15382:void <init>() -> <init>
+    15458:46699:void <clinit>() -> <clinit>
+    15390:15390:void <init>() -> <init>
 com.companyname.andriodapp1.R$xml -> com.companyname.andriodapp1.R$xml:
-    46707:46707:void <init>() -> <init>
+    46715:46715:void <init>() -> <init>
 com.companyname.andriodapp1.SeekerKeepAliveService -> com.companyname.andriodapp1.SeekerKeepAliveService:
     18:18:void <clinit>() -> <clinit>
     24:26:void <init>() -> <init>
@@ -48622,7 +48622,7 @@ com.xamarin.java_interop.internal.JavaProxyThrowable -> com.xamarin.java_interop
     19:25:void <init>(java.lang.String) -> <init>
     30:30:void jiAddManagedReference(java.lang.Object) -> jiAddManagedReference
     35:35:void jiClearManagedReferences() -> jiClearManagedReferences
-crc641f2ff10af9458ede.RecyclerUserListAdapter -> crc641f2ff10af9458ede.RecyclerUserListAdapter:
+crc645adb2f9e4b743f6c.RecyclerUserListAdapter -> crc645adb2f9e4b743f6c.RecyclerUserListAdapter:
     18:18:void <clinit>() -> <clinit>
     24:26:void <init>() -> <init>
     33:33:int getItemCount() -> getItemCount
@@ -48631,57 +48631,19 @@ crc641f2ff10af9458ede.RecyclerUserListAdapter -> crc641f2ff10af9458ede.RecyclerU
     72:73:void monodroidClearReferences() -> monodroidClearReferences
     41:41:void onBindViewHolder(androidx.recyclerview.widget.RecyclerView$ViewHolder,int) -> onBindViewHolder
     57:57:androidx.recyclerview.widget.RecyclerView$ViewHolder onCreateViewHolder(android.view.ViewGroup,int) -> onCreateViewHolder
-crc641f2ff10af9458ede.UserRowView -> crc641f2ff10af9458ede.UserRowView:
+crc645adb2f9e4b743f6c.UserRowView -> crc645adb2f9e4b743f6c.UserRowView:
     14:14:void <clinit>() -> <clinit>
     20:22:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
     29:31:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
     38:40:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
     45:46:void monodroidClearReferences() -> monodroidClearReferences
-crc641f2ff10af9458ede.UserRowViewHolder -> crc641f2ff10af9458ede.UserRowViewHolder:
+crc645adb2f9e4b743f6c.UserRowViewHolder -> crc645adb2f9e4b743f6c.UserRowViewHolder:
     16:16:void <clinit>() -> <clinit>
     22:24:void <init>(android.view.View) -> <init>
     39:41:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
     46:47:void monodroidClearReferences() -> monodroidClearReferences
     31:31:void onCreateContextMenu(android.view.ContextMenu,android.view.View,android.view.ContextMenu$ContextMenuInfo) -> onCreateContextMenu
-crc642417f7fd3533ddb1.AllTickersDialog -> crc642417f7fd3533ddb1.AllTickersDialog:
-    17:17:void <clinit>() -> <clinit>
-    23:25:void <init>() -> <init>
-    32:34:void <init>(int) -> <init>
-    40:42:void <init>(java.lang.String) -> <init>
-    73:75:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    80:81:void monodroidClearReferences() -> monodroidClearReferences
-    57:57:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
-    49:49:void onResume() -> onResume
-    65:65:void onViewCreated(android.view.View,android.os.Bundle) -> onViewCreated
-crc642417f7fd3533ddb1.ChatroomInnerFragment -> crc642417f7fd3533ddb1.ChatroomInnerFragment:
-    20:20:void <clinit>() -> <clinit>
-    26:28:void <init>() -> <init>
-    35:37:void <init>(int) -> <init>
-    92:94:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    99:100:void monodroidClearReferences() -> monodroidClearReferences
-    60:60:void onAttach(android.content.Context) -> onAttach
-    44:44:boolean onContextItemSelected(android.view.MenuItem) -> onContextItemSelected
-    52:52:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
-    84:84:void onDetach() -> onDetach
-    68:68:void onPause() -> onPause
-    76:76:void onResume() -> onResume
-crc642417f7fd3533ddb1.ChatroomInnerFragment_CustomClickEvent -> crc642417f7fd3533ddb1.ChatroomInnerFragment_CustomClickEvent:
-    16:16:void <clinit>() -> <clinit>
-    22:24:void <init>() -> <init>
-    39:41:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    46:47:void monodroidClearReferences() -> monodroidClearReferences
-    31:31:boolean onTouch(android.view.View,android.view.MotionEvent) -> onTouch
-crc642417f7fd3533ddb1.ChatroomOverviewFragment -> crc642417f7fd3533ddb1.ChatroomOverviewFragment:
-    18:18:void <clinit>() -> <clinit>
-    24:26:void <init>() -> <init>
-    33:35:void <init>(int) -> <init>
-    74:76:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    81:82:void monodroidClearReferences() -> monodroidClearReferences
-    66:66:void onAttach(android.content.Context) -> onAttach
-    42:42:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
-    58:58:void onPause() -> onPause
-    50:50:void onResume() -> onResume
-crc642417f7fd3533ddb1.RoomTickerAdapter -> crc642417f7fd3533ddb1.RoomTickerAdapter:
+crc646350f44cde9e1cf7.BrowseAdapter -> crc646350f44cde9e1cf7.BrowseAdapter:
     15:15:void <clinit>() -> <clinit>
     21:23:void <init>(android.content.Context,int) -> <init>
     30:32:void <init>(android.content.Context,int,int) -> <init>
@@ -48692,121 +48654,46 @@ crc642417f7fd3533ddb1.RoomTickerAdapter -> crc642417f7fd3533ddb1.RoomTickerAdapt
     75:75:android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
     83:85:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
     90:91:void monodroidClearReferences() -> monodroidClearReferences
-crc642417f7fd3533ddb1.RoomUserItemView -> crc642417f7fd3533ddb1.RoomUserItemView:
+crc646350f44cde9e1cf7.BrowseFragment -> crc646350f44cde9e1cf7.BrowseFragment:
+    27:27:void <clinit>() -> <clinit>
+    33:35:void <init>() -> <init>
+    42:44:void <init>(int) -> <init>
+    155:157:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    162:163:void monodroidClearReferences() -> monodroidClearReferences
+    147:147:boolean onContextItemSelected(android.view.MenuItem) -> onContextItemSelected
+    139:139:void onCreateContextMenu(android.view.ContextMenu,android.view.View,android.view.ContextMenu$ContextMenuInfo) -> onCreateContextMenu
+    51:51:void onCreateOptionsMenu(android.view.Menu,android.view.MenuInflater) -> onCreateOptionsMenu
+    91:91:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
+    83:83:void onDestroyView() -> onDestroyView
+    67:67:boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
+    131:131:void onPause() -> onPause
+    59:59:void onPrepareOptionsMenu(android.view.Menu) -> onPrepareOptionsMenu
+    123:123:void onResume() -> onResume
+    107:107:void onSaveInstanceState(android.os.Bundle) -> onSaveInstanceState
+    99:99:void onViewCreated(android.view.View,android.os.Bundle) -> onViewCreated
+    115:115:void onViewStateRestored(android.os.Bundle) -> onViewStateRestored
+    75:75:void setMenuVisibility(boolean) -> setMenuVisibility
+crc646350f44cde9e1cf7.BrowseResponseItemView -> crc646350f44cde9e1cf7.BrowseResponseItemView:
     14:14:void <clinit>() -> <clinit>
     20:22:void <init>(android.content.Context) -> <init>
     29:31:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
     38:40:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
     47:49:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
     54:55:void monodroidClearReferences() -> monodroidClearReferences
-crc642417f7fd3533ddb1.RoomUserItemViewHolder -> crc642417f7fd3533ddb1.RoomUserItemViewHolder:
-    16:16:void <clinit>() -> <clinit>
-    22:24:void <init>(android.view.View) -> <init>
-    39:41:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    46:47:void monodroidClearReferences() -> monodroidClearReferences
-    31:31:void onCreateContextMenu(android.view.ContextMenu,android.view.View,android.view.ContextMenu$ContextMenuInfo) -> onCreateContextMenu
-crc642417f7fd3533ddb1.RoomUserItemViewHolder_FixForDialogFragmentContext -> crc642417f7fd3533ddb1.RoomUserItemViewHolder_FixForDialogFragmentContext:
-    16:16:void <clinit>() -> <clinit>
-    22:24:void <init>() -> <init>
-    39:41:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    46:47:void monodroidClearReferences() -> monodroidClearReferences
-    31:31:boolean onMenuItemClick(android.view.MenuItem) -> onMenuItemClick
-crc642417f7fd3533ddb1.RoomUserListDialog -> crc642417f7fd3533ddb1.RoomUserListDialog:
-    19:19:void <clinit>() -> <clinit>
-    25:27:void <init>() -> <init>
-    34:36:void <init>(int) -> <init>
-    42:44:void <init>(java.lang.String,boolean) -> <init>
-    91:93:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    98:99:void monodroidClearReferences() -> monodroidClearReferences
-    83:83:boolean onContextItemSelected(android.view.MenuItem) -> onContextItemSelected
-    67:67:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
-    59:59:void onPause() -> onPause
-    51:51:void onResume() -> onResume
-    75:75:void onViewCreated(android.view.View,android.os.Bundle) -> onViewCreated
-crc642417f7fd3533ddb1.RoomUserListDialog_ToolbarMenuItemClickListener -> crc642417f7fd3533ddb1.RoomUserListDialog_ToolbarMenuItemClickListener:
-    16:16:void <clinit>() -> <clinit>
-    22:24:void <init>() -> <init>
-    39:41:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    46:47:void monodroidClearReferences() -> monodroidClearReferences
-    31:31:boolean onMenuItemClick(android.view.MenuItem) -> onMenuItemClick
-crc642417f7fd3533ddb1.RoomUserListRecyclerAdapter -> crc642417f7fd3533ddb1.RoomUserListRecyclerAdapter:
-    19:19:void <clinit>() -> <clinit>
-    25:27:void <init>() -> <init>
-    34:34:int getItemCount() -> getItemCount
-    66:68:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    73:74:void monodroidClearReferences() -> monodroidClearReferences
-    42:42:void onBindViewHolder(androidx.recyclerview.widget.RecyclerView$ViewHolder,int) -> onBindViewHolder
-    50:50:androidx.recyclerview.widget.RecyclerView$ViewHolder onCreateViewHolder(android.view.ViewGroup,int) -> onCreateViewHolder
-    58:58:boolean onMenuItemClick(android.view.MenuItem) -> onMenuItemClick
-crc642417f7fd3533ddb1.TickerItemView -> crc642417f7fd3533ddb1.TickerItemView:
-    14:14:void <clinit>() -> <clinit>
-    20:22:void <init>(android.content.Context) -> <init>
-    29:31:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
-    38:40:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
-    47:49:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    54:55:void monodroidClearReferences() -> monodroidClearReferences
-crc64340d94748e4d3c15.ItemTouchHelperMessageOverviewCallback -> crc64340d94748e4d3c15.ItemTouchHelperMessageOverviewCallback:
-    17:17:void <clinit>() -> <clinit>
-    23:25:void <init>(int,int) -> <init>
-    56:58:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    63:64:void monodroidClearReferences() -> monodroidClearReferences
-    48:48:void onChildDraw(android.graphics.Canvas,androidx.recyclerview.widget.RecyclerView,androidx.recyclerview.widget.RecyclerView$ViewHolder,float,float,int,boolean) -> onChildDraw
-    32:32:boolean onMove(androidx.recyclerview.widget.RecyclerView,androidx.recyclerview.widget.RecyclerView$ViewHolder,androidx.recyclerview.widget.RecyclerView$ViewHolder) -> onMove
-    40:40:void onSwiped(androidx.recyclerview.widget.RecyclerView$ViewHolder,int) -> onSwiped
-crc64340d94748e4d3c15.MessageInnerViewReceived -> crc64340d94748e4d3c15.MessageInnerViewReceived:
-    14:14:void <clinit>() -> <clinit>
-    20:22:void <init>(android.content.Context) -> <init>
-    29:31:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
-    38:40:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
-    47:49:void <init>(android.content.Context,android.util.AttributeSet,int,int) -> <init>
-    56:58:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    63:64:void monodroidClearReferences() -> monodroidClearReferences
-crc64340d94748e4d3c15.MessageInnerViewReceivedHolder -> crc64340d94748e4d3c15.MessageInnerViewReceivedHolder:
-    16:16:void <clinit>() -> <clinit>
-    22:24:void <init>(android.view.View) -> <init>
-    39:41:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    46:47:void monodroidClearReferences() -> monodroidClearReferences
-    31:31:void onCreateContextMenu(android.view.ContextMenu,android.view.View,android.view.ContextMenu$ContextMenuInfo) -> onCreateContextMenu
-crc64340d94748e4d3c15.MessageInnerViewSent -> crc64340d94748e4d3c15.MessageInnerViewSent:
-    14:14:void <clinit>() -> <clinit>
-    20:22:void <init>(android.content.Context) -> <init>
-    29:31:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
-    38:40:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
-    47:49:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    54:55:void monodroidClearReferences() -> monodroidClearReferences
-crc64340d94748e4d3c15.MessageInnerViewSentHolder -> crc64340d94748e4d3c15.MessageInnerViewSentHolder:
-    16:16:void <clinit>() -> <clinit>
-    22:24:void <init>(android.view.View) -> <init>
-    39:41:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    46:47:void monodroidClearReferences() -> monodroidClearReferences
-    31:31:void onCreateContextMenu(android.view.ContextMenu,android.view.View,android.view.ContextMenu$ContextMenuInfo) -> onCreateContextMenu
-crc64340d94748e4d3c15.MessageOverviewHolder -> crc64340d94748e4d3c15.MessageOverviewHolder:
-    14:14:void <clinit>() -> <clinit>
-    20:22:void <init>(android.view.View) -> <init>
-    29:31:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    36:37:void monodroidClearReferences() -> monodroidClearReferences
-crc64340d94748e4d3c15.MessageOverviewView -> crc64340d94748e4d3c15.MessageOverviewView:
-    14:14:void <clinit>() -> <clinit>
-    20:22:void <init>(android.content.Context) -> <init>
-    29:31:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
-    38:40:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
-    47:49:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    54:55:void monodroidClearReferences() -> monodroidClearReferences
-crc64340d94748e4d3c15.MessagesInnerFragment -> crc64340d94748e4d3c15.MessagesInnerFragment:
+crc646350f44cde9e1cf7.ChatroomActivity -> crc646350f44cde9e1cf7.ChatroomActivity:
     21:21:void <clinit>() -> <clinit>
     27:29:void <init>() -> <init>
     36:38:void <init>(int) -> <init>
-    44:46:void <init>(java.lang.String) -> <init>
-    109:111:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    116:117:void monodroidClearReferences() -> monodroidClearReferences
-    77:77:void onAttach(android.content.Context) -> onAttach
-    61:61:boolean onContextItemSelected(android.view.MenuItem) -> onContextItemSelected
-    53:53:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
-    101:101:void onDetach() -> onDetach
-    93:93:void onPause() -> onPause
-    85:85:void onResume() -> onResume
-    69:69:void onSaveInstanceState(android.os.Bundle) -> onSaveInstanceState
-crc64340d94748e4d3c15.MessagesInnerRecyclerAdapter -> crc64340d94748e4d3c15.MessagesInnerRecyclerAdapter:
+    101:103:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    108:109:void monodroidClearReferences() -> monodroidClearReferences
+    69:69:void onBackPressed() -> onBackPressed
+    45:45:void onCreate(android.os.Bundle) -> onCreate
+    77:77:boolean onCreateOptionsMenu(android.view.Menu) -> onCreateOptionsMenu
+    53:53:void onNewIntent(android.content.Intent) -> onNewIntent
+    93:93:boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
+    85:85:boolean onPrepareOptionsMenu(android.view.Menu) -> onPrepareOptionsMenu
+    61:61:void onSaveInstanceState(android.os.Bundle) -> onSaveInstanceState
+crc646350f44cde9e1cf7.ChatroomInnerRecyclerAdapter -> crc646350f44cde9e1cf7.ChatroomInnerRecyclerAdapter:
     18:18:void <clinit>() -> <clinit>
     24:26:void <init>() -> <init>
     33:33:int getItemCount() -> getItemCount
@@ -48815,18 +48702,52 @@ crc64340d94748e4d3c15.MessagesInnerRecyclerAdapter -> crc64340d94748e4d3c15.Mess
     72:73:void monodroidClearReferences() -> monodroidClearReferences
     41:41:void onBindViewHolder(androidx.recyclerview.widget.RecyclerView$ViewHolder,int) -> onBindViewHolder
     57:57:androidx.recyclerview.widget.RecyclerView$ViewHolder onCreateViewHolder(android.view.ViewGroup,int) -> onCreateViewHolder
-crc64340d94748e4d3c15.MessagesOverviewFragment -> crc64340d94748e4d3c15.MessagesOverviewFragment:
-    19:19:void <clinit>() -> <clinit>
-    25:27:void <init>() -> <init>
-    34:36:void <init>(int) -> <init>
-    83:85:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    90:91:void monodroidClearReferences() -> monodroidClearReferences
-    67:67:void onAttach(android.content.Context) -> onAttach
-    43:43:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
-    75:75:void onDetach() -> onDetach
-    59:59:void onPause() -> onPause
-    51:51:void onResume() -> onResume
-crc64340d94748e4d3c15.MessagesOverviewRecyclerAdapter -> crc64340d94748e4d3c15.MessagesOverviewRecyclerAdapter:
+crc646350f44cde9e1cf7.ChatroomOverviewCategoryHolder -> crc646350f44cde9e1cf7.ChatroomOverviewCategoryHolder:
+    14:14:void <clinit>() -> <clinit>
+    20:22:void <init>(android.view.View) -> <init>
+    29:31:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    36:37:void monodroidClearReferences() -> monodroidClearReferences
+crc646350f44cde9e1cf7.ChatroomOverviewCategoryView -> crc646350f44cde9e1cf7.ChatroomOverviewCategoryView:
+    14:14:void <clinit>() -> <clinit>
+    20:22:void <init>(android.content.Context) -> <init>
+    29:31:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
+    38:40:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
+    47:49:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    54:55:void monodroidClearReferences() -> monodroidClearReferences
+crc646350f44cde9e1cf7.ChatroomOverviewHolder -> crc646350f44cde9e1cf7.ChatroomOverviewHolder:
+    14:14:void <clinit>() -> <clinit>
+    20:22:void <init>(android.view.View) -> <init>
+    29:31:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    36:37:void monodroidClearReferences() -> monodroidClearReferences
+crc646350f44cde9e1cf7.ChatroomOverviewJoinedView -> crc646350f44cde9e1cf7.ChatroomOverviewJoinedView:
+    14:14:void <clinit>() -> <clinit>
+    20:22:void <init>(android.content.Context) -> <init>
+    29:31:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
+    38:40:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
+    47:49:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    54:55:void monodroidClearReferences() -> monodroidClearReferences
+crc646350f44cde9e1cf7.ChatroomOverviewJoinedViewHolder -> crc646350f44cde9e1cf7.ChatroomOverviewJoinedViewHolder:
+    14:14:void <clinit>() -> <clinit>
+    20:22:void <init>(android.view.View) -> <init>
+    29:31:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    36:37:void monodroidClearReferences() -> monodroidClearReferences
+crc646350f44cde9e1cf7.ChatroomOverviewRecyclerAdapter -> crc646350f44cde9e1cf7.ChatroomOverviewRecyclerAdapter:
+    18:18:void <clinit>() -> <clinit>
+    24:26:void <init>() -> <init>
+    33:33:int getItemCount() -> getItemCount
+    49:49:int getItemViewType(int) -> getItemViewType
+    65:67:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    72:73:void monodroidClearReferences() -> monodroidClearReferences
+    41:41:void onBindViewHolder(androidx.recyclerview.widget.RecyclerView$ViewHolder,int) -> onBindViewHolder
+    57:57:androidx.recyclerview.widget.RecyclerView$ViewHolder onCreateViewHolder(android.view.ViewGroup,int) -> onCreateViewHolder
+crc646350f44cde9e1cf7.ChatroomOverviewView -> crc646350f44cde9e1cf7.ChatroomOverviewView:
+    14:14:void <clinit>() -> <clinit>
+    20:22:void <init>(android.content.Context) -> <init>
+    29:31:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
+    38:40:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
+    47:49:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    54:55:void monodroidClearReferences() -> monodroidClearReferences
+crc646350f44cde9e1cf7.ChatroomStatusesRecyclerAdapter -> crc646350f44cde9e1cf7.ChatroomStatusesRecyclerAdapter:
     17:17:void <clinit>() -> <clinit>
     23:25:void <init>() -> <init>
     32:32:int getItemCount() -> getItemCount
@@ -48834,6 +48755,713 @@ crc64340d94748e4d3c15.MessagesOverviewRecyclerAdapter -> crc64340d94748e4d3c15.M
     63:64:void monodroidClearReferences() -> monodroidClearReferences
     40:40:void onBindViewHolder(androidx.recyclerview.widget.RecyclerView$ViewHolder,int) -> onBindViewHolder
     48:48:androidx.recyclerview.widget.RecyclerView$ViewHolder onCreateViewHolder(android.view.ViewGroup,int) -> onCreateViewHolder
+crc646350f44cde9e1cf7.ChipItemView -> crc646350f44cde9e1cf7.ChipItemView:
+    14:14:void <clinit>() -> <clinit>
+    20:22:void <init>(android.content.Context) -> <init>
+    29:31:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
+    38:40:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
+    47:49:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    54:55:void monodroidClearReferences() -> monodroidClearReferences
+crc646350f44cde9e1cf7.ChipItemViewHolder -> crc646350f44cde9e1cf7.ChipItemViewHolder:
+    14:14:void <clinit>() -> <clinit>
+    20:22:void <init>(android.view.View) -> <init>
+    29:31:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    36:37:void monodroidClearReferences() -> monodroidClearReferences
+crc646350f44cde9e1cf7.ChipsItemRecyclerAdapter -> crc646350f44cde9e1cf7.ChipsItemRecyclerAdapter:
+    17:17:void <clinit>() -> <clinit>
+    23:25:void <init>() -> <init>
+    32:32:int getItemCount() -> getItemCount
+    56:58:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    63:64:void monodroidClearReferences() -> monodroidClearReferences
+    48:48:void onBindViewHolder(androidx.recyclerview.widget.RecyclerView$ViewHolder,int) -> onBindViewHolder
+    40:40:androidx.recyclerview.widget.RecyclerView$ViewHolder onCreateViewHolder(android.view.ViewGroup,int) -> onCreateViewHolder
+crc646350f44cde9e1cf7.CloseActivity -> crc646350f44cde9e1cf7.CloseActivity:
+    15:15:void <clinit>() -> <clinit>
+    21:23:void <init>() -> <init>
+    30:32:void <init>(int) -> <init>
+    47:49:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    54:55:void monodroidClearReferences() -> monodroidClearReferences
+    39:39:void onCreate(android.os.Bundle) -> onCreate
+crc646350f44cde9e1cf7.ConnectionReceiver -> crc646350f44cde9e1cf7.ConnectionReceiver:
+    15:15:void <clinit>() -> <clinit>
+    21:23:void <init>() -> <init>
+    38:40:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    45:46:void monodroidClearReferences() -> monodroidClearReferences
+    30:30:void onReceive(android.content.Context,android.content.Intent) -> onReceive
+crc646350f44cde9e1cf7.CustomLinearLayoutManager -> crc646350f44cde9e1cf7.CustomLinearLayoutManager:
+    15:15:void <clinit>() -> <clinit>
+    21:23:void <init>(android.content.Context) -> <init>
+    30:32:void <init>(android.content.Context,android.util.AttributeSet,int,int) -> <init>
+    39:41:void <init>(android.content.Context,int,boolean) -> <init>
+    56:58:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    63:64:void monodroidClearReferences() -> monodroidClearReferences
+    48:48:boolean supportsPredictiveItemAnimations() -> supportsPredictiveItemAnimations
+crc646350f44cde9e1cf7.DownloadCustomAdapter -> crc646350f44cde9e1cf7.DownloadCustomAdapter:
+    15:15:void <clinit>() -> <clinit>
+    21:23:void <init>(android.content.Context,int) -> <init>
+    30:32:void <init>(android.content.Context,int,int) -> <init>
+    39:41:void <init>(android.content.Context,int,java.lang.Object[]) -> <init>
+    48:50:void <init>(android.content.Context,int,int,java.lang.Object[]) -> <init>
+    57:59:void <init>(android.content.Context,int,java.util.List) -> <init>
+    66:68:void <init>(android.content.Context,int,int,java.util.List) -> <init>
+    75:75:android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
+    83:85:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    90:91:void monodroidClearReferences() -> monodroidClearReferences
+crc646350f44cde9e1cf7.DownloadDialog -> crc646350f44cde9e1cf7.DownloadDialog:
+    23:23:void <clinit>() -> <clinit>
+    29:31:void <init>() -> <init>
+    38:40:void <init>(int) -> <init>
+    111:113:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    118:119:void monodroidClearReferences() -> monodroidClearReferences
+    55:55:void onAttach(android.content.Context) -> onAttach
+    87:87:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
+    71:71:void onDestroy() -> onDestroy
+    63:63:void onDetach() -> onDetach
+    79:79:void onDismiss(android.content.DialogInterface) -> onDismiss
+    103:103:boolean onMenuItemClick(android.view.MenuItem) -> onMenuItemClick
+    47:47:void onResume() -> onResume
+    95:95:void onViewCreated(android.view.View,android.os.Bundle) -> onViewCreated
+crc646350f44cde9e1cf7.DownloadDialog_OnRefreshListenerGetFolder -> crc646350f44cde9e1cf7.DownloadDialog_OnRefreshListenerGetFolder:
+    16:16:void <clinit>() -> <clinit>
+    22:24:void <init>() -> <init>
+    30:32:void <init>(crc646350f44cde9e1cf7.DownloadDialog) -> <init>
+    47:49:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    54:55:void monodroidClearReferences() -> monodroidClearReferences
+    39:39:void onRefresh() -> onRefresh
+crc646350f44cde9e1cf7.DownloadItemView -> crc646350f44cde9e1cf7.DownloadItemView:
+    14:14:void <clinit>() -> <clinit>
+    20:22:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
+    29:31:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
+    38:40:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    45:46:void monodroidClearReferences() -> monodroidClearReferences
+crc646350f44cde9e1cf7.DragDropItemTouchHelper -> crc646350f44cde9e1cf7.DragDropItemTouchHelper:
+    21:21:void <clinit>() -> <clinit>
+    27:29:void <init>(int,int) -> <init>
+    84:84:void clearView(androidx.recyclerview.widget.RecyclerView,androidx.recyclerview.widget.RecyclerView$ViewHolder) -> clearView
+    52:52:int getMovementFlags(androidx.recyclerview.widget.RecyclerView,androidx.recyclerview.widget.RecyclerView$ViewHolder) -> getMovementFlags
+    44:44:boolean isItemViewSwipeEnabled() -> isItemViewSwipeEnabled
+    36:36:boolean isLongPressDragEnabled() -> isLongPressDragEnabled
+    92:94:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    99:100:void monodroidClearReferences() -> monodroidClearReferences
+    60:60:boolean onMove(androidx.recyclerview.widget.RecyclerView,androidx.recyclerview.widget.RecyclerView$ViewHolder,androidx.recyclerview.widget.RecyclerView$ViewHolder) -> onMove
+    76:76:void onSelectedChanged(androidx.recyclerview.widget.RecyclerView$ViewHolder,int) -> onSelectedChanged
+    68:68:void onSwiped(androidx.recyclerview.widget.RecyclerView$ViewHolder,int) -> onSwiped
+crc646350f44cde9e1cf7.EditUserInfoActivity -> crc646350f44cde9e1cf7.EditUserInfoActivity:
+    20:20:void <clinit>() -> <clinit>
+    26:28:void <init>() -> <init>
+    35:37:void <init>(int) -> <init>
+    92:94:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    99:100:void monodroidClearReferences() -> monodroidClearReferences
+    84:84:void onActivityResult(int,int,android.content.Intent) -> onActivityResult
+    68:68:void onBackPressed() -> onBackPressed
+    76:76:void onCreate(android.os.Bundle) -> onCreate
+    44:44:boolean onCreateOptionsMenu(android.view.Menu) -> onCreateOptionsMenu
+    60:60:boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
+    52:52:boolean onPrepareOptionsMenu(android.view.Menu) -> onPrepareOptionsMenu
+crc646350f44cde9e1cf7.ExpandableSearchItemFilesAdapter -> crc646350f44cde9e1cf7.ExpandableSearchItemFilesAdapter:
+    15:15:void <clinit>() -> <clinit>
+    21:23:void <init>(android.content.Context,int) -> <init>
+    30:32:void <init>(android.content.Context,int,int) -> <init>
+    39:41:void <init>(android.content.Context,int,java.lang.Object[]) -> <init>
+    48:50:void <init>(android.content.Context,int,int,java.lang.Object[]) -> <init>
+    57:59:void <init>(android.content.Context,int,java.util.List) -> <init>
+    66:68:void <init>(android.content.Context,int,int,java.util.List) -> <init>
+    75:75:android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
+    83:85:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    90:91:void monodroidClearReferences() -> monodroidClearReferences
+crc646350f44cde9e1cf7.ForegroundLifecycleTracker -> crc646350f44cde9e1cf7.ForegroundLifecycleTracker:
+    36:36:void <clinit>() -> <clinit>
+    42:44:void <init>() -> <init>
+    219:221:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    226:227:void monodroidClearReferences() -> monodroidClearReferences
+    51:51:void onActivityCreated(android.app.Activity,android.os.Bundle) -> onActivityCreated
+    59:59:void onActivityDestroyed(android.app.Activity) -> onActivityDestroyed
+    67:67:void onActivityPaused(android.app.Activity) -> onActivityPaused
+    107:107:void onActivityPostCreated(android.app.Activity,android.os.Bundle) -> onActivityPostCreated
+    115:115:void onActivityPostDestroyed(android.app.Activity) -> onActivityPostDestroyed
+    123:123:void onActivityPostPaused(android.app.Activity) -> onActivityPostPaused
+    131:131:void onActivityPostResumed(android.app.Activity) -> onActivityPostResumed
+    139:139:void onActivityPostSaveInstanceState(android.app.Activity,android.os.Bundle) -> onActivityPostSaveInstanceState
+    147:147:void onActivityPostStarted(android.app.Activity) -> onActivityPostStarted
+    155:155:void onActivityPostStopped(android.app.Activity) -> onActivityPostStopped
+    163:163:void onActivityPreCreated(android.app.Activity,android.os.Bundle) -> onActivityPreCreated
+    171:171:void onActivityPreDestroyed(android.app.Activity) -> onActivityPreDestroyed
+    179:179:void onActivityPrePaused(android.app.Activity) -> onActivityPrePaused
+    187:187:void onActivityPreResumed(android.app.Activity) -> onActivityPreResumed
+    195:195:void onActivityPreSaveInstanceState(android.app.Activity,android.os.Bundle) -> onActivityPreSaveInstanceState
+    203:203:void onActivityPreStarted(android.app.Activity) -> onActivityPreStarted
+    211:211:void onActivityPreStopped(android.app.Activity) -> onActivityPreStopped
+    75:75:void onActivityResumed(android.app.Activity) -> onActivityResumed
+    83:83:void onActivitySaveInstanceState(android.app.Activity,android.os.Bundle) -> onActivitySaveInstanceState
+    91:91:void onActivityStarted(android.app.Activity) -> onActivityStarted
+    99:99:void onActivityStopped(android.app.Activity) -> onActivityStopped
+crc646350f44cde9e1cf7.GroupMessageInnerViewReceived -> crc646350f44cde9e1cf7.GroupMessageInnerViewReceived:
+    14:14:void <clinit>() -> <clinit>
+    20:22:void <init>(android.content.Context) -> <init>
+    29:31:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
+    38:40:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
+    47:49:void <init>(android.content.Context,android.util.AttributeSet,int,int) -> <init>
+    56:58:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    63:64:void monodroidClearReferences() -> monodroidClearReferences
+crc646350f44cde9e1cf7.GroupMessageInnerViewReceivedHolder -> crc646350f44cde9e1cf7.GroupMessageInnerViewReceivedHolder:
+    16:16:void <clinit>() -> <clinit>
+    22:24:void <init>(android.view.View) -> <init>
+    39:41:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    46:47:void monodroidClearReferences() -> monodroidClearReferences
+    31:31:void onCreateContextMenu(android.view.ContextMenu,android.view.View,android.view.ContextMenu$ContextMenuInfo) -> onCreateContextMenu
+crc646350f44cde9e1cf7.ImportItemView -> crc646350f44cde9e1cf7.ImportItemView:
+    14:14:void <clinit>() -> <clinit>
+    20:22:void <init>(android.content.Context) -> <init>
+    29:31:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
+    38:40:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
+    47:49:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    54:55:void monodroidClearReferences() -> monodroidClearReferences
+crc646350f44cde9e1cf7.ImportItemViewHolder -> crc646350f44cde9e1cf7.ImportItemViewHolder:
+    14:14:void <clinit>() -> <clinit>
+    20:22:void <init>(android.view.View) -> <init>
+    29:31:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    36:37:void monodroidClearReferences() -> monodroidClearReferences
+crc646350f44cde9e1cf7.ImportListAdapter -> crc646350f44cde9e1cf7.ImportListAdapter:
+    17:17:void <clinit>() -> <clinit>
+    23:25:void <init>() -> <init>
+    32:32:int getItemCount() -> getItemCount
+    56:58:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    63:64:void monodroidClearReferences() -> monodroidClearReferences
+    48:48:void onBindViewHolder(androidx.recyclerview.widget.RecyclerView$ViewHolder,int) -> onBindViewHolder
+    40:40:androidx.recyclerview.widget.RecyclerView$ViewHolder onCreateViewHolder(android.view.ViewGroup,int) -> onCreateViewHolder
+crc646350f44cde9e1cf7.ImportListFragment -> crc646350f44cde9e1cf7.ImportListFragment:
+    20:20:void <clinit>() -> <clinit>
+    26:28:void <init>() -> <init>
+    35:37:void <init>(int) -> <init>
+    92:94:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    99:100:void monodroidClearReferences() -> monodroidClearReferences
+    84:84:void onAttach(android.content.Context) -> onAttach
+    52:52:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
+    60:60:void onDestroy() -> onDestroy
+    68:68:void onDestroyView() -> onDestroyView
+    76:76:void onResume() -> onResume
+    44:44:void onSaveInstanceState(android.os.Bundle) -> onSaveInstanceState
+crc646350f44cde9e1cf7.ImportWizardActivity -> crc646350f44cde9e1cf7.ImportWizardActivity:
+    18:18:void <clinit>() -> <clinit>
+    24:26:void <init>() -> <init>
+    33:35:void <init>(int) -> <init>
+    74:76:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    81:82:void monodroidClearReferences() -> monodroidClearReferences
+    66:66:void onActivityResult(int,int,android.content.Intent) -> onActivityResult
+    58:58:void onBackPressed() -> onBackPressed
+    42:42:void onCreate(android.os.Bundle) -> onCreate
+    50:50:void onDestroy() -> onDestroy
+crc646350f44cde9e1cf7.ItemViewHolder -> crc646350f44cde9e1cf7.ItemViewHolder:
+    14:14:void <clinit>() -> <clinit>
+    20:22:void <init>(android.view.View) -> <init>
+    29:31:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    36:37:void monodroidClearReferences() -> monodroidClearReferences
+crc646350f44cde9e1cf7.LoginFragment -> crc646350f44cde9e1cf7.LoginFragment:
+    17:17:void <clinit>() -> <clinit>
+    23:25:void <init>() -> <init>
+    32:34:void <init>(int) -> <init>
+    65:67:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    72:73:void monodroidClearReferences() -> monodroidClearReferences
+    41:41:void onCreateOptionsMenu(android.view.Menu,android.view.MenuInflater) -> onCreateOptionsMenu
+    49:49:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
+    57:57:void onViewCreated(android.view.View,android.os.Bundle) -> onViewCreated
+crc646350f44cde9e1cf7.MagnetLinkClickableSpan -> crc646350f44cde9e1cf7.MagnetLinkClickableSpan:
+    15:15:void <clinit>() -> <clinit>
+    21:23:void <init>() -> <init>
+    29:31:void <init>(java.lang.String) -> <init>
+    46:48:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    53:54:void monodroidClearReferences() -> monodroidClearReferences
+    38:38:void onClick(android.view.View) -> onClick
+crc646350f44cde9e1cf7.MainActivity -> crc646350f44cde9e1cf7.MainActivity:
+    28:28:void <clinit>() -> <clinit>
+    34:36:void <init>() -> <init>
+    43:45:void <init>(int) -> <init>
+    140:142:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    147:148:void monodroidClearReferences() -> monodroidClearReferences
+    92:92:void onActivityResult(int,int,android.content.Intent) -> onActivityResult
+    84:84:void onBackPressed() -> onBackPressed
+    52:52:void onCreate(android.os.Bundle) -> onCreate
+    116:116:boolean onCreateOptionsMenu(android.view.Menu) -> onCreateOptionsMenu
+    132:132:boolean onNavigationItemSelected(android.view.MenuItem) -> onNavigationItemSelected
+    68:68:void onNewIntent(android.content.Intent) -> onNewIntent
+    76:76:boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
+    100:100:void onPause() -> onPause
+    124:124:void onRequestPermissionsResult(int,java.lang.String[],int[]) -> onRequestPermissionsResult
+    108:108:void onSaveInstanceState(android.os.Bundle) -> onSaveInstanceState
+    60:60:void onStart() -> onStart
+crc646350f44cde9e1cf7.MainActivity_BottomNavigationViewAnimationListener -> crc646350f44cde9e1cf7.MainActivity_BottomNavigationViewAnimationListener:
+    19:19:void <clinit>() -> <clinit>
+    25:27:void <init>() -> <init>
+    66:68:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    73:74:void monodroidClearReferences() -> monodroidClearReferences
+    34:34:void onAnimationCancel(android.animation.Animator) -> onAnimationCancel
+    42:42:void onAnimationEnd(android.animation.Animator) -> onAnimationEnd
+    50:50:void onAnimationRepeat(android.animation.Animator) -> onAnimationRepeat
+    58:58:void onAnimationStart(android.animation.Animator) -> onAnimationStart
+crc646350f44cde9e1cf7.MainActivity_ListenerKeyboard -> crc646350f44cde9e1cf7.MainActivity_ListenerKeyboard:
+    16:16:void <clinit>() -> <clinit>
+    22:24:void <init>() -> <init>
+    30:32:void <init>(android.view.View) -> <init>
+    47:49:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    54:55:void monodroidClearReferences() -> monodroidClearReferences
+    39:39:void onGlobalLayout() -> onGlobalLayout
+crc646350f44cde9e1cf7.MainActivity_OnPageChangeLister1 -> crc646350f44cde9e1cf7.MainActivity_OnPageChangeLister1:
+    18:18:void <clinit>() -> <clinit>
+    24:26:void <init>() -> <init>
+    57:59:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    64:65:void monodroidClearReferences() -> monodroidClearReferences
+    33:33:void onPageScrollStateChanged(int) -> onPageScrollStateChanged
+    41:41:void onPageScrolled(int,float,int) -> onPageScrolled
+    49:49:void onPageSelected(int) -> onPageSelected
+crc646350f44cde9e1cf7.MaterialProgressBarPassThrough -> crc646350f44cde9e1cf7.MaterialProgressBarPassThrough:
+    14:14:void <clinit>() -> <clinit>
+    20:22:void <init>(android.content.Context) -> <init>
+    29:31:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
+    38:40:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
+    47:49:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    54:55:void monodroidClearReferences() -> monodroidClearReferences
+crc646350f44cde9e1cf7.MessageConnectionStatus -> crc646350f44cde9e1cf7.MessageConnectionStatus:
+    14:14:void <clinit>() -> <clinit>
+    20:22:void <init>(android.content.Context) -> <init>
+    29:31:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
+    38:40:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
+    47:49:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    54:55:void monodroidClearReferences() -> monodroidClearReferences
+crc646350f44cde9e1cf7.MessageConnectionStatusHolder -> crc646350f44cde9e1cf7.MessageConnectionStatusHolder:
+    14:14:void <clinit>() -> <clinit>
+    20:22:void <init>(android.view.View) -> <init>
+    29:31:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    36:37:void monodroidClearReferences() -> monodroidClearReferences
+crc646350f44cde9e1cf7.MessagesActivity -> crc646350f44cde9e1cf7.MessagesActivity:
+    23:23:void <clinit>() -> <clinit>
+    29:31:void <init>() -> <init>
+    38:40:void <init>(int) -> <init>
+    119:121:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    126:127:void monodroidClearReferences() -> monodroidClearReferences
+    87:87:void onBackPressed() -> onBackPressed
+    111:111:void onCreate(android.os.Bundle) -> onCreate
+    63:63:boolean onCreateOptionsMenu(android.view.Menu) -> onCreateOptionsMenu
+    95:95:void onNewIntent(android.content.Intent) -> onNewIntent
+    79:79:boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
+    71:71:boolean onPrepareOptionsMenu(android.view.Menu) -> onPrepareOptionsMenu
+    55:55:void onRestoreInstanceState(android.os.Bundle) -> onRestoreInstanceState
+    103:103:void onResume() -> onResume
+    47:47:void onSaveInstanceState(android.os.Bundle) -> onSaveInstanceState
+crc646350f44cde9e1cf7.MessagesBroadcastReceiver -> crc646350f44cde9e1cf7.MessagesBroadcastReceiver:
+    15:15:void <clinit>() -> <clinit>
+    21:23:void <init>() -> <init>
+    38:40:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    45:46:void monodroidClearReferences() -> monodroidClearReferences
+    30:30:void onReceive(android.content.Context,android.content.Intent) -> onReceive
+crc646350f44cde9e1cf7.RecyclerListAdapter -> crc646350f44cde9e1cf7.RecyclerListAdapter:
+    17:17:void <clinit>() -> <clinit>
+    23:25:void <init>() -> <init>
+    48:48:int getItemCount() -> getItemCount
+    56:58:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    63:64:void monodroidClearReferences() -> monodroidClearReferences
+    40:40:void onBindViewHolder(androidx.recyclerview.widget.RecyclerView$ViewHolder,int) -> onBindViewHolder
+    32:32:androidx.recyclerview.widget.RecyclerView$ViewHolder onCreateViewHolder(android.view.ViewGroup,int) -> onCreateViewHolder
+crc646350f44cde9e1cf7.RecyclerView2 -> crc646350f44cde9e1cf7.RecyclerView2:
+    15:15:void <clinit>() -> <clinit>
+    21:23:void <init>(android.content.Context) -> <init>
+    30:32:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
+    39:41:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
+    56:58:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    63:64:void monodroidClearReferences() -> monodroidClearReferences
+    48:48:void onSizeChanged(int,int,int,int) -> onSizeChanged
+crc646350f44cde9e1cf7.SearchDialog -> crc646350f44cde9e1cf7.SearchDialog:
+    19:19:void <clinit>() -> <clinit>
+    25:27:void <init>() -> <init>
+    34:36:void <init>(int) -> <init>
+    42:44:void <init>(java.lang.String,boolean) -> <init>
+    91:93:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    98:99:void monodroidClearReferences() -> monodroidClearReferences
+    75:75:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
+    67:67:void onDestroy() -> onDestroy
+    51:51:void onPause() -> onPause
+    59:59:void onResume() -> onResume
+    83:83:void onViewCreated(android.view.View,android.os.Bundle) -> onViewCreated
+crc646350f44cde9e1cf7.SearchDialogDummyActivity -> crc646350f44cde9e1cf7.SearchDialogDummyActivity:
+    15:15:void <clinit>() -> <clinit>
+    21:23:void <init>() -> <init>
+    30:32:void <init>(int) -> <init>
+    47:49:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    54:55:void monodroidClearReferences() -> monodroidClearReferences
+    39:39:void onCreate(android.os.Bundle) -> onCreate
+crc646350f44cde9e1cf7.SearchFragment -> crc646350f44cde9e1cf7.SearchFragment:
+    23:23:void <clinit>() -> <clinit>
+    29:31:void <init>() -> <init>
+    38:40:void <init>(int) -> <init>
+    119:121:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    126:127:void monodroidClearReferences() -> monodroidClearReferences
+    111:111:void onAttach(android.app.Activity) -> onAttach
+    71:71:void onCreateOptionsMenu(android.view.Menu,android.view.MenuInflater) -> onCreateOptionsMenu
+    87:87:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
+    103:103:void onDetach() -> onDetach
+    79:79:boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
+    95:95:void onPause() -> onPause
+    55:55:void onResume() -> onResume
+    47:47:void onStart() -> onStart
+    63:63:void setMenuVisibility(boolean) -> setMenuVisibility
+crc646350f44cde9e1cf7.SearchFragment_BSDF_Menu -> crc646350f44cde9e1cf7.SearchFragment_BSDF_Menu:
+    15:15:void <clinit>() -> <clinit>
+    21:23:void <init>() -> <init>
+    30:32:void <init>(int) -> <init>
+    47:49:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    54:55:void monodroidClearReferences() -> monodroidClearReferences
+    39:39:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
+crc646350f44cde9e1cf7.SearchFragment_SearchAdapterRecyclerVersion -> crc646350f44cde9e1cf7.SearchFragment_SearchAdapterRecyclerVersion:
+    17:17:void <clinit>() -> <clinit>
+    23:25:void <init>() -> <init>
+    32:32:int getItemCount() -> getItemCount
+    56:58:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    63:64:void monodroidClearReferences() -> monodroidClearReferences
+    40:40:void onBindViewHolder(androidx.recyclerview.widget.RecyclerView$ViewHolder,int) -> onBindViewHolder
+    48:48:androidx.recyclerview.widget.RecyclerView$ViewHolder onCreateViewHolder(android.view.ViewGroup,int) -> onCreateViewHolder
+crc646350f44cde9e1cf7.SearchFragment_SearchDiffCallback -> crc646350f44cde9e1cf7.SearchFragment_SearchDiffCallback:
+    18:18:void <clinit>() -> <clinit>
+    24:26:void <init>() -> <init>
+    49:49:boolean areContentsTheSame(int,int) -> areContentsTheSame
+    57:57:boolean areItemsTheSame(int,int) -> areItemsTheSame
+    33:33:int getNewListSize() -> getNewListSize
+    41:41:int getOldListSize() -> getOldListSize
+    65:67:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    72:73:void monodroidClearReferences() -> monodroidClearReferences
+crc646350f44cde9e1cf7.SearchFragment_SearchViewHolder -> crc646350f44cde9e1cf7.SearchFragment_SearchViewHolder:
+    14:14:void <clinit>() -> <clinit>
+    20:22:void <init>(android.view.View) -> <init>
+    29:31:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    36:37:void monodroidClearReferences() -> monodroidClearReferences
+crc646350f44cde9e1cf7.SearchItemViewExpandable -> crc646350f44cde9e1cf7.SearchItemViewExpandable:
+    14:14:void <clinit>() -> <clinit>
+    20:22:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
+    29:31:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
+    38:40:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    45:46:void monodroidClearReferences() -> monodroidClearReferences
+crc646350f44cde9e1cf7.SearchItemViewMedium -> crc646350f44cde9e1cf7.SearchItemViewMedium:
+    14:14:void <clinit>() -> <clinit>
+    20:22:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
+    29:31:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
+    38:40:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    45:46:void monodroidClearReferences() -> monodroidClearReferences
+crc646350f44cde9e1cf7.SearchItemViewMinimal -> crc646350f44cde9e1cf7.SearchItemViewMinimal:
+    14:14:void <clinit>() -> <clinit>
+    20:22:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
+    29:31:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
+    38:40:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    45:46:void monodroidClearReferences() -> monodroidClearReferences
+crc646350f44cde9e1cf7.SearchTabDialog -> crc646350f44cde9e1cf7.SearchTabDialog:
+    19:19:void <clinit>() -> <clinit>
+    25:27:void <init>() -> <init>
+    34:36:void <init>(int) -> <init>
+    75:77:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    82:83:void monodroidClearReferences() -> monodroidClearReferences
+    43:43:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
+    67:67:void onGlobalLayout() -> onGlobalLayout
+    59:59:void onResume() -> onResume
+    51:51:void onViewCreated(android.view.View,android.os.Bundle) -> onViewCreated
+crc646350f44cde9e1cf7.SearchTabItemRecyclerAdapter -> crc646350f44cde9e1cf7.SearchTabItemRecyclerAdapter:
+    17:17:void <clinit>() -> <clinit>
+    23:25:void <init>() -> <init>
+    32:32:int getItemCount() -> getItemCount
+    56:58:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    63:64:void monodroidClearReferences() -> monodroidClearReferences
+    48:48:void onBindViewHolder(androidx.recyclerview.widget.RecyclerView$ViewHolder,int) -> onBindViewHolder
+    40:40:androidx.recyclerview.widget.RecyclerView$ViewHolder onCreateViewHolder(android.view.ViewGroup,int) -> onCreateViewHolder
+crc646350f44cde9e1cf7.SearchTabView -> crc646350f44cde9e1cf7.SearchTabView:
+    14:14:void <clinit>() -> <clinit>
+    20:22:void <init>(android.content.Context) -> <init>
+    29:31:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
+    38:40:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
+    47:49:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    54:55:void monodroidClearReferences() -> monodroidClearReferences
+crc646350f44cde9e1cf7.SearchTabViewHolder -> crc646350f44cde9e1cf7.SearchTabViewHolder:
+    14:14:void <clinit>() -> <clinit>
+    20:22:void <init>(android.view.View) -> <init>
+    29:31:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    36:37:void monodroidClearReferences() -> monodroidClearReferences
+crc646350f44cde9e1cf7.SeekerApplication -> crc646350f44cde9e1cf7.SeekerApplication:
+    18:19:void <init>() -> <init>
+    33:35:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    40:41:void monodroidClearReferences() -> monodroidClearReferences
+    25:25:void onCreate() -> onCreate
+crc646350f44cde9e1cf7.SettingsActivity -> crc646350f44cde9e1cf7.SettingsActivity:
+    22:22:void <clinit>() -> <clinit>
+    28:30:void <init>() -> <init>
+    37:39:void <init>(int) -> <init>
+    110:112:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    117:118:void monodroidClearReferences() -> monodroidClearReferences
+    102:102:void onActivityResult(int,int,android.content.Intent) -> onActivityResult
+    86:86:boolean onContextItemSelected(android.view.MenuItem) -> onContextItemSelected
+    78:78:void onCreate(android.os.Bundle) -> onCreate
+    46:46:boolean onCreateOptionsMenu(android.view.Menu) -> onCreateOptionsMenu
+    54:54:boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
+    70:70:void onPause() -> onPause
+    94:94:void onRequestPermissionsResult(int,java.lang.String[],int[]) -> onRequestPermissionsResult
+    62:62:void onResume() -> onResume
+crc646350f44cde9e1cf7.SettingsActivity_RecyclerViewFolderHolder -> crc646350f44cde9e1cf7.SettingsActivity_RecyclerViewFolderHolder:
+    16:16:void <clinit>() -> <clinit>
+    22:24:void <init>(android.view.View) -> <init>
+    39:41:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    46:47:void monodroidClearReferences() -> monodroidClearReferences
+    31:31:void onCreateContextMenu(android.view.ContextMenu,android.view.View,android.view.ContextMenu$ContextMenuInfo) -> onCreateContextMenu
+crc646350f44cde9e1cf7.SettingsActivity_RecyclerViewFolderView -> crc646350f44cde9e1cf7.SettingsActivity_RecyclerViewFolderView:
+    14:14:void <clinit>() -> <clinit>
+    20:22:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
+    29:31:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
+    38:40:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    45:46:void monodroidClearReferences() -> monodroidClearReferences
+crc646350f44cde9e1cf7.SettingsActivity_ReyclerUploadsAdapter -> crc646350f44cde9e1cf7.SettingsActivity_ReyclerUploadsAdapter:
+    17:17:void <clinit>() -> <clinit>
+    23:25:void <init>() -> <init>
+    32:32:int getItemCount() -> getItemCount
+    56:58:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    63:64:void monodroidClearReferences() -> monodroidClearReferences
+    40:40:void onBindViewHolder(androidx.recyclerview.widget.RecyclerView$ViewHolder,int) -> onBindViewHolder
+    48:48:androidx.recyclerview.widget.RecyclerView$ViewHolder onCreateViewHolder(android.view.ViewGroup,int) -> onCreateViewHolder
+crc646350f44cde9e1cf7.SimpleArrayAdaper -> crc646350f44cde9e1cf7.SimpleArrayAdaper:
+    15:15:void <clinit>() -> <clinit>
+    21:23:void <init>(android.content.Context,int) -> <init>
+    30:32:void <init>(android.content.Context,int,int) -> <init>
+    39:41:void <init>(android.content.Context,int,java.lang.Object[]) -> <init>
+    48:50:void <init>(android.content.Context,int,int,java.lang.Object[]) -> <init>
+    57:59:void <init>(android.content.Context,int,java.util.List) -> <init>
+    66:68:void <init>(android.content.Context,int,int,java.util.List) -> <init>
+    74:76:void <init>(android.content.Context,int,java.lang.String[]) -> <init>
+    82:84:void <init>(android.content.Context,int,int,java.lang.String[]) -> <init>
+    91:91:android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
+    99:101:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    106:107:void monodroidClearReferences() -> monodroidClearReferences
+crc646350f44cde9e1cf7.SimpleFileDialog_DialogBackListener -> crc646350f44cde9e1cf7.SimpleFileDialog_DialogBackListener:
+    16:16:void <clinit>() -> <clinit>
+    22:24:void <init>() -> <init>
+    39:41:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    46:47:void monodroidClearReferences() -> monodroidClearReferences
+    31:31:boolean onKey(android.content.DialogInterface,int,android.view.KeyEvent) -> onKey
+crc646350f44cde9e1cf7.SlskLinkClickableSpan -> crc646350f44cde9e1cf7.SlskLinkClickableSpan:
+    15:15:void <clinit>() -> <clinit>
+    21:23:void <init>() -> <init>
+    29:31:void <init>(java.lang.String) -> <init>
+    46:48:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    53:54:void monodroidClearReferences() -> monodroidClearReferences
+    38:38:void onClick(android.view.View) -> onClick
+crc646350f44cde9e1cf7.SlskLinkMenuActivity -> crc646350f44cde9e1cf7.SlskLinkMenuActivity:
+    17:17:void <clinit>() -> <clinit>
+    23:25:void <init>() -> <init>
+    32:34:void <init>(int) -> <init>
+    65:67:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    72:73:void monodroidClearReferences() -> monodroidClearReferences
+    57:57:boolean onContextItemSelected(android.view.MenuItem) -> onContextItemSelected
+    49:49:void onContextMenuClosed(android.view.Menu) -> onContextMenuClosed
+    41:41:void onCreateContextMenu(android.view.ContextMenu,android.view.View,android.view.ContextMenu$ContextMenuInfo) -> onCreateContextMenu
+crc646350f44cde9e1cf7.StartPageFragment -> crc646350f44cde9e1cf7.StartPageFragment:
+    17:17:void <clinit>() -> <clinit>
+    23:25:void <init>() -> <init>
+    32:34:void <init>(int) -> <init>
+    65:67:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    72:73:void monodroidClearReferences() -> monodroidClearReferences
+    41:41:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
+    49:49:void onDestroy() -> onDestroy
+    57:57:void onDestroyView() -> onDestroyView
+crc646350f44cde9e1cf7.StepPagerStrip -> crc646350f44cde9e1cf7.StepPagerStrip:
+    17:17:void <clinit>() -> <clinit>
+    23:25:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
+    32:34:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
+    65:67:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    72:73:void monodroidClearReferences() -> monodroidClearReferences
+    41:41:void onDraw(android.graphics.Canvas) -> onDraw
+    49:49:void onMeasure(int,int) -> onMeasure
+    57:57:void onSizeChanged(int,int,int,int) -> onSizeChanged
+crc646350f44cde9e1cf7.SwipeDisabledViewPager -> crc646350f44cde9e1cf7.SwipeDisabledViewPager:
+    16:16:void <clinit>() -> <clinit>
+    22:24:void <init>(android.content.Context) -> <init>
+    31:33:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
+    56:58:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    63:64:void monodroidClearReferences() -> monodroidClearReferences
+    48:48:boolean onInterceptTouchEvent(android.view.MotionEvent) -> onInterceptTouchEvent
+    40:40:boolean onTouchEvent(android.view.MotionEvent) -> onTouchEvent
+crc646350f44cde9e1cf7.TabsPagerAdapter -> crc646350f44cde9e1cf7.TabsPagerAdapter:
+    18:18:void <clinit>() -> <clinit>
+    24:26:void <init>(androidx.fragment.app.FragmentManager) -> <init>
+    33:35:void <init>(androidx.fragment.app.FragmentManager,int) -> <init>
+    42:42:int getCount() -> getCount
+    50:50:androidx.fragment.app.Fragment getItem(int) -> getItem
+    58:58:int getItemPosition(java.lang.Object) -> getItemPosition
+    66:66:java.lang.CharSequence getPageTitle(int) -> getPageTitle
+    74:76:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    81:82:void monodroidClearReferences() -> monodroidClearReferences
+crc646350f44cde9e1cf7.ThemeableActivity -> crc646350f44cde9e1cf7.ThemeableActivity:
+    17:17:void <clinit>() -> <clinit>
+    23:25:void <init>() -> <init>
+    32:34:void <init>(int) -> <init>
+    57:57:void attachBaseContext(android.content.Context) -> attachBaseContext
+    65:67:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    72:73:void monodroidClearReferences() -> monodroidClearReferences
+    49:49:void onCreate(android.os.Bundle) -> onCreate
+    41:41:void onDestroy() -> onDestroy
+crc646350f44cde9e1cf7.TransferItemViewDetails -> crc646350f44cde9e1cf7.TransferItemViewDetails:
+    16:16:void <clinit>() -> <clinit>
+    22:24:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
+    31:33:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
+    48:50:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    55:56:void monodroidClearReferences() -> monodroidClearReferences
+    40:40:void onCreateContextMenu(android.view.ContextMenu,android.view.View,android.view.ContextMenu$ContextMenuInfo) -> onCreateContextMenu
+crc646350f44cde9e1cf7.TransferItemViewFolder -> crc646350f44cde9e1cf7.TransferItemViewFolder:
+    16:16:void <clinit>() -> <clinit>
+    22:24:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
+    31:33:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
+    48:50:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    55:56:void monodroidClearReferences() -> monodroidClearReferences
+    40:40:void onCreateContextMenu(android.view.ContextMenu,android.view.View,android.view.ContextMenu$ContextMenuInfo) -> onCreateContextMenu
+crc646350f44cde9e1cf7.TransfersFragment -> crc646350f44cde9e1cf7.TransfersFragment:
+    28:28:void <clinit>() -> <clinit>
+    34:36:void <init>() -> <init>
+    43:45:void <init>(int) -> <init>
+    156:158:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    163:164:void monodroidClearReferences() -> monodroidClearReferences
+    116:116:boolean onContextItemSelected(android.view.MenuItem) -> onContextItemSelected
+    140:140:void onCreate(android.os.Bundle) -> onCreate
+    60:60:void onCreateOptionsMenu(android.view.Menu,android.view.MenuInflater) -> onCreateOptionsMenu
+    92:92:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
+    84:84:void onDestroy() -> onDestroy
+    148:148:boolean onMenuItemClick(android.view.MenuItem) -> onMenuItemClick
+    76:76:boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
+    108:108:void onPause() -> onPause
+    68:68:void onPrepareOptionsMenu(android.view.Menu) -> onPrepareOptionsMenu
+    100:100:void onResume() -> onResume
+    124:124:void onStart() -> onStart
+    132:132:void onStop() -> onStop
+    52:52:void setMenuVisibility(boolean) -> setMenuVisibility
+crc646350f44cde9e1cf7.TransfersFragment_ActionModeCallback -> crc646350f44cde9e1cf7.TransfersFragment_ActionModeCallback:
+    19:19:void <clinit>() -> <clinit>
+    25:27:void <init>() -> <init>
+    66:68:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    73:74:void monodroidClearReferences() -> monodroidClearReferences
+    34:34:boolean onActionItemClicked(android.view.ActionMode,android.view.MenuItem) -> onActionItemClicked
+    42:42:boolean onCreateActionMode(android.view.ActionMode,android.view.Menu) -> onCreateActionMode
+    50:50:void onDestroyActionMode(android.view.ActionMode) -> onDestroyActionMode
+    58:58:boolean onPrepareActionMode(android.view.ActionMode,android.view.Menu) -> onPrepareActionMode
+crc646350f44cde9e1cf7.TransfersFragment_ProgressSizeTextView -> crc646350f44cde9e1cf7.TransfersFragment_ProgressSizeTextView:
+    15:15:void <clinit>() -> <clinit>
+    21:23:void <init>(android.content.Context) -> <init>
+    30:32:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
+    39:41:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
+    56:58:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    63:64:void monodroidClearReferences() -> monodroidClearReferences
+    48:48:void onDraw(android.graphics.Canvas) -> onDraw
+crc646350f44cde9e1cf7.TransfersFragment_TransferAdapterRecyclerFolderItem -> crc646350f44cde9e1cf7.TransfersFragment_TransferAdapterRecyclerFolderItem:
+    16:16:void <clinit>() -> <clinit>
+    22:24:void <init>() -> <init>
+    47:49:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    54:55:void monodroidClearReferences() -> monodroidClearReferences
+    31:31:void onBindViewHolder(androidx.recyclerview.widget.RecyclerView$ViewHolder,int) -> onBindViewHolder
+    39:39:androidx.recyclerview.widget.RecyclerView$ViewHolder onCreateViewHolder(android.view.ViewGroup,int) -> onCreateViewHolder
+crc646350f44cde9e1cf7.TransfersFragment_TransferAdapterRecyclerIndividualItem -> crc646350f44cde9e1cf7.TransfersFragment_TransferAdapterRecyclerIndividualItem:
+    16:16:void <clinit>() -> <clinit>
+    22:24:void <init>() -> <init>
+    47:49:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    54:55:void monodroidClearReferences() -> monodroidClearReferences
+    31:31:void onBindViewHolder(androidx.recyclerview.widget.RecyclerView$ViewHolder,int) -> onBindViewHolder
+    39:39:androidx.recyclerview.widget.RecyclerView$ViewHolder onCreateViewHolder(android.view.ViewGroup,int) -> onCreateViewHolder
+crc646350f44cde9e1cf7.TransfersFragment_TransferAdapterRecyclerVersion -> crc646350f44cde9e1cf7.TransfersFragment_TransferAdapterRecyclerVersion:
+    15:15:void <clinit>() -> <clinit>
+    21:23:void <init>() -> <init>
+    30:30:int getItemCount() -> getItemCount
+    38:40:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    45:46:void monodroidClearReferences() -> monodroidClearReferences
+crc646350f44cde9e1cf7.TransfersFragment_TransferViewHolder -> crc646350f44cde9e1cf7.TransfersFragment_TransferViewHolder:
+    16:16:void <clinit>() -> <clinit>
+    22:24:void <init>(android.view.View) -> <init>
+    39:41:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    46:47:void monodroidClearReferences() -> monodroidClearReferences
+    31:31:void onCreateContextMenu(android.view.ContextMenu,android.view.View,android.view.ContextMenu$ContextMenuInfo) -> onCreateContextMenu
+crc646350f44cde9e1cf7.TreePathItemView -> crc646350f44cde9e1cf7.TreePathItemView:
+    14:14:void <clinit>() -> <clinit>
+    20:22:void <init>(android.content.Context) -> <init>
+    29:31:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
+    38:40:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
+    47:49:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    54:55:void monodroidClearReferences() -> monodroidClearReferences
+crc646350f44cde9e1cf7.TreePathItemViewHolder -> crc646350f44cde9e1cf7.TreePathItemViewHolder:
+    14:14:void <clinit>() -> <clinit>
+    20:22:void <init>(android.view.View) -> <init>
+    29:31:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    36:37:void monodroidClearReferences() -> monodroidClearReferences
+crc646350f44cde9e1cf7.TreePathRecyclerAdapter -> crc646350f44cde9e1cf7.TreePathRecyclerAdapter:
+    17:17:void <clinit>() -> <clinit>
+    23:25:void <init>() -> <init>
+    32:32:int getItemCount() -> getItemCount
+    56:58:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    63:64:void monodroidClearReferences() -> monodroidClearReferences
+    48:48:void onBindViewHolder(androidx.recyclerview.widget.RecyclerView$ViewHolder,int) -> onBindViewHolder
+    40:40:androidx.recyclerview.widget.RecyclerView$ViewHolder onCreateViewHolder(android.view.ViewGroup,int) -> onCreateViewHolder
+crc646350f44cde9e1cf7.UserListActivity -> crc646350f44cde9e1cf7.UserListActivity:
+    21:21:void <clinit>() -> <clinit>
+    27:29:void <init>() -> <init>
+    36:38:void <init>(int) -> <init>
+    101:103:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    108:109:void monodroidClearReferences() -> monodroidClearReferences
+    53:53:boolean onContextItemSelected(android.view.MenuItem) -> onContextItemSelected
+    69:69:void onCreate(android.os.Bundle) -> onCreate
+    45:45:boolean onCreateOptionsMenu(android.view.Menu) -> onCreateOptionsMenu
+    93:93:boolean onNavigateUp() -> onNavigateUp
+    61:61:boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
+    77:77:void onPause() -> onPause
+    85:85:void onResume() -> onResume
+crc646350f44cde9e1cf7.UserListActivity_UserListDiffCallback -> crc646350f44cde9e1cf7.UserListActivity_UserListDiffCallback:
+    18:18:void <clinit>() -> <clinit>
+    24:26:void <init>() -> <init>
+    49:49:boolean areContentsTheSame(int,int) -> areContentsTheSame
+    57:57:boolean areItemsTheSame(int,int) -> areItemsTheSame
+    33:33:int getNewListSize() -> getNewListSize
+    41:41:int getOldListSize() -> getOldListSize
+    65:67:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    72:73:void monodroidClearReferences() -> monodroidClearReferences
+crc646350f44cde9e1cf7.UserStatusHolder -> crc646350f44cde9e1cf7.UserStatusHolder:
+    14:14:void <clinit>() -> <clinit>
+    20:22:void <init>(android.view.View) -> <init>
+    29:31:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    36:37:void monodroidClearReferences() -> monodroidClearReferences
+crc646350f44cde9e1cf7.UserStatusView -> crc646350f44cde9e1cf7.UserStatusView:
+    14:14:void <clinit>() -> <clinit>
+    20:22:void <init>(android.content.Context) -> <init>
+    29:31:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
+    38:40:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
+    47:49:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    54:55:void monodroidClearReferences() -> monodroidClearReferences
+crc646350f44cde9e1cf7.ViewPagerFixed -> crc646350f44cde9e1cf7.ViewPagerFixed:
+    16:16:void <clinit>() -> <clinit>
+    22:24:void <init>(android.content.Context) -> <init>
+    31:33:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
+    56:58:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    63:64:void monodroidClearReferences() -> monodroidClearReferences
+    48:48:boolean onInterceptTouchEvent(android.view.MotionEvent) -> onInterceptTouchEvent
+    40:40:boolean onTouchEvent(android.view.MotionEvent) -> onTouchEvent
+crc646350f44cde9e1cf7.ViewUserInfoActivity -> crc646350f44cde9e1cf7.ViewUserInfoActivity:
+    24:24:void <clinit>() -> <clinit>
+    30:32:void <init>() -> <init>
+    39:41:void <init>(int) -> <init>
+    128:130:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    135:136:void monodroidClearReferences() -> monodroidClearReferences
+    120:120:boolean onContextItemSelected(android.view.MenuItem) -> onContextItemSelected
+    88:88:void onCreate(android.os.Bundle) -> onCreate
+    112:112:void onCreateContextMenu(android.view.ContextMenu,android.view.View,android.view.ContextMenu$ContextMenuInfo) -> onCreateContextMenu
+    48:48:boolean onCreateOptionsMenu(android.view.Menu) -> onCreateOptionsMenu
+    64:64:boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
+    104:104:void onPause() -> onPause
+    56:56:boolean onPrepareOptionsMenu(android.view.Menu) -> onPrepareOptionsMenu
+    80:80:void onRestoreInstanceState(android.os.Bundle) -> onRestoreInstanceState
+    96:96:void onResume() -> onResume
+    72:72:void onSaveInstanceState(android.os.Bundle) -> onSaveInstanceState
+crc646350f44cde9e1cf7.WizardPagerAdapter -> crc646350f44cde9e1cf7.WizardPagerAdapter:
+    17:17:void <clinit>() -> <clinit>
+    23:25:void <init>(androidx.fragment.app.FragmentManager) -> <init>
+    32:34:void <init>(androidx.fragment.app.FragmentManager,int) -> <init>
+    41:41:int getCount() -> getCount
+    49:49:androidx.fragment.app.Fragment getItem(int) -> getItem
+    57:57:int getItemPosition(java.lang.Object) -> getItemPosition
+    65:67:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    72:73:void monodroidClearReferences() -> monodroidClearReferences
 crc6495d4f5d63cc5c882.AwaitableTaskCompleteListener_1 -> crc6495d4f5d63cc5c882.AwaitableTaskCompleteListener_1:
     16:16:void <clinit>() -> <clinit>
     22:24:void <init>() -> <init>
@@ -48866,284 +49494,15 @@ crc64a0e0a82d0db9a07d.ActivityLifecycleContextListener -> crc64a0e0a82d0db9a07d.
     83:83:void onActivitySaveInstanceState(android.app.Activity,android.os.Bundle) -> onActivitySaveInstanceState
     91:91:void onActivityStarted(android.app.Activity) -> onActivityStarted
     99:99:void onActivityStopped(android.app.Activity) -> onActivityStopped
-crc64bfdd6e7a3264c045.CrashlyticsException -> crc64bfdd6e7a3264c045.CrashlyticsException:
-    14:14:void <clinit>() -> <clinit>
-    20:22:void <init>(java.lang.String) -> <init>
-    29:31:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    36:37:void monodroidClearReferences() -> monodroidClearReferences
-crc64c9fbd4a1c52464df.BrowseFragment -> crc64c9fbd4a1c52464df.BrowseFragment:
-    27:27:void <clinit>() -> <clinit>
-    33:35:void <init>() -> <init>
-    42:44:void <init>(int) -> <init>
-    155:157:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    162:163:void monodroidClearReferences() -> monodroidClearReferences
-    147:147:boolean onContextItemSelected(android.view.MenuItem) -> onContextItemSelected
-    139:139:void onCreateContextMenu(android.view.ContextMenu,android.view.View,android.view.ContextMenu$ContextMenuInfo) -> onCreateContextMenu
-    51:51:void onCreateOptionsMenu(android.view.Menu,android.view.MenuInflater) -> onCreateOptionsMenu
-    91:91:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
-    83:83:void onDestroyView() -> onDestroyView
-    67:67:boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
-    131:131:void onPause() -> onPause
-    59:59:void onPrepareOptionsMenu(android.view.Menu) -> onPrepareOptionsMenu
-    123:123:void onResume() -> onResume
-    107:107:void onSaveInstanceState(android.os.Bundle) -> onSaveInstanceState
-    99:99:void onViewCreated(android.view.View,android.os.Bundle) -> onViewCreated
-    115:115:void onViewStateRestored(android.os.Bundle) -> onViewStateRestored
-    75:75:void setMenuVisibility(boolean) -> setMenuVisibility
-crc64c9fbd4a1c52464df.BrowseFragment_BrowseAdapter -> crc64c9fbd4a1c52464df.BrowseFragment_BrowseAdapter:
-    15:15:void <clinit>() -> <clinit>
-    21:23:void <init>(android.content.Context,int) -> <init>
-    30:32:void <init>(android.content.Context,int,int) -> <init>
-    39:41:void <init>(android.content.Context,int,java.lang.Object[]) -> <init>
-    48:50:void <init>(android.content.Context,int,int,java.lang.Object[]) -> <init>
-    57:59:void <init>(android.content.Context,int,java.util.List) -> <init>
-    66:68:void <init>(android.content.Context,int,int,java.util.List) -> <init>
-    75:75:android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
-    83:85:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    90:91:void monodroidClearReferences() -> monodroidClearReferences
-crc64c9fbd4a1c52464df.BrowseFragment_TreePathItemView -> crc64c9fbd4a1c52464df.BrowseFragment_TreePathItemView:
-    14:14:void <clinit>() -> <clinit>
-    20:22:void <init>(android.content.Context) -> <init>
-    29:31:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
-    38:40:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
-    47:49:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    54:55:void monodroidClearReferences() -> monodroidClearReferences
-crc64c9fbd4a1c52464df.BrowseFragment_TreePathItemViewHolder -> crc64c9fbd4a1c52464df.BrowseFragment_TreePathItemViewHolder:
-    14:14:void <clinit>() -> <clinit>
-    20:22:void <init>(android.view.View) -> <init>
-    29:31:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    36:37:void monodroidClearReferences() -> monodroidClearReferences
-crc64c9fbd4a1c52464df.BrowseFragment_TreePathRecyclerAdapter -> crc64c9fbd4a1c52464df.BrowseFragment_TreePathRecyclerAdapter:
+crc64a2405933f3d133ba.ItemTouchHelperMessageOverviewCallback -> crc64a2405933f3d133ba.ItemTouchHelperMessageOverviewCallback:
     17:17:void <clinit>() -> <clinit>
-    23:25:void <init>() -> <init>
-    32:32:int getItemCount() -> getItemCount
+    23:25:void <init>(int,int) -> <init>
     56:58:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
     63:64:void monodroidClearReferences() -> monodroidClearReferences
-    48:48:void onBindViewHolder(androidx.recyclerview.widget.RecyclerView$ViewHolder,int) -> onBindViewHolder
-    40:40:androidx.recyclerview.widget.RecyclerView$ViewHolder onCreateViewHolder(android.view.ViewGroup,int) -> onCreateViewHolder
-crc64c9fbd4a1c52464df.BrowseResponseItemView -> crc64c9fbd4a1c52464df.BrowseResponseItemView:
-    14:14:void <clinit>() -> <clinit>
-    20:22:void <init>(android.content.Context) -> <init>
-    29:31:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
-    38:40:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
-    47:49:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    54:55:void monodroidClearReferences() -> monodroidClearReferences
-crc64c9fbd4a1c52464df.ChatroomActivity -> crc64c9fbd4a1c52464df.ChatroomActivity:
-    21:21:void <clinit>() -> <clinit>
-    27:29:void <init>() -> <init>
-    36:38:void <init>(int) -> <init>
-    101:103:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    108:109:void monodroidClearReferences() -> monodroidClearReferences
-    69:69:void onBackPressed() -> onBackPressed
-    45:45:void onCreate(android.os.Bundle) -> onCreate
-    77:77:boolean onCreateOptionsMenu(android.view.Menu) -> onCreateOptionsMenu
-    53:53:void onNewIntent(android.content.Intent) -> onNewIntent
-    93:93:boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
-    85:85:boolean onPrepareOptionsMenu(android.view.Menu) -> onPrepareOptionsMenu
-    61:61:void onSaveInstanceState(android.os.Bundle) -> onSaveInstanceState
-crc64c9fbd4a1c52464df.ChatroomInnerRecyclerAdapter -> crc64c9fbd4a1c52464df.ChatroomInnerRecyclerAdapter:
-    18:18:void <clinit>() -> <clinit>
-    24:26:void <init>() -> <init>
-    33:33:int getItemCount() -> getItemCount
-    49:49:int getItemViewType(int) -> getItemViewType
-    65:67:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    72:73:void monodroidClearReferences() -> monodroidClearReferences
-    41:41:void onBindViewHolder(androidx.recyclerview.widget.RecyclerView$ViewHolder,int) -> onBindViewHolder
-    57:57:androidx.recyclerview.widget.RecyclerView$ViewHolder onCreateViewHolder(android.view.ViewGroup,int) -> onCreateViewHolder
-crc64c9fbd4a1c52464df.ChatroomOverviewCategoryHolder -> crc64c9fbd4a1c52464df.ChatroomOverviewCategoryHolder:
-    14:14:void <clinit>() -> <clinit>
-    20:22:void <init>(android.view.View) -> <init>
-    29:31:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    36:37:void monodroidClearReferences() -> monodroidClearReferences
-crc64c9fbd4a1c52464df.ChatroomOverviewCategoryView -> crc64c9fbd4a1c52464df.ChatroomOverviewCategoryView:
-    14:14:void <clinit>() -> <clinit>
-    20:22:void <init>(android.content.Context) -> <init>
-    29:31:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
-    38:40:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
-    47:49:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    54:55:void monodroidClearReferences() -> monodroidClearReferences
-crc64c9fbd4a1c52464df.ChatroomOverviewHolder -> crc64c9fbd4a1c52464df.ChatroomOverviewHolder:
-    14:14:void <clinit>() -> <clinit>
-    20:22:void <init>(android.view.View) -> <init>
-    29:31:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    36:37:void monodroidClearReferences() -> monodroidClearReferences
-crc64c9fbd4a1c52464df.ChatroomOverviewJoinedView -> crc64c9fbd4a1c52464df.ChatroomOverviewJoinedView:
-    14:14:void <clinit>() -> <clinit>
-    20:22:void <init>(android.content.Context) -> <init>
-    29:31:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
-    38:40:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
-    47:49:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    54:55:void monodroidClearReferences() -> monodroidClearReferences
-crc64c9fbd4a1c52464df.ChatroomOverviewJoinedViewHolder -> crc64c9fbd4a1c52464df.ChatroomOverviewJoinedViewHolder:
-    14:14:void <clinit>() -> <clinit>
-    20:22:void <init>(android.view.View) -> <init>
-    29:31:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    36:37:void monodroidClearReferences() -> monodroidClearReferences
-crc64c9fbd4a1c52464df.ChatroomOverviewRecyclerAdapter -> crc64c9fbd4a1c52464df.ChatroomOverviewRecyclerAdapter:
-    18:18:void <clinit>() -> <clinit>
-    24:26:void <init>() -> <init>
-    33:33:int getItemCount() -> getItemCount
-    49:49:int getItemViewType(int) -> getItemViewType
-    65:67:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    72:73:void monodroidClearReferences() -> monodroidClearReferences
-    41:41:void onBindViewHolder(androidx.recyclerview.widget.RecyclerView$ViewHolder,int) -> onBindViewHolder
-    57:57:androidx.recyclerview.widget.RecyclerView$ViewHolder onCreateViewHolder(android.view.ViewGroup,int) -> onCreateViewHolder
-crc64c9fbd4a1c52464df.ChatroomOverviewView -> crc64c9fbd4a1c52464df.ChatroomOverviewView:
-    14:14:void <clinit>() -> <clinit>
-    20:22:void <init>(android.content.Context) -> <init>
-    29:31:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
-    38:40:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
-    47:49:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    54:55:void monodroidClearReferences() -> monodroidClearReferences
-crc64c9fbd4a1c52464df.ChatroomStatusesRecyclerAdapter -> crc64c9fbd4a1c52464df.ChatroomStatusesRecyclerAdapter:
-    17:17:void <clinit>() -> <clinit>
-    23:25:void <init>() -> <init>
-    32:32:int getItemCount() -> getItemCount
-    56:58:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    63:64:void monodroidClearReferences() -> monodroidClearReferences
-    40:40:void onBindViewHolder(androidx.recyclerview.widget.RecyclerView$ViewHolder,int) -> onBindViewHolder
-    48:48:androidx.recyclerview.widget.RecyclerView$ViewHolder onCreateViewHolder(android.view.ViewGroup,int) -> onCreateViewHolder
-crc64c9fbd4a1c52464df.ChipItemView -> crc64c9fbd4a1c52464df.ChipItemView:
-    14:14:void <clinit>() -> <clinit>
-    20:22:void <init>(android.content.Context) -> <init>
-    29:31:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
-    38:40:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
-    47:49:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    54:55:void monodroidClearReferences() -> monodroidClearReferences
-crc64c9fbd4a1c52464df.ChipItemViewHolder -> crc64c9fbd4a1c52464df.ChipItemViewHolder:
-    14:14:void <clinit>() -> <clinit>
-    20:22:void <init>(android.view.View) -> <init>
-    29:31:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    36:37:void monodroidClearReferences() -> monodroidClearReferences
-crc64c9fbd4a1c52464df.ChipsItemRecyclerAdapter -> crc64c9fbd4a1c52464df.ChipsItemRecyclerAdapter:
-    17:17:void <clinit>() -> <clinit>
-    23:25:void <init>() -> <init>
-    32:32:int getItemCount() -> getItemCount
-    56:58:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    63:64:void monodroidClearReferences() -> monodroidClearReferences
-    48:48:void onBindViewHolder(androidx.recyclerview.widget.RecyclerView$ViewHolder,int) -> onBindViewHolder
-    40:40:androidx.recyclerview.widget.RecyclerView$ViewHolder onCreateViewHolder(android.view.ViewGroup,int) -> onCreateViewHolder
-crc64c9fbd4a1c52464df.CloseActivity -> crc64c9fbd4a1c52464df.CloseActivity:
-    15:15:void <clinit>() -> <clinit>
-    21:23:void <init>() -> <init>
-    30:32:void <init>(int) -> <init>
-    47:49:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    54:55:void monodroidClearReferences() -> monodroidClearReferences
-    39:39:void onCreate(android.os.Bundle) -> onCreate
-crc64c9fbd4a1c52464df.ConnectionReceiver -> crc64c9fbd4a1c52464df.ConnectionReceiver:
-    15:15:void <clinit>() -> <clinit>
-    21:23:void <init>() -> <init>
-    38:40:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    45:46:void monodroidClearReferences() -> monodroidClearReferences
-    30:30:void onReceive(android.content.Context,android.content.Intent) -> onReceive
-crc64c9fbd4a1c52464df.CustomLinearLayoutManager -> crc64c9fbd4a1c52464df.CustomLinearLayoutManager:
-    15:15:void <clinit>() -> <clinit>
-    21:23:void <init>(android.content.Context) -> <init>
-    30:32:void <init>(android.content.Context,android.util.AttributeSet,int,int) -> <init>
-    39:41:void <init>(android.content.Context,int,boolean) -> <init>
-    56:58:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    63:64:void monodroidClearReferences() -> monodroidClearReferences
-    48:48:boolean supportsPredictiveItemAnimations() -> supportsPredictiveItemAnimations
-crc64c9fbd4a1c52464df.DownloadCustomAdapter -> crc64c9fbd4a1c52464df.DownloadCustomAdapter:
-    15:15:void <clinit>() -> <clinit>
-    21:23:void <init>(android.content.Context,int) -> <init>
-    30:32:void <init>(android.content.Context,int,int) -> <init>
-    39:41:void <init>(android.content.Context,int,java.lang.Object[]) -> <init>
-    48:50:void <init>(android.content.Context,int,int,java.lang.Object[]) -> <init>
-    57:59:void <init>(android.content.Context,int,java.util.List) -> <init>
-    66:68:void <init>(android.content.Context,int,int,java.util.List) -> <init>
-    75:75:android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
-    83:85:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    90:91:void monodroidClearReferences() -> monodroidClearReferences
-crc64c9fbd4a1c52464df.DownloadDialog -> crc64c9fbd4a1c52464df.DownloadDialog:
-    23:23:void <clinit>() -> <clinit>
-    29:31:void <init>() -> <init>
-    38:40:void <init>(int) -> <init>
-    111:113:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    118:119:void monodroidClearReferences() -> monodroidClearReferences
-    55:55:void onAttach(android.content.Context) -> onAttach
-    87:87:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
-    71:71:void onDestroy() -> onDestroy
-    63:63:void onDetach() -> onDetach
-    79:79:void onDismiss(android.content.DialogInterface) -> onDismiss
-    103:103:boolean onMenuItemClick(android.view.MenuItem) -> onMenuItemClick
-    47:47:void onResume() -> onResume
-    95:95:void onViewCreated(android.view.View,android.os.Bundle) -> onViewCreated
-crc64c9fbd4a1c52464df.DownloadDialog_OnRefreshListenerGetFolder -> crc64c9fbd4a1c52464df.DownloadDialog_OnRefreshListenerGetFolder:
-    16:16:void <clinit>() -> <clinit>
-    22:24:void <init>() -> <init>
-    30:32:void <init>(crc64c9fbd4a1c52464df.DownloadDialog) -> <init>
-    47:49:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    54:55:void monodroidClearReferences() -> monodroidClearReferences
-    39:39:void onRefresh() -> onRefresh
-crc64c9fbd4a1c52464df.DownloadItemView -> crc64c9fbd4a1c52464df.DownloadItemView:
-    14:14:void <clinit>() -> <clinit>
-    20:22:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
-    29:31:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
-    38:40:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    45:46:void monodroidClearReferences() -> monodroidClearReferences
-crc64c9fbd4a1c52464df.DragDropItemTouchHelper -> crc64c9fbd4a1c52464df.DragDropItemTouchHelper:
-    21:21:void <clinit>() -> <clinit>
-    27:29:void <init>(int,int) -> <init>
-    84:84:void clearView(androidx.recyclerview.widget.RecyclerView,androidx.recyclerview.widget.RecyclerView$ViewHolder) -> clearView
-    52:52:int getMovementFlags(androidx.recyclerview.widget.RecyclerView,androidx.recyclerview.widget.RecyclerView$ViewHolder) -> getMovementFlags
-    44:44:boolean isItemViewSwipeEnabled() -> isItemViewSwipeEnabled
-    36:36:boolean isLongPressDragEnabled() -> isLongPressDragEnabled
-    92:94:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    99:100:void monodroidClearReferences() -> monodroidClearReferences
-    60:60:boolean onMove(androidx.recyclerview.widget.RecyclerView,androidx.recyclerview.widget.RecyclerView$ViewHolder,androidx.recyclerview.widget.RecyclerView$ViewHolder) -> onMove
-    76:76:void onSelectedChanged(androidx.recyclerview.widget.RecyclerView$ViewHolder,int) -> onSelectedChanged
-    68:68:void onSwiped(androidx.recyclerview.widget.RecyclerView$ViewHolder,int) -> onSwiped
-crc64c9fbd4a1c52464df.EditUserInfoActivity -> crc64c9fbd4a1c52464df.EditUserInfoActivity:
-    20:20:void <clinit>() -> <clinit>
-    26:28:void <init>() -> <init>
-    35:37:void <init>(int) -> <init>
-    92:94:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    99:100:void monodroidClearReferences() -> monodroidClearReferences
-    84:84:void onActivityResult(int,int,android.content.Intent) -> onActivityResult
-    68:68:void onBackPressed() -> onBackPressed
-    76:76:void onCreate(android.os.Bundle) -> onCreate
-    44:44:boolean onCreateOptionsMenu(android.view.Menu) -> onCreateOptionsMenu
-    60:60:boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
-    52:52:boolean onPrepareOptionsMenu(android.view.Menu) -> onPrepareOptionsMenu
-crc64c9fbd4a1c52464df.ExpandableSearchItemFilesAdapter -> crc64c9fbd4a1c52464df.ExpandableSearchItemFilesAdapter:
-    15:15:void <clinit>() -> <clinit>
-    21:23:void <init>(android.content.Context,int) -> <init>
-    30:32:void <init>(android.content.Context,int,int) -> <init>
-    39:41:void <init>(android.content.Context,int,java.lang.Object[]) -> <init>
-    48:50:void <init>(android.content.Context,int,int,java.lang.Object[]) -> <init>
-    57:59:void <init>(android.content.Context,int,java.util.List) -> <init>
-    66:68:void <init>(android.content.Context,int,int,java.util.List) -> <init>
-    75:75:android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
-    83:85:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    90:91:void monodroidClearReferences() -> monodroidClearReferences
-crc64c9fbd4a1c52464df.ForegroundLifecycleTracker -> crc64c9fbd4a1c52464df.ForegroundLifecycleTracker:
-    36:36:void <clinit>() -> <clinit>
-    42:44:void <init>() -> <init>
-    219:221:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    226:227:void monodroidClearReferences() -> monodroidClearReferences
-    51:51:void onActivityCreated(android.app.Activity,android.os.Bundle) -> onActivityCreated
-    59:59:void onActivityDestroyed(android.app.Activity) -> onActivityDestroyed
-    67:67:void onActivityPaused(android.app.Activity) -> onActivityPaused
-    107:107:void onActivityPostCreated(android.app.Activity,android.os.Bundle) -> onActivityPostCreated
-    115:115:void onActivityPostDestroyed(android.app.Activity) -> onActivityPostDestroyed
-    123:123:void onActivityPostPaused(android.app.Activity) -> onActivityPostPaused
-    131:131:void onActivityPostResumed(android.app.Activity) -> onActivityPostResumed
-    139:139:void onActivityPostSaveInstanceState(android.app.Activity,android.os.Bundle) -> onActivityPostSaveInstanceState
-    147:147:void onActivityPostStarted(android.app.Activity) -> onActivityPostStarted
-    155:155:void onActivityPostStopped(android.app.Activity) -> onActivityPostStopped
-    163:163:void onActivityPreCreated(android.app.Activity,android.os.Bundle) -> onActivityPreCreated
-    171:171:void onActivityPreDestroyed(android.app.Activity) -> onActivityPreDestroyed
-    179:179:void onActivityPrePaused(android.app.Activity) -> onActivityPrePaused
-    187:187:void onActivityPreResumed(android.app.Activity) -> onActivityPreResumed
-    195:195:void onActivityPreSaveInstanceState(android.app.Activity,android.os.Bundle) -> onActivityPreSaveInstanceState
-    203:203:void onActivityPreStarted(android.app.Activity) -> onActivityPreStarted
-    211:211:void onActivityPreStopped(android.app.Activity) -> onActivityPreStopped
-    75:75:void onActivityResumed(android.app.Activity) -> onActivityResumed
-    83:83:void onActivitySaveInstanceState(android.app.Activity,android.os.Bundle) -> onActivitySaveInstanceState
-    91:91:void onActivityStarted(android.app.Activity) -> onActivityStarted
-    99:99:void onActivityStopped(android.app.Activity) -> onActivityStopped
-crc64c9fbd4a1c52464df.GroupMessageInnerViewReceived -> crc64c9fbd4a1c52464df.GroupMessageInnerViewReceived:
+    48:48:void onChildDraw(android.graphics.Canvas,androidx.recyclerview.widget.RecyclerView,androidx.recyclerview.widget.RecyclerView$ViewHolder,float,float,int,boolean) -> onChildDraw
+    32:32:boolean onMove(androidx.recyclerview.widget.RecyclerView,androidx.recyclerview.widget.RecyclerView$ViewHolder,androidx.recyclerview.widget.RecyclerView$ViewHolder) -> onMove
+    40:40:void onSwiped(androidx.recyclerview.widget.RecyclerView$ViewHolder,int) -> onSwiped
+crc64a2405933f3d133ba.MessageInnerViewReceived -> crc64a2405933f3d133ba.MessageInnerViewReceived:
     14:14:void <clinit>() -> <clinit>
     20:22:void <init>(android.content.Context) -> <init>
     29:31:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
@@ -49151,323 +49510,123 @@ crc64c9fbd4a1c52464df.GroupMessageInnerViewReceived -> crc64c9fbd4a1c52464df.Gro
     47:49:void <init>(android.content.Context,android.util.AttributeSet,int,int) -> <init>
     56:58:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
     63:64:void monodroidClearReferences() -> monodroidClearReferences
-crc64c9fbd4a1c52464df.GroupMessageInnerViewReceivedHolder -> crc64c9fbd4a1c52464df.GroupMessageInnerViewReceivedHolder:
+crc64a2405933f3d133ba.MessageInnerViewReceivedHolder -> crc64a2405933f3d133ba.MessageInnerViewReceivedHolder:
     16:16:void <clinit>() -> <clinit>
     22:24:void <init>(android.view.View) -> <init>
     39:41:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
     46:47:void monodroidClearReferences() -> monodroidClearReferences
     31:31:void onCreateContextMenu(android.view.ContextMenu,android.view.View,android.view.ContextMenu$ContextMenuInfo) -> onCreateContextMenu
-crc64c9fbd4a1c52464df.ImportItemView -> crc64c9fbd4a1c52464df.ImportItemView:
+crc64a2405933f3d133ba.MessageInnerViewSent -> crc64a2405933f3d133ba.MessageInnerViewSent:
     14:14:void <clinit>() -> <clinit>
     20:22:void <init>(android.content.Context) -> <init>
     29:31:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
     38:40:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
     47:49:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
     54:55:void monodroidClearReferences() -> monodroidClearReferences
-crc64c9fbd4a1c52464df.ImportItemViewHolder -> crc64c9fbd4a1c52464df.ImportItemViewHolder:
+crc64a2405933f3d133ba.MessageInnerViewSentHolder -> crc64a2405933f3d133ba.MessageInnerViewSentHolder:
+    16:16:void <clinit>() -> <clinit>
+    22:24:void <init>(android.view.View) -> <init>
+    39:41:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    46:47:void monodroidClearReferences() -> monodroidClearReferences
+    31:31:void onCreateContextMenu(android.view.ContextMenu,android.view.View,android.view.ContextMenu$ContextMenuInfo) -> onCreateContextMenu
+crc64a2405933f3d133ba.MessageOverviewHolder -> crc64a2405933f3d133ba.MessageOverviewHolder:
     14:14:void <clinit>() -> <clinit>
     20:22:void <init>(android.view.View) -> <init>
     29:31:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
     36:37:void monodroidClearReferences() -> monodroidClearReferences
-crc64c9fbd4a1c52464df.ImportListAdapter -> crc64c9fbd4a1c52464df.ImportListAdapter:
+crc64a2405933f3d133ba.MessageOverviewView -> crc64a2405933f3d133ba.MessageOverviewView:
+    14:14:void <clinit>() -> <clinit>
+    20:22:void <init>(android.content.Context) -> <init>
+    29:31:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
+    38:40:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
+    47:49:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    54:55:void monodroidClearReferences() -> monodroidClearReferences
+crc64a2405933f3d133ba.MessagesInnerFragment -> crc64a2405933f3d133ba.MessagesInnerFragment:
+    21:21:void <clinit>() -> <clinit>
+    27:29:void <init>() -> <init>
+    36:38:void <init>(int) -> <init>
+    44:46:void <init>(java.lang.String) -> <init>
+    109:111:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    116:117:void monodroidClearReferences() -> monodroidClearReferences
+    77:77:void onAttach(android.content.Context) -> onAttach
+    61:61:boolean onContextItemSelected(android.view.MenuItem) -> onContextItemSelected
+    53:53:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
+    101:101:void onDetach() -> onDetach
+    93:93:void onPause() -> onPause
+    85:85:void onResume() -> onResume
+    69:69:void onSaveInstanceState(android.os.Bundle) -> onSaveInstanceState
+crc64a2405933f3d133ba.MessagesInnerRecyclerAdapter -> crc64a2405933f3d133ba.MessagesInnerRecyclerAdapter:
+    18:18:void <clinit>() -> <clinit>
+    24:26:void <init>() -> <init>
+    33:33:int getItemCount() -> getItemCount
+    49:49:int getItemViewType(int) -> getItemViewType
+    65:67:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    72:73:void monodroidClearReferences() -> monodroidClearReferences
+    41:41:void onBindViewHolder(androidx.recyclerview.widget.RecyclerView$ViewHolder,int) -> onBindViewHolder
+    57:57:androidx.recyclerview.widget.RecyclerView$ViewHolder onCreateViewHolder(android.view.ViewGroup,int) -> onCreateViewHolder
+crc64a2405933f3d133ba.MessagesOverviewFragment -> crc64a2405933f3d133ba.MessagesOverviewFragment:
+    19:19:void <clinit>() -> <clinit>
+    25:27:void <init>() -> <init>
+    34:36:void <init>(int) -> <init>
+    83:85:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    90:91:void monodroidClearReferences() -> monodroidClearReferences
+    67:67:void onAttach(android.content.Context) -> onAttach
+    43:43:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
+    75:75:void onDetach() -> onDetach
+    59:59:void onPause() -> onPause
+    51:51:void onResume() -> onResume
+crc64a2405933f3d133ba.MessagesOverviewRecyclerAdapter -> crc64a2405933f3d133ba.MessagesOverviewRecyclerAdapter:
     17:17:void <clinit>() -> <clinit>
     23:25:void <init>() -> <init>
     32:32:int getItemCount() -> getItemCount
     56:58:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
     63:64:void monodroidClearReferences() -> monodroidClearReferences
-    48:48:void onBindViewHolder(androidx.recyclerview.widget.RecyclerView$ViewHolder,int) -> onBindViewHolder
-    40:40:androidx.recyclerview.widget.RecyclerView$ViewHolder onCreateViewHolder(android.view.ViewGroup,int) -> onCreateViewHolder
-crc64c9fbd4a1c52464df.ImportListFragment -> crc64c9fbd4a1c52464df.ImportListFragment:
+    40:40:void onBindViewHolder(androidx.recyclerview.widget.RecyclerView$ViewHolder,int) -> onBindViewHolder
+    48:48:androidx.recyclerview.widget.RecyclerView$ViewHolder onCreateViewHolder(android.view.ViewGroup,int) -> onCreateViewHolder
+crc64bfdd6e7a3264c045.CrashlyticsException -> crc64bfdd6e7a3264c045.CrashlyticsException:
+    14:14:void <clinit>() -> <clinit>
+    20:22:void <init>(java.lang.String) -> <init>
+    29:31:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    36:37:void monodroidClearReferences() -> monodroidClearReferences
+crc64cc653dbf8e3a3ac8.AllTickersDialog -> crc64cc653dbf8e3a3ac8.AllTickersDialog:
+    17:17:void <clinit>() -> <clinit>
+    23:25:void <init>() -> <init>
+    32:34:void <init>(int) -> <init>
+    40:42:void <init>(java.lang.String) -> <init>
+    73:75:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    80:81:void monodroidClearReferences() -> monodroidClearReferences
+    57:57:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
+    49:49:void onResume() -> onResume
+    65:65:void onViewCreated(android.view.View,android.os.Bundle) -> onViewCreated
+crc64cc653dbf8e3a3ac8.ChatroomInnerFragment -> crc64cc653dbf8e3a3ac8.ChatroomInnerFragment:
     20:20:void <clinit>() -> <clinit>
     26:28:void <init>() -> <init>
     35:37:void <init>(int) -> <init>
     92:94:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
     99:100:void monodroidClearReferences() -> monodroidClearReferences
-    84:84:void onAttach(android.content.Context) -> onAttach
+    60:60:void onAttach(android.content.Context) -> onAttach
+    44:44:boolean onContextItemSelected(android.view.MenuItem) -> onContextItemSelected
     52:52:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
-    60:60:void onDestroy() -> onDestroy
-    68:68:void onDestroyView() -> onDestroyView
+    84:84:void onDetach() -> onDetach
+    68:68:void onPause() -> onPause
     76:76:void onResume() -> onResume
-    44:44:void onSaveInstanceState(android.os.Bundle) -> onSaveInstanceState
-crc64c9fbd4a1c52464df.ImportWizardActivity -> crc64c9fbd4a1c52464df.ImportWizardActivity:
+crc64cc653dbf8e3a3ac8.ChatroomInnerFragment_CustomClickEvent -> crc64cc653dbf8e3a3ac8.ChatroomInnerFragment_CustomClickEvent:
+    16:16:void <clinit>() -> <clinit>
+    22:24:void <init>() -> <init>
+    39:41:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    46:47:void monodroidClearReferences() -> monodroidClearReferences
+    31:31:boolean onTouch(android.view.View,android.view.MotionEvent) -> onTouch
+crc64cc653dbf8e3a3ac8.ChatroomOverviewFragment -> crc64cc653dbf8e3a3ac8.ChatroomOverviewFragment:
     18:18:void <clinit>() -> <clinit>
     24:26:void <init>() -> <init>
     33:35:void <init>(int) -> <init>
     74:76:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
     81:82:void monodroidClearReferences() -> monodroidClearReferences
-    66:66:void onActivityResult(int,int,android.content.Intent) -> onActivityResult
-    58:58:void onBackPressed() -> onBackPressed
-    42:42:void onCreate(android.os.Bundle) -> onCreate
-    50:50:void onDestroy() -> onDestroy
-crc64c9fbd4a1c52464df.ItemViewHolder -> crc64c9fbd4a1c52464df.ItemViewHolder:
-    14:14:void <clinit>() -> <clinit>
-    20:22:void <init>(android.view.View) -> <init>
-    29:31:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    36:37:void monodroidClearReferences() -> monodroidClearReferences
-crc64c9fbd4a1c52464df.LoginFragment -> crc64c9fbd4a1c52464df.LoginFragment:
-    17:17:void <clinit>() -> <clinit>
-    23:25:void <init>() -> <init>
-    32:34:void <init>(int) -> <init>
-    65:67:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    72:73:void monodroidClearReferences() -> monodroidClearReferences
-    41:41:void onCreateOptionsMenu(android.view.Menu,android.view.MenuInflater) -> onCreateOptionsMenu
-    49:49:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
-    57:57:void onViewCreated(android.view.View,android.os.Bundle) -> onViewCreated
-crc64c9fbd4a1c52464df.MagnetLinkClickableSpan -> crc64c9fbd4a1c52464df.MagnetLinkClickableSpan:
-    15:15:void <clinit>() -> <clinit>
-    21:23:void <init>() -> <init>
-    29:31:void <init>(java.lang.String) -> <init>
-    46:48:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    53:54:void monodroidClearReferences() -> monodroidClearReferences
-    38:38:void onClick(android.view.View) -> onClick
-crc64c9fbd4a1c52464df.MainActivity -> crc64c9fbd4a1c52464df.MainActivity:
-    28:28:void <clinit>() -> <clinit>
-    34:36:void <init>() -> <init>
-    43:45:void <init>(int) -> <init>
-    140:142:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    147:148:void monodroidClearReferences() -> monodroidClearReferences
-    92:92:void onActivityResult(int,int,android.content.Intent) -> onActivityResult
-    84:84:void onBackPressed() -> onBackPressed
-    52:52:void onCreate(android.os.Bundle) -> onCreate
-    116:116:boolean onCreateOptionsMenu(android.view.Menu) -> onCreateOptionsMenu
-    132:132:boolean onNavigationItemSelected(android.view.MenuItem) -> onNavigationItemSelected
-    68:68:void onNewIntent(android.content.Intent) -> onNewIntent
-    76:76:boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
-    100:100:void onPause() -> onPause
-    124:124:void onRequestPermissionsResult(int,java.lang.String[],int[]) -> onRequestPermissionsResult
-    108:108:void onSaveInstanceState(android.os.Bundle) -> onSaveInstanceState
-    60:60:void onStart() -> onStart
-crc64c9fbd4a1c52464df.MainActivity_BottomNavigationViewAnimationListener -> crc64c9fbd4a1c52464df.MainActivity_BottomNavigationViewAnimationListener:
-    19:19:void <clinit>() -> <clinit>
-    25:27:void <init>() -> <init>
-    66:68:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    73:74:void monodroidClearReferences() -> monodroidClearReferences
-    34:34:void onAnimationCancel(android.animation.Animator) -> onAnimationCancel
-    42:42:void onAnimationEnd(android.animation.Animator) -> onAnimationEnd
-    50:50:void onAnimationRepeat(android.animation.Animator) -> onAnimationRepeat
-    58:58:void onAnimationStart(android.animation.Animator) -> onAnimationStart
-crc64c9fbd4a1c52464df.MainActivity_ListenerKeyboard -> crc64c9fbd4a1c52464df.MainActivity_ListenerKeyboard:
-    16:16:void <clinit>() -> <clinit>
-    22:24:void <init>() -> <init>
-    30:32:void <init>(android.view.View) -> <init>
-    47:49:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    54:55:void monodroidClearReferences() -> monodroidClearReferences
-    39:39:void onGlobalLayout() -> onGlobalLayout
-crc64c9fbd4a1c52464df.MainActivity_OnPageChangeLister1 -> crc64c9fbd4a1c52464df.MainActivity_OnPageChangeLister1:
-    18:18:void <clinit>() -> <clinit>
-    24:26:void <init>() -> <init>
-    57:59:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    64:65:void monodroidClearReferences() -> monodroidClearReferences
-    33:33:void onPageScrollStateChanged(int) -> onPageScrollStateChanged
-    41:41:void onPageScrolled(int,float,int) -> onPageScrolled
-    49:49:void onPageSelected(int) -> onPageSelected
-crc64c9fbd4a1c52464df.MaterialProgressBarPassThrough -> crc64c9fbd4a1c52464df.MaterialProgressBarPassThrough:
-    14:14:void <clinit>() -> <clinit>
-    20:22:void <init>(android.content.Context) -> <init>
-    29:31:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
-    38:40:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
-    47:49:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    54:55:void monodroidClearReferences() -> monodroidClearReferences
-crc64c9fbd4a1c52464df.MessageConnectionStatus -> crc64c9fbd4a1c52464df.MessageConnectionStatus:
-    14:14:void <clinit>() -> <clinit>
-    20:22:void <init>(android.content.Context) -> <init>
-    29:31:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
-    38:40:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
-    47:49:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    54:55:void monodroidClearReferences() -> monodroidClearReferences
-crc64c9fbd4a1c52464df.MessageConnectionStatusHolder -> crc64c9fbd4a1c52464df.MessageConnectionStatusHolder:
-    14:14:void <clinit>() -> <clinit>
-    20:22:void <init>(android.view.View) -> <init>
-    29:31:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    36:37:void monodroidClearReferences() -> monodroidClearReferences
-crc64c9fbd4a1c52464df.MessagesActivity -> crc64c9fbd4a1c52464df.MessagesActivity:
-    23:23:void <clinit>() -> <clinit>
-    29:31:void <init>() -> <init>
-    38:40:void <init>(int) -> <init>
-    119:121:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    126:127:void monodroidClearReferences() -> monodroidClearReferences
-    87:87:void onBackPressed() -> onBackPressed
-    111:111:void onCreate(android.os.Bundle) -> onCreate
-    63:63:boolean onCreateOptionsMenu(android.view.Menu) -> onCreateOptionsMenu
-    95:95:void onNewIntent(android.content.Intent) -> onNewIntent
-    79:79:boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
-    71:71:boolean onPrepareOptionsMenu(android.view.Menu) -> onPrepareOptionsMenu
-    55:55:void onRestoreInstanceState(android.os.Bundle) -> onRestoreInstanceState
-    103:103:void onResume() -> onResume
-    47:47:void onSaveInstanceState(android.os.Bundle) -> onSaveInstanceState
-crc64c9fbd4a1c52464df.MessagesBroadcastReceiver -> crc64c9fbd4a1c52464df.MessagesBroadcastReceiver:
-    15:15:void <clinit>() -> <clinit>
-    21:23:void <init>() -> <init>
-    38:40:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    45:46:void monodroidClearReferences() -> monodroidClearReferences
-    30:30:void onReceive(android.content.Context,android.content.Intent) -> onReceive
-crc64c9fbd4a1c52464df.RecyclerListAdapter -> crc64c9fbd4a1c52464df.RecyclerListAdapter:
-    17:17:void <clinit>() -> <clinit>
-    23:25:void <init>() -> <init>
-    48:48:int getItemCount() -> getItemCount
-    56:58:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    63:64:void monodroidClearReferences() -> monodroidClearReferences
-    40:40:void onBindViewHolder(androidx.recyclerview.widget.RecyclerView$ViewHolder,int) -> onBindViewHolder
-    32:32:androidx.recyclerview.widget.RecyclerView$ViewHolder onCreateViewHolder(android.view.ViewGroup,int) -> onCreateViewHolder
-crc64c9fbd4a1c52464df.RecyclerView2 -> crc64c9fbd4a1c52464df.RecyclerView2:
-    15:15:void <clinit>() -> <clinit>
-    21:23:void <init>(android.content.Context) -> <init>
-    30:32:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
-    39:41:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
-    56:58:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    63:64:void monodroidClearReferences() -> monodroidClearReferences
-    48:48:void onSizeChanged(int,int,int,int) -> onSizeChanged
-crc64c9fbd4a1c52464df.SearchDialog -> crc64c9fbd4a1c52464df.SearchDialog:
-    19:19:void <clinit>() -> <clinit>
-    25:27:void <init>() -> <init>
-    34:36:void <init>(int) -> <init>
-    42:44:void <init>(java.lang.String,boolean) -> <init>
-    91:93:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    98:99:void monodroidClearReferences() -> monodroidClearReferences
-    75:75:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
-    67:67:void onDestroy() -> onDestroy
-    51:51:void onPause() -> onPause
-    59:59:void onResume() -> onResume
-    83:83:void onViewCreated(android.view.View,android.os.Bundle) -> onViewCreated
-crc64c9fbd4a1c52464df.SearchDialogDummyActivity -> crc64c9fbd4a1c52464df.SearchDialogDummyActivity:
-    15:15:void <clinit>() -> <clinit>
-    21:23:void <init>() -> <init>
-    30:32:void <init>(int) -> <init>
-    47:49:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    54:55:void monodroidClearReferences() -> monodroidClearReferences
-    39:39:void onCreate(android.os.Bundle) -> onCreate
-crc64c9fbd4a1c52464df.SearchFragment -> crc64c9fbd4a1c52464df.SearchFragment:
-    23:23:void <clinit>() -> <clinit>
-    29:31:void <init>() -> <init>
-    38:40:void <init>(int) -> <init>
-    119:121:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    126:127:void monodroidClearReferences() -> monodroidClearReferences
-    111:111:void onAttach(android.app.Activity) -> onAttach
-    71:71:void onCreateOptionsMenu(android.view.Menu,android.view.MenuInflater) -> onCreateOptionsMenu
-    87:87:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
-    103:103:void onDetach() -> onDetach
-    79:79:boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
-    95:95:void onPause() -> onPause
-    55:55:void onResume() -> onResume
-    47:47:void onStart() -> onStart
-    63:63:void setMenuVisibility(boolean) -> setMenuVisibility
-crc64c9fbd4a1c52464df.SearchFragment_BSDF_Menu -> crc64c9fbd4a1c52464df.SearchFragment_BSDF_Menu:
-    15:15:void <clinit>() -> <clinit>
-    21:23:void <init>() -> <init>
-    30:32:void <init>(int) -> <init>
-    47:49:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    54:55:void monodroidClearReferences() -> monodroidClearReferences
-    39:39:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
-crc64c9fbd4a1c52464df.SearchFragment_SearchAdapterRecyclerVersion -> crc64c9fbd4a1c52464df.SearchFragment_SearchAdapterRecyclerVersion:
-    17:17:void <clinit>() -> <clinit>
-    23:25:void <init>() -> <init>
-    32:32:int getItemCount() -> getItemCount
-    56:58:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    63:64:void monodroidClearReferences() -> monodroidClearReferences
-    40:40:void onBindViewHolder(androidx.recyclerview.widget.RecyclerView$ViewHolder,int) -> onBindViewHolder
-    48:48:androidx.recyclerview.widget.RecyclerView$ViewHolder onCreateViewHolder(android.view.ViewGroup,int) -> onCreateViewHolder
-crc64c9fbd4a1c52464df.SearchFragment_SearchDiffCallback -> crc64c9fbd4a1c52464df.SearchFragment_SearchDiffCallback:
-    18:18:void <clinit>() -> <clinit>
-    24:26:void <init>() -> <init>
-    49:49:boolean areContentsTheSame(int,int) -> areContentsTheSame
-    57:57:boolean areItemsTheSame(int,int) -> areItemsTheSame
-    33:33:int getNewListSize() -> getNewListSize
-    41:41:int getOldListSize() -> getOldListSize
-    65:67:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    72:73:void monodroidClearReferences() -> monodroidClearReferences
-crc64c9fbd4a1c52464df.SearchFragment_SearchViewHolder -> crc64c9fbd4a1c52464df.SearchFragment_SearchViewHolder:
-    14:14:void <clinit>() -> <clinit>
-    20:22:void <init>(android.view.View) -> <init>
-    29:31:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    36:37:void monodroidClearReferences() -> monodroidClearReferences
-crc64c9fbd4a1c52464df.SearchItemViewExpandable -> crc64c9fbd4a1c52464df.SearchItemViewExpandable:
-    14:14:void <clinit>() -> <clinit>
-    20:22:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
-    29:31:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
-    38:40:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    45:46:void monodroidClearReferences() -> monodroidClearReferences
-crc64c9fbd4a1c52464df.SearchItemViewMedium -> crc64c9fbd4a1c52464df.SearchItemViewMedium:
-    14:14:void <clinit>() -> <clinit>
-    20:22:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
-    29:31:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
-    38:40:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    45:46:void monodroidClearReferences() -> monodroidClearReferences
-crc64c9fbd4a1c52464df.SearchItemViewMinimal -> crc64c9fbd4a1c52464df.SearchItemViewMinimal:
-    14:14:void <clinit>() -> <clinit>
-    20:22:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
-    29:31:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
-    38:40:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    45:46:void monodroidClearReferences() -> monodroidClearReferences
-crc64c9fbd4a1c52464df.SearchTabDialog -> crc64c9fbd4a1c52464df.SearchTabDialog:
-    19:19:void <clinit>() -> <clinit>
-    25:27:void <init>() -> <init>
-    34:36:void <init>(int) -> <init>
-    75:77:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    82:83:void monodroidClearReferences() -> monodroidClearReferences
-    43:43:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
-    67:67:void onGlobalLayout() -> onGlobalLayout
-    59:59:void onResume() -> onResume
-    51:51:void onViewCreated(android.view.View,android.os.Bundle) -> onViewCreated
-crc64c9fbd4a1c52464df.SearchTabItemRecyclerAdapter -> crc64c9fbd4a1c52464df.SearchTabItemRecyclerAdapter:
-    17:17:void <clinit>() -> <clinit>
-    23:25:void <init>() -> <init>
-    32:32:int getItemCount() -> getItemCount
-    56:58:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    63:64:void monodroidClearReferences() -> monodroidClearReferences
-    48:48:void onBindViewHolder(androidx.recyclerview.widget.RecyclerView$ViewHolder,int) -> onBindViewHolder
-    40:40:androidx.recyclerview.widget.RecyclerView$ViewHolder onCreateViewHolder(android.view.ViewGroup,int) -> onCreateViewHolder
-crc64c9fbd4a1c52464df.SearchTabView -> crc64c9fbd4a1c52464df.SearchTabView:
-    14:14:void <clinit>() -> <clinit>
-    20:22:void <init>(android.content.Context) -> <init>
-    29:31:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
-    38:40:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
-    47:49:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    54:55:void monodroidClearReferences() -> monodroidClearReferences
-crc64c9fbd4a1c52464df.SearchTabViewHolder -> crc64c9fbd4a1c52464df.SearchTabViewHolder:
-    14:14:void <clinit>() -> <clinit>
-    20:22:void <init>(android.view.View) -> <init>
-    29:31:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    36:37:void monodroidClearReferences() -> monodroidClearReferences
-crc64c9fbd4a1c52464df.SeekerApplication -> crc64c9fbd4a1c52464df.SeekerApplication:
-    18:19:void <init>() -> <init>
-    33:35:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    40:41:void monodroidClearReferences() -> monodroidClearReferences
-    25:25:void onCreate() -> onCreate
-crc64c9fbd4a1c52464df.SettingsActivity -> crc64c9fbd4a1c52464df.SettingsActivity:
-    22:22:void <clinit>() -> <clinit>
-    28:30:void <init>() -> <init>
-    37:39:void <init>(int) -> <init>
-    110:112:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    117:118:void monodroidClearReferences() -> monodroidClearReferences
-    102:102:void onActivityResult(int,int,android.content.Intent) -> onActivityResult
-    86:86:boolean onContextItemSelected(android.view.MenuItem) -> onContextItemSelected
-    78:78:void onCreate(android.os.Bundle) -> onCreate
-    46:46:boolean onCreateOptionsMenu(android.view.Menu) -> onCreateOptionsMenu
-    54:54:boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
-    70:70:void onPause() -> onPause
-    94:94:void onRequestPermissionsResult(int,java.lang.String[],int[]) -> onRequestPermissionsResult
-    62:62:void onResume() -> onResume
-crc64c9fbd4a1c52464df.SettingsActivity_RecyclerViewFolderHolder -> crc64c9fbd4a1c52464df.SettingsActivity_RecyclerViewFolderHolder:
-    16:16:void <clinit>() -> <clinit>
-    22:24:void <init>(android.view.View) -> <init>
-    39:41:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    46:47:void monodroidClearReferences() -> monodroidClearReferences
-    31:31:void onCreateContextMenu(android.view.ContextMenu,android.view.View,android.view.ContextMenu$ContextMenuInfo) -> onCreateContextMenu
-crc64c9fbd4a1c52464df.SettingsActivity_RecyclerViewFolderView -> crc64c9fbd4a1c52464df.SettingsActivity_RecyclerViewFolderView:
-    14:14:void <clinit>() -> <clinit>
-    20:22:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
-    29:31:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
-    38:40:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    45:46:void monodroidClearReferences() -> monodroidClearReferences
-crc64c9fbd4a1c52464df.SettingsActivity_ReyclerUploadsAdapter -> crc64c9fbd4a1c52464df.SettingsActivity_ReyclerUploadsAdapter:
-    17:17:void <clinit>() -> <clinit>
-    23:25:void <init>() -> <init>
-    32:32:int getItemCount() -> getItemCount
-    56:58:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    63:64:void monodroidClearReferences() -> monodroidClearReferences
-    40:40:void onBindViewHolder(androidx.recyclerview.widget.RecyclerView$ViewHolder,int) -> onBindViewHolder
-    48:48:androidx.recyclerview.widget.RecyclerView$ViewHolder onCreateViewHolder(android.view.ViewGroup,int) -> onCreateViewHolder
-crc64c9fbd4a1c52464df.SimpleArrayAdaper -> crc64c9fbd4a1c52464df.SimpleArrayAdaper:
+    66:66:void onAttach(android.content.Context) -> onAttach
+    42:42:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
+    58:58:void onPause() -> onPause
+    50:50:void onResume() -> onResume
+crc64cc653dbf8e3a3ac8.RoomTickerAdapter -> crc64cc653dbf8e3a3ac8.RoomTickerAdapter:
     15:15:void <clinit>() -> <clinit>
     21:23:void <init>(android.content.Context,int) -> <init>
     30:32:void <init>(android.content.Context,int,int) -> <init>
@@ -49475,221 +49634,62 @@ crc64c9fbd4a1c52464df.SimpleArrayAdaper -> crc64c9fbd4a1c52464df.SimpleArrayAdap
     48:50:void <init>(android.content.Context,int,int,java.lang.Object[]) -> <init>
     57:59:void <init>(android.content.Context,int,java.util.List) -> <init>
     66:68:void <init>(android.content.Context,int,int,java.util.List) -> <init>
-    74:76:void <init>(android.content.Context,int,java.lang.String[]) -> <init>
-    82:84:void <init>(android.content.Context,int,int,java.lang.String[]) -> <init>
-    91:91:android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
-    99:101:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    106:107:void monodroidClearReferences() -> monodroidClearReferences
-crc64c9fbd4a1c52464df.SimpleFileDialog_DialogBackListener -> crc64c9fbd4a1c52464df.SimpleFileDialog_DialogBackListener:
-    16:16:void <clinit>() -> <clinit>
-    22:24:void <init>() -> <init>
-    39:41:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    46:47:void monodroidClearReferences() -> monodroidClearReferences
-    31:31:boolean onKey(android.content.DialogInterface,int,android.view.KeyEvent) -> onKey
-crc64c9fbd4a1c52464df.SlskLinkClickableSpan -> crc64c9fbd4a1c52464df.SlskLinkClickableSpan:
-    15:15:void <clinit>() -> <clinit>
-    21:23:void <init>() -> <init>
-    29:31:void <init>(java.lang.String) -> <init>
-    46:48:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    53:54:void monodroidClearReferences() -> monodroidClearReferences
-    38:38:void onClick(android.view.View) -> onClick
-crc64c9fbd4a1c52464df.SlskLinkMenuActivity -> crc64c9fbd4a1c52464df.SlskLinkMenuActivity:
-    17:17:void <clinit>() -> <clinit>
-    23:25:void <init>() -> <init>
-    32:34:void <init>(int) -> <init>
-    65:67:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    72:73:void monodroidClearReferences() -> monodroidClearReferences
-    57:57:boolean onContextItemSelected(android.view.MenuItem) -> onContextItemSelected
-    49:49:void onContextMenuClosed(android.view.Menu) -> onContextMenuClosed
-    41:41:void onCreateContextMenu(android.view.ContextMenu,android.view.View,android.view.ContextMenu$ContextMenuInfo) -> onCreateContextMenu
-crc64c9fbd4a1c52464df.StartPageFragment -> crc64c9fbd4a1c52464df.StartPageFragment:
-    17:17:void <clinit>() -> <clinit>
-    23:25:void <init>() -> <init>
-    32:34:void <init>(int) -> <init>
-    65:67:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    72:73:void monodroidClearReferences() -> monodroidClearReferences
-    41:41:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
-    49:49:void onDestroy() -> onDestroy
-    57:57:void onDestroyView() -> onDestroyView
-crc64c9fbd4a1c52464df.StepPagerStrip -> crc64c9fbd4a1c52464df.StepPagerStrip:
-    17:17:void <clinit>() -> <clinit>
-    23:25:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
-    32:34:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
-    65:67:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    72:73:void monodroidClearReferences() -> monodroidClearReferences
-    41:41:void onDraw(android.graphics.Canvas) -> onDraw
-    49:49:void onMeasure(int,int) -> onMeasure
-    57:57:void onSizeChanged(int,int,int,int) -> onSizeChanged
-crc64c9fbd4a1c52464df.SwipeDisabledViewPager -> crc64c9fbd4a1c52464df.SwipeDisabledViewPager:
-    16:16:void <clinit>() -> <clinit>
-    22:24:void <init>(android.content.Context) -> <init>
-    31:33:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
-    56:58:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    63:64:void monodroidClearReferences() -> monodroidClearReferences
-    48:48:boolean onInterceptTouchEvent(android.view.MotionEvent) -> onInterceptTouchEvent
-    40:40:boolean onTouchEvent(android.view.MotionEvent) -> onTouchEvent
-crc64c9fbd4a1c52464df.TabsPagerAdapter -> crc64c9fbd4a1c52464df.TabsPagerAdapter:
-    18:18:void <clinit>() -> <clinit>
-    24:26:void <init>(androidx.fragment.app.FragmentManager) -> <init>
-    33:35:void <init>(androidx.fragment.app.FragmentManager,int) -> <init>
-    42:42:int getCount() -> getCount
-    50:50:androidx.fragment.app.Fragment getItem(int) -> getItem
-    58:58:int getItemPosition(java.lang.Object) -> getItemPosition
-    66:66:java.lang.CharSequence getPageTitle(int) -> getPageTitle
-    74:76:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    81:82:void monodroidClearReferences() -> monodroidClearReferences
-crc64c9fbd4a1c52464df.ThemeableActivity -> crc64c9fbd4a1c52464df.ThemeableActivity:
-    17:17:void <clinit>() -> <clinit>
-    23:25:void <init>() -> <init>
-    32:34:void <init>(int) -> <init>
-    57:57:void attachBaseContext(android.content.Context) -> attachBaseContext
-    65:67:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    72:73:void monodroidClearReferences() -> monodroidClearReferences
-    49:49:void onCreate(android.os.Bundle) -> onCreate
-    41:41:void onDestroy() -> onDestroy
-crc64c9fbd4a1c52464df.TransferItemViewDetails -> crc64c9fbd4a1c52464df.TransferItemViewDetails:
-    16:16:void <clinit>() -> <clinit>
-    22:24:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
-    31:33:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
-    48:50:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    55:56:void monodroidClearReferences() -> monodroidClearReferences
-    40:40:void onCreateContextMenu(android.view.ContextMenu,android.view.View,android.view.ContextMenu$ContextMenuInfo) -> onCreateContextMenu
-crc64c9fbd4a1c52464df.TransferItemViewFolder -> crc64c9fbd4a1c52464df.TransferItemViewFolder:
-    16:16:void <clinit>() -> <clinit>
-    22:24:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
-    31:33:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
-    48:50:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    55:56:void monodroidClearReferences() -> monodroidClearReferences
-    40:40:void onCreateContextMenu(android.view.ContextMenu,android.view.View,android.view.ContextMenu$ContextMenuInfo) -> onCreateContextMenu
-crc64c9fbd4a1c52464df.TransfersFragment -> crc64c9fbd4a1c52464df.TransfersFragment:
-    28:28:void <clinit>() -> <clinit>
-    34:36:void <init>() -> <init>
-    43:45:void <init>(int) -> <init>
-    156:158:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    163:164:void monodroidClearReferences() -> monodroidClearReferences
-    116:116:boolean onContextItemSelected(android.view.MenuItem) -> onContextItemSelected
-    140:140:void onCreate(android.os.Bundle) -> onCreate
-    60:60:void onCreateOptionsMenu(android.view.Menu,android.view.MenuInflater) -> onCreateOptionsMenu
-    92:92:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
-    84:84:void onDestroy() -> onDestroy
-    148:148:boolean onMenuItemClick(android.view.MenuItem) -> onMenuItemClick
-    76:76:boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
-    108:108:void onPause() -> onPause
-    68:68:void onPrepareOptionsMenu(android.view.Menu) -> onPrepareOptionsMenu
-    100:100:void onResume() -> onResume
-    124:124:void onStart() -> onStart
-    132:132:void onStop() -> onStop
-    52:52:void setMenuVisibility(boolean) -> setMenuVisibility
-crc64c9fbd4a1c52464df.TransfersFragment_ActionModeCallback -> crc64c9fbd4a1c52464df.TransfersFragment_ActionModeCallback:
-    19:19:void <clinit>() -> <clinit>
-    25:27:void <init>() -> <init>
-    66:68:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    73:74:void monodroidClearReferences() -> monodroidClearReferences
-    34:34:boolean onActionItemClicked(android.view.ActionMode,android.view.MenuItem) -> onActionItemClicked
-    42:42:boolean onCreateActionMode(android.view.ActionMode,android.view.Menu) -> onCreateActionMode
-    50:50:void onDestroyActionMode(android.view.ActionMode) -> onDestroyActionMode
-    58:58:boolean onPrepareActionMode(android.view.ActionMode,android.view.Menu) -> onPrepareActionMode
-crc64c9fbd4a1c52464df.TransfersFragment_ProgressSizeTextView -> crc64c9fbd4a1c52464df.TransfersFragment_ProgressSizeTextView:
-    15:15:void <clinit>() -> <clinit>
-    21:23:void <init>(android.content.Context) -> <init>
-    30:32:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
-    39:41:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
-    56:58:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    63:64:void monodroidClearReferences() -> monodroidClearReferences
-    48:48:void onDraw(android.graphics.Canvas) -> onDraw
-crc64c9fbd4a1c52464df.TransfersFragment_TransferAdapterRecyclerFolderItem -> crc64c9fbd4a1c52464df.TransfersFragment_TransferAdapterRecyclerFolderItem:
-    16:16:void <clinit>() -> <clinit>
-    22:24:void <init>() -> <init>
-    47:49:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    54:55:void monodroidClearReferences() -> monodroidClearReferences
-    31:31:void onBindViewHolder(androidx.recyclerview.widget.RecyclerView$ViewHolder,int) -> onBindViewHolder
-    39:39:androidx.recyclerview.widget.RecyclerView$ViewHolder onCreateViewHolder(android.view.ViewGroup,int) -> onCreateViewHolder
-crc64c9fbd4a1c52464df.TransfersFragment_TransferAdapterRecyclerIndividualItem -> crc64c9fbd4a1c52464df.TransfersFragment_TransferAdapterRecyclerIndividualItem:
-    16:16:void <clinit>() -> <clinit>
-    22:24:void <init>() -> <init>
-    47:49:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    54:55:void monodroidClearReferences() -> monodroidClearReferences
-    31:31:void onBindViewHolder(androidx.recyclerview.widget.RecyclerView$ViewHolder,int) -> onBindViewHolder
-    39:39:androidx.recyclerview.widget.RecyclerView$ViewHolder onCreateViewHolder(android.view.ViewGroup,int) -> onCreateViewHolder
-crc64c9fbd4a1c52464df.TransfersFragment_TransferAdapterRecyclerVersion -> crc64c9fbd4a1c52464df.TransfersFragment_TransferAdapterRecyclerVersion:
-    15:15:void <clinit>() -> <clinit>
-    21:23:void <init>() -> <init>
-    30:30:int getItemCount() -> getItemCount
-    38:40:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    45:46:void monodroidClearReferences() -> monodroidClearReferences
-crc64c9fbd4a1c52464df.TransfersFragment_TransferViewHolder -> crc64c9fbd4a1c52464df.TransfersFragment_TransferViewHolder:
-    16:16:void <clinit>() -> <clinit>
-    22:24:void <init>(android.view.View) -> <init>
-    39:41:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    46:47:void monodroidClearReferences() -> monodroidClearReferences
-    31:31:void onCreateContextMenu(android.view.ContextMenu,android.view.View,android.view.ContextMenu$ContextMenuInfo) -> onCreateContextMenu
-crc64c9fbd4a1c52464df.UserListActivity -> crc64c9fbd4a1c52464df.UserListActivity:
-    21:21:void <clinit>() -> <clinit>
-    27:29:void <init>() -> <init>
-    36:38:void <init>(int) -> <init>
-    101:103:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    108:109:void monodroidClearReferences() -> monodroidClearReferences
-    53:53:boolean onContextItemSelected(android.view.MenuItem) -> onContextItemSelected
-    69:69:void onCreate(android.os.Bundle) -> onCreate
-    45:45:boolean onCreateOptionsMenu(android.view.Menu) -> onCreateOptionsMenu
-    93:93:boolean onNavigateUp() -> onNavigateUp
-    61:61:boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
-    77:77:void onPause() -> onPause
-    85:85:void onResume() -> onResume
-crc64c9fbd4a1c52464df.UserListActivity_UserListDiffCallback -> crc64c9fbd4a1c52464df.UserListActivity_UserListDiffCallback:
-    18:18:void <clinit>() -> <clinit>
-    24:26:void <init>() -> <init>
-    49:49:boolean areContentsTheSame(int,int) -> areContentsTheSame
-    57:57:boolean areItemsTheSame(int,int) -> areItemsTheSame
-    33:33:int getNewListSize() -> getNewListSize
-    41:41:int getOldListSize() -> getOldListSize
-    65:67:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    72:73:void monodroidClearReferences() -> monodroidClearReferences
-crc64c9fbd4a1c52464df.UserStatusHolder -> crc64c9fbd4a1c52464df.UserStatusHolder:
-    14:14:void <clinit>() -> <clinit>
-    20:22:void <init>(android.view.View) -> <init>
-    29:31:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    36:37:void monodroidClearReferences() -> monodroidClearReferences
-crc64c9fbd4a1c52464df.UserStatusView -> crc64c9fbd4a1c52464df.UserStatusView:
+    75:75:android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
+    83:85:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    90:91:void monodroidClearReferences() -> monodroidClearReferences
+crc64cc653dbf8e3a3ac8.RoomUserItemView -> crc64cc653dbf8e3a3ac8.RoomUserItemView:
     14:14:void <clinit>() -> <clinit>
     20:22:void <init>(android.content.Context) -> <init>
     29:31:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
     38:40:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
     47:49:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
     54:55:void monodroidClearReferences() -> monodroidClearReferences
-crc64c9fbd4a1c52464df.ViewPagerFixed -> crc64c9fbd4a1c52464df.ViewPagerFixed:
+crc64cc653dbf8e3a3ac8.RoomUserItemViewHolder -> crc64cc653dbf8e3a3ac8.RoomUserItemViewHolder:
     16:16:void <clinit>() -> <clinit>
-    22:24:void <init>(android.content.Context) -> <init>
-    31:33:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
-    56:58:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    63:64:void monodroidClearReferences() -> monodroidClearReferences
-    48:48:boolean onInterceptTouchEvent(android.view.MotionEvent) -> onInterceptTouchEvent
-    40:40:boolean onTouchEvent(android.view.MotionEvent) -> onTouchEvent
-crc64c9fbd4a1c52464df.ViewUserInfoActivity -> crc64c9fbd4a1c52464df.ViewUserInfoActivity:
-    24:24:void <clinit>() -> <clinit>
-    30:32:void <init>() -> <init>
-    39:41:void <init>(int) -> <init>
-    128:130:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    135:136:void monodroidClearReferences() -> monodroidClearReferences
-    120:120:boolean onContextItemSelected(android.view.MenuItem) -> onContextItemSelected
-    88:88:void onCreate(android.os.Bundle) -> onCreate
-    112:112:void onCreateContextMenu(android.view.ContextMenu,android.view.View,android.view.ContextMenu$ContextMenuInfo) -> onCreateContextMenu
-    48:48:boolean onCreateOptionsMenu(android.view.Menu) -> onCreateOptionsMenu
-    64:64:boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
-    104:104:void onPause() -> onPause
-    56:56:boolean onPrepareOptionsMenu(android.view.Menu) -> onPrepareOptionsMenu
-    80:80:void onRestoreInstanceState(android.os.Bundle) -> onRestoreInstanceState
-    96:96:void onResume() -> onResume
-    72:72:void onSaveInstanceState(android.os.Bundle) -> onSaveInstanceState
-crc64c9fbd4a1c52464df.WizardPagerAdapter -> crc64c9fbd4a1c52464df.WizardPagerAdapter:
-    17:17:void <clinit>() -> <clinit>
-    23:25:void <init>(androidx.fragment.app.FragmentManager) -> <init>
-    32:34:void <init>(androidx.fragment.app.FragmentManager,int) -> <init>
-    41:41:int getCount() -> getCount
-    49:49:androidx.fragment.app.Fragment getItem(int) -> getItem
-    57:57:int getItemPosition(java.lang.Object) -> getItemPosition
-    65:67:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
-    72:73:void monodroidClearReferences() -> monodroidClearReferences
+    22:24:void <init>(android.view.View) -> <init>
+    39:41:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    46:47:void monodroidClearReferences() -> monodroidClearReferences
+    31:31:void onCreateContextMenu(android.view.ContextMenu,android.view.View,android.view.ContextMenu$ContextMenuInfo) -> onCreateContextMenu
+crc64cc653dbf8e3a3ac8.RoomUserItemViewHolder_FixForDialogFragmentContext -> crc64cc653dbf8e3a3ac8.RoomUserItemViewHolder_FixForDialogFragmentContext:
+    16:16:void <clinit>() -> <clinit>
+    22:24:void <init>() -> <init>
+    39:41:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    46:47:void monodroidClearReferences() -> monodroidClearReferences
+    31:31:boolean onMenuItemClick(android.view.MenuItem) -> onMenuItemClick
+crc64cc653dbf8e3a3ac8.RoomUserListDialog -> crc64cc653dbf8e3a3ac8.RoomUserListDialog:
+    19:19:void <clinit>() -> <clinit>
+    25:27:void <init>() -> <init>
+    34:36:void <init>(int) -> <init>
+    42:44:void <init>(java.lang.String,boolean) -> <init>
+    91:93:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    98:99:void monodroidClearReferences() -> monodroidClearReferences
+    83:83:boolean onContextItemSelected(android.view.MenuItem) -> onContextItemSelected
+    67:67:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
+    59:59:void onPause() -> onPause
+    51:51:void onResume() -> onResume
+    75:75:void onViewCreated(android.view.View,android.os.Bundle) -> onViewCreated
+crc64cc653dbf8e3a3ac8.RoomUserListDialog_ToolbarMenuItemClickListener -> crc64cc653dbf8e3a3ac8.RoomUserListDialog_ToolbarMenuItemClickListener:
+    16:16:void <clinit>() -> <clinit>
+    22:24:void <init>() -> <init>
+    39:41:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    46:47:void monodroidClearReferences() -> monodroidClearReferences
+    31:31:boolean onMenuItemClick(android.view.MenuItem) -> onMenuItemClick
+crc64cc653dbf8e3a3ac8.RoomUserListRecyclerAdapter -> crc64cc653dbf8e3a3ac8.RoomUserListRecyclerAdapter:
+    19:19:void <clinit>() -> <clinit>
+    25:27:void <init>() -> <init>
+    34:34:int getItemCount() -> getItemCount
+    66:68:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    73:74:void monodroidClearReferences() -> monodroidClearReferences
+    42:42:void onBindViewHolder(androidx.recyclerview.widget.RecyclerView$ViewHolder,int) -> onBindViewHolder
+    50:50:androidx.recyclerview.widget.RecyclerView$ViewHolder onCreateViewHolder(android.view.ViewGroup,int) -> onCreateViewHolder
+    58:58:boolean onMenuItemClick(android.view.MenuItem) -> onMenuItemClick
+crc64cc653dbf8e3a3ac8.TickerItemView -> crc64cc653dbf8e3a3ac8.TickerItemView:
+    14:14:void <clinit>() -> <clinit>
+    20:22:void <init>(android.content.Context) -> <init>
+    29:31:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
+    38:40:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
+    47:49:void monodroidAddReference(java.lang.Object) -> monodroidAddReference
+    54:55:void monodroidClearReferences() -> monodroidClearReferences
 crc64e9db98a0d7058662.CallExtensions_ActionCallback -> crc64e9db98a0d7058662.CallExtensions_ActionCallback:
     17:17:void <clinit>() -> <clinit>
     23:25:void <init>() -> <init>
