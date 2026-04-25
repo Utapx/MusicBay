@@ -4,6 +4,7 @@ using Microsoft.VisualStudio.TestPlatform.PlatformAbstractions.Interfaces;
 using NUnit.Framework;
 using Seeker;
 using Soulseek;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -27,7 +28,7 @@ namespace UnitTestCommon
         public string FirstFilename { get; set; }
     }
 
-    public class Tests
+    public class BrowseTreeParseTests
     {
         [TestCase("username1")]
         [TestCase("username2")]
@@ -52,6 +53,47 @@ namespace UnitTestCommon
 
             await Verifier.Verify(result).UseParameters(username);
         }
+
+        #if DEBUG
+        private void encryptFile(string inputPath, string outputPath)
+        {
+            var normalBytes = System.IO.File.ReadAllBytes(inputPath);
+            var encryptedFileHelper = new Seeker.Debug.EncryptedFileHelper();
+            encryptedFileHelper.WriteToFile(outputPath, normalBytes);
+        }
+
+
+        [TestCase("RealUser1")]
+        [TestCase("RealUser2")]
+        public async Task TestRealUserParsingBrowseResponseTestData(string username)
+        {
+            string testDataDir = Path.Combine(TestContext.CurrentContext.TestDirectory, "TestData", "BrowseResponse");
+            string path = Path.Combine(testDataDir, $"{username}_Encrypted.mpk");
+
+            var encryptedData = System.IO.File.ReadAllBytes(path);
+            var encryptedFileHelper = new Seeker.Debug.EncryptedFileHelper();
+            var data = encryptedFileHelper.Decrypt(encryptedData);
+
+            var memoryStream = new MemoryStream(data);
+            var browseResponse = MessagePackSerializer.Deserialize<BrowseResponse>(memoryStream, SerializationHelper.BrowseResponseOptions);
+
+
+            Common.TreeNode<Soulseek.Directory> tree = BrowseUtils.CreateTreeFromFlatList(browseResponse, false, null, null, username, false);
+            string result = PrintTreeToString(tree);
+            string answerPath = Path.Combine(testDataDir, $"{username}_Answer.bin");
+
+            // uncomment to write answer
+            //var resultBytes = Encoding.UTF8.GetBytes(result);
+            //var resultBytesEncrypted = encryptedFileHelper.Encrypt(resultBytes);
+            //System.IO.File.WriteAllBytes(answerPath, resultBytesEncrypted);
+
+            var bytes = System.IO.File.ReadAllBytes(answerPath);
+            var answerBytes = encryptedFileHelper.Decrypt(bytes);
+            var answerPlainText = Encoding.UTF8.GetString(answerBytes);
+
+            Assert.AreEqual(result, answerPlainText);
+        }
+        #endif
 
         private static Soulseek.Directory ToDirectory(DirectoryTestData d)
         {
