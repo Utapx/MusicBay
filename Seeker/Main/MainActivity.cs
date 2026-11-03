@@ -204,9 +204,12 @@ namespace Seeker
             //keep all four tab fragments resident (FragmentPagerAdapter never destroyed them); the app
             //relies on long-lived fragments via SearchFragment.Instance / BrowseFragment.Instance etc.
             pager.OffscreenPageLimit = 3;
+            // tabs change by tapping only: a page swipe would compete with the sideways rows on Home
+            pager.UserInputEnabled = false;
             pager.RegisterOnPageChangeCallback(new OnPageChangeLister1());
             Seeker.Player.MiniPlayer.Attach(this);
             Seeker.Player.GlassBars.Install(this);
+            sidewaysDragGuard = new Seeker.Player.SidewaysDragGuard(this);
             if (!reborn)
             {
                 Seeker.Player.AppUpdater.CheckOnLaunch(this);
@@ -1018,6 +1021,17 @@ namespace Seeker
         }
 
         public void GoToTab(int position) => pager.SetCurrentItem(position, false);
+
+        private Seeker.Player.SidewaysDragGuard sidewaysDragGuard;
+
+        public override bool DispatchTouchEvent(MotionEvent ev)
+        {
+            if (sidewaysDragGuard != null && sidewaysDragGuard.Filter(ev, e => base.DispatchTouchEvent(e)))
+            {
+                return true;
+            }
+            return base.DispatchTouchEvent(ev);
+        }
 
         public static int goToSearchTab = int.MaxValue;
         public void SyncToPage(int position)

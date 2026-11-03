@@ -247,13 +247,19 @@ half4 main(float2 xy) {
 
         internal static void Reserve(View view)
         {
-            if (view is RecyclerView || view is AbsListView || view is ScrollView || view is AndroidX.Core.Widget.NestedScrollView)
+            if (view is ScrollView || view is AndroidX.Core.Widget.NestedScrollView)
             {
-                // the first height seen is the view's own, so repeated calls never pile up
-                var saved = view.GetTag(Resource.Id.glass_base_padding) as Java.Lang.Integer;
-                int basePadding = saved?.IntValue() ?? view.PaddingBottom;
-                if (saved == null) { view.SetTag(Resource.Id.glass_base_padding, Java.Lang.Integer.ValueOf(basePadding)); }
-                view.SetPadding(view.PaddingLeft, view.PaddingTop, view.PaddingRight, basePadding + reserved);
+                // On the child, not the scroll view: a scroll view ignores its own padding when deciding whether it can scroll,
+                // and then a drag starting on a tappable row never scrolls.
+                var content = ((ViewGroup)view).GetChildAt(0);
+                if (content != null) { PadBottom(content); }
+                return;
+            }
+            if (view is RecyclerView || view is AbsListView)
+            {
+                // a wrap-content strip, like the search chips, sits above the bars and would just grow taller
+                if (view.LayoutParameters?.Height == ViewGroup.LayoutParams.WrapContent) { return; }
+                PadBottom(view);
                 ((ViewGroup)view).SetClipToPadding(false);
                 return;
             }
@@ -266,6 +272,15 @@ half4 main(float2 xy) {
             {
                 for (int i = 0; i < group.ChildCount; i++) { Reserve(group.GetChildAt(i)); }
             }
+        }
+
+        static void PadBottom(View view)
+        {
+            // the first height seen is the view's own, so repeated calls never pile up
+            var saved = view.GetTag(Resource.Id.glass_base_padding) as Java.Lang.Integer;
+            int basePadding = saved?.IntValue() ?? view.PaddingBottom;
+            if (saved == null) { view.SetTag(Resource.Id.glass_base_padding, Java.Lang.Integer.ValueOf(basePadding)); }
+            view.SetPadding(view.PaddingLeft, view.PaddingTop, view.PaddingRight, basePadding + reserved);
         }
 
         class PageWatcher : FragmentManager.FragmentLifecycleCallbacks
@@ -294,6 +309,84 @@ half4 main(float2 xy) {
                 v.SetPadding(v.PaddingLeft, v.PaddingTop, v.PaddingRight, bottom + gap);
                 return insets;
             }
+        }
+    }
+
+    /// <summary>
+    /// With tab swiping off, nothing claims a sideways drag any more, so lifting the finger over a wide row would count as tapping it.
+    /// This cancels such a drag, unless it began on something that really moves sideways.
+    /// </summary>
+    internal class SidewaysDragGuard
+    {
+        readonly View pager, bars;
+        readonly int slop;
+        readonly int[] origin = new int[2];
+        bool watching, swallowing;
+        float startX, startY;
+
+        public SidewaysDragGuard(Android.App.Activity activity)
+        {
+            pager = activity.FindViewById(Resource.Id.pager);
+            bars = activity.FindViewById(Resource.Id.glass_bars);
+            slop = ViewConfiguration.Get(activity).ScaledTouchSlop;
+        }
+
+        /// <summary>True when the event must not reach the app. dispatch sends the cancel that ends the press under the finger.</summary>
+        public bool Filter(MotionEvent e, Func<MotionEvent, bool> dispatch)
+        {
+            switch (e.ActionMasked)
+            {
+                case MotionEventActions.Down:
+                    swallowing = false;
+                    startX = e.RawX;
+                    startY = e.RawY;
+                    watching = Inside(pager, startX, startY) && !(bars.Visibility == ViewStates.Visible && Inside(bars, startX, startY)) && !MovesSideways(pager, startX, startY);
+                    return false;
+                case MotionEventActions.Move:
+                    if (swallowing) { return true; }
+                    if (!watching) { return false; }
+                    float dx = Math.Abs(e.RawX - startX), dy = Math.Abs(e.RawY - startY);
+                    if (dy > slop) { watching = false; return false; } // an up-down scroll owns this gesture
+                    if (dx <= slop) { return false; }
+                    swallowing = true;
+                    var cancel = MotionEvent.Obtain(e);
+                    cancel.Action = MotionEventActions.Cancel;
+                    dispatch(cancel);
+                    cancel.Recycle();
+                    return true;
+                case MotionEventActions.Up:
+                case MotionEventActions.Cancel:
+                    watching = false;
+                    bool swallowed = swallowing;
+                    swallowing = false;
+                    return swallowed;
+                default:
+                    return swallowing;
+            }
+        }
+
+        bool Inside(View view, float x, float y)
+        {
+            view.GetLocationOnScreen(origin);
+            return x >= origin[0] && x < origin[0] + view.Width && y >= origin[1] && y < origin[1] + view.Height;
+        }
+
+        // only the topmost child under the finger counts: a row covered by the Account panel is not what is being touched
+        bool MovesSideways(View view, float x, float y)
+        {
+            if (view is EditText || view is SeekBar || view is HorizontalScrollView) { return true; }
+            // the pager and its page list still report sideways scrolling even with swiping turned off
+            bool isPager = view == pager || view.Parent == pager;
+            if (!isPager && (view.CanScrollHorizontally(1) || view.CanScrollHorizontally(-1))) { return true; }
+            if (view is ViewGroup group)
+            {
+                for (int i = group.ChildCount - 1; i >= 0; i--)
+                {
+                    var child = group.GetChildAt(i);
+                    if (child.Visibility == ViewStates.Visible && Inside(child, x, y)) { return MovesSideways(child, x, y); }
+                }
+            }
+            return false;
         }
     }
 
