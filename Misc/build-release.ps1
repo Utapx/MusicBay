@@ -1,6 +1,10 @@
-# Builds the signed arm64 APK that goes on a GitHub release.
+# Builds the signed arm64 APK and the update.json that go on a GitHub release.
 # Needs the signing key next to this repository, in ..\keys. The key must never be committed: every update must carry it.
+# NotesFile holds what changed, as plain "- " lines: the app shows it to users exactly as written when it offers the update.
+param([Parameter(Mandatory = $true)][string]$NotesFile)
 $ErrorActionPreference = 'Stop'
+$notes = ([IO.File]::ReadAllText((Resolve-Path $NotesFile)) -replace "`r`n", "`n").Trim()
+if (-not $notes) { throw "Release notes are empty: $NotesFile" }
 $repo = Split-Path $PSScriptRoot -Parent
 $root = Split-Path $repo -Parent
 $keyStore = Join-Path $root 'keys\musicbay-release.jks'
@@ -29,5 +33,8 @@ if ($LASTEXITCODE -ne 0) { throw 'Build failed' }
 $version = ([xml](Get-Content (Join-Path $repo 'Seeker\Properties\AndroidManifest.xml'))).manifest.versionName
 $output = Join-Path $root "release\MusicBay-$version.apk"
 Copy-Item (Join-Path $repo 'Seeker\bin\Release\net10.0-android36.0\android-arm64\app.musicbay-Signed.apk') $output -Force
+$update = Join-Path $root 'release\update.json'
+$json = @{ version = "v$version"; notes = $notes; apk = "https://github.com/ssenwako/MusicBay/releases/download/v$version/MusicBay-$version.apk" } | ConvertTo-Json
+[IO.File]::WriteAllText($update, $json, (New-Object Text.UTF8Encoding($false)))
 Write-Output "Built $output"
-Write-Output "Publish it with: gh release create v$version `"$output`" LICENSE --title `"MusicBay $version`" --notes `"What changed`""
+Write-Output "Publish it with: gh release create v$version `"$output`" `"$update`" LICENSE --title `"MusicBay $version`" --notes-file `"$NotesFile`""

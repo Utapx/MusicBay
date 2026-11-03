@@ -38,9 +38,10 @@ namespace Seeker.Player
     internal static class AppUpdater
     {
 #if MOCK
-        const string LatestReleaseUrl = "http://localhost:8765/latest.json";
+        const string LatestReleaseUrl = "http://localhost:8765/update.json";
 #else
-        const string LatestReleaseUrl = "https://api.github.com/repos/ssenwako/MusicBay/releases/latest";
+        // a release file, not GitHub's API: the API allows only 60 requests an hour per IP, and many phones on a mobile network share one IP
+        const string LatestReleaseUrl = "https://github.com/ssenwako/MusicBay/releases/latest/download/update.json";
 #endif
         const string PrefsName = "musicbay_player";
         const string SkippedVersionKey = "update_skipped_version";
@@ -92,7 +93,7 @@ namespace Seeker.Player
                         if (userAsked) { Toast.MakeText(activity, Resource.String.update_check_failed, ToastLength.Short).Show(); }
                         return;
                     }
-                    if (release == null || !VersionCompare.IsNewer(release.Tag, installed))
+                    if (!VersionCompare.IsNewer(release.Tag, installed))
                     {
                         if (userAsked) { Toast.MakeText(activity, Resource.String.update_up_to_date, ToastLength.Short).Show(); }
                         return;
@@ -109,19 +110,12 @@ namespace Seeker.Player
         {
             using var limit = new CancellationTokenSource(TimeSpan.FromSeconds(20));
             using var response = await http.GetAsync(LatestReleaseUrl, limit.Token);
-            // GitHub answers 404 until a release exists
-            if (!response.IsSuccessStatusCode) { return null; }
+            // every failure throws, so a check that could not run is never reported as "up to date"
+            response.EnsureSuccessStatusCode();
             var json = new JSONObject(await response.Content.ReadAsStringAsync());
-            var assets = json.GetJSONArray("assets");
-            for (int i = 0; i < assets.Length(); i++)
-            {
-                string url = assets.GetJSONObject(i).GetString("browser_download_url");
-                if (url.EndsWith(".apk", StringComparison.OrdinalIgnoreCase) && IsTrustedUrl(url))
-                {
-                    return new Release { Tag = json.GetString("tag_name"), Notes = json.OptString("body", ""), ApkUrl = url };
-                }
-            }
-            return null;
+            string url = json.GetString("apk");
+            if (!url.EndsWith(".apk", StringComparison.OrdinalIgnoreCase) || !IsTrustedUrl(url)) { throw new IOException("unusable APK address"); }
+            return new Release { Tag = json.GetString("version"), Notes = json.OptString("notes", ""), ApkUrl = url };
         }
 
 #if MOCK
