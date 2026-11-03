@@ -186,30 +186,54 @@
 
     <!-- light neutral app bar, dark text / icons -->
     <style name="DefaultLight_Modern" parent="DefaultLight">
-        <item name="appBarColor">#F3EDF7</item>
-        <item name="appBarIconColor">#49454F</item>
-        <item name="appBarTextColor">#1D1B20</item>
-        <item name="appBarHintColor">#49454F</item>
+        <item name="colorPrimary">@color/mb_light_accent</item>
+        <item name="colorOnPrimary">@color/mb_light_on_accent</item>
+        <item name="colorSecondaryContainer">@color/mb_light_accent_container</item>
+        <item name="android:colorBackground">@color/mb_light_bg</item>
+        <item name="android:windowBackground">@color/mb_light_bg</item>
+        <item name="colorSurfaceContainer">@color/mb_light_surface</item>
+        <item name="elevationOverlayEnabled">false</item>
+        <item name="colorSurface">@color/mb_light_bg</item>
+        <item name="colorSurfaceLogin">@color/mb_light_bg</item>
+        <item name="mainPurple">@color/mb_light_accent</item>
+        <item name="mainTextColor">@color/mb_light_accent</item>
+        <item name="checkBoxColor">@color/mb_light_accent</item>
+        <item name="normalTextColor">@color/mb_light_text</item>
+        <item name="normalTextColorNonTinted">@color/mb_light_text</item>
+        <item name="cellTextColor">@color/mb_light_text</item>
+        <item name="cellTextColorSubdued">@color/mb_light_text_secondary</item>
+        <item name="cellTextColorMoreSubdued">@color/mb_light_text_secondary</item>
+        <item name="cellStroke">@color/mb_light_outline</item>
+        <item name="settingsDividerColor">@color/mb_light_outline</item>
+        <item name="slightestContrastColor">@color/mb_light_raised</item>
+        <item name="searchTabPillInactiveColor">@color/mb_light_raised</item>
+        <item name="mainTextColorHintedFlair">@color/mb_light_accent</item>
+        <item name="sectionHeaderTextColor">@color/mb_light_accent</item>
+
+        <item name="appBarColor">@color/mb_light_surface</item>
+        <item name="appBarIconColor">@color/mb_light_text</item>
+        <item name="appBarTextColor">@color/mb_light_text</item>
+        <item name="appBarHintColor">@color/mb_light_text_secondary</item>
         <item name="appBarOverlayTheme">@style/AppTheme.AppBarOverlay.Light</item>
         <item name="actionModeTheme">@style/AppTheme.ActionModeOverlay.Light</item>
-        <item name="searchBarColor">#E6E0E9</item>
-        <item name="searchBarHighlightColor">#C8CBF5</item>
+        <item name="searchBarColor">@color/mb_light_raised</item>
+        <item name="searchBarHighlightColor">@color/mb_light_accent_container</item>
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:windowLightNavigationBar" tools:targetApi="27">true</item>
 
-        <item name="whitePurpleForNavBar">#DEE0FF</item>
-        <item name="navItemSelectedColor">#2E3478</item>
-        <item name="navItemUnselectedColor">#49454F</item>
-        <item name="filterBottomSheetBackground">#F3EDF7</item>
-        <!-- surface_variant1 is the app bar colour here, so the room ticker / statuses would blend into it -->
-        <item name="roomStatusesColor">#E7E1EB</item>
+        <item name="whitePurpleForNavBar">@color/mb_light_accent_container</item>
+        <item name="navItemSelectedColor">@color/mb_light_accent</item>
+        <item name="navItemUnselectedColor">@color/mb_light_text_secondary</item>
+        <item name="filterBottomSheetBackground">@color/mb_light_surface</item>
+        <item name="dialog_background">@color/mb_light_surface</item>
+        <item name="surface_variant1">@color/mb_light_raised</item>
+        <item name="roomStatusesColor">@color/mb_light_raised</item>
 
-        <item name="checkCircleSelectedColor">#4f58c4</item>
-        <item name="checkCircleCheckColor">#FFFFFF</item>
-        <!-- #CCCEE3 over the #FEF7FF background -->
-        <item name="batchSelectHighlightColor">#4037548F</item>
+        <item name="checkCircleSelectedColor">@color/mb_light_accent</item>
+        <item name="checkCircleCheckColor">@color/mb_light_on_accent</item>
+        <item name="batchSelectHighlightColor">#409A5200</item>
 
-        <item name="snackbarActionColor">#BCC1F7</item>
+        <item name="snackbarActionColor">@color/mb_dark_accent</item>
     </style>
 
     <style name="DefaultDark" parent="AppTheme.NoActionBar">
@@ -294,24 +318,49 @@
     </style>
 
     <style name="DefaultDark_Modern" parent="DefaultDark">
-        <!--<item name="appBarColor">#221e17</item>-->
-        <item name="appBarColor">#1d1c2a</item>
-        <item name="appBarIconColor">#DFD8E6</item>
-        <item name="whitePurpleForNavBar">#3b417f</item>
-		<item name="filterBottomSheetBackground">#1d1c2a</item>
-        <item name="surface_variant1">#ff202020</item>
-        <item name="dialog_background">#ff282828</item>
-        <item name="download_dialog_background">@color/absoluteBackColor2</item>
-        <!--<item name="mainPurple">#3b417f</item>-->
-		<!-- a bit brighter for dark mode -->
-        <item name="mainPurple">#535DEE</item>
+        <item name="colorPrimary">@color/mb_dark_accent</item>
+        <item name="colorOnPrimary">@color/mb_dark_on_accent</item>
+        <item name="colorSecondaryContainer">@color/mb_dark_accent_container</item>
+        <item name="android:colorBackground">@color/mb_dark_bg</item>
+        <item name="android:windowBackground">@color/mb_dark_bg</item>
+        <item name="colorSurfaceContainer">@color/mb_dark_surface</item>
+        <item name="elevationOverlayEnabled">false</item>
+        <item name="colorSurface">@color/mb_dark_surface</item>
+        <item name="colorSurfaceLogin">@color/mb_dark_bg</item>
+        <item name="pseudo_window_background_color">@color/mb_dark_bg</item>
+        <item name="cellback">@color/mb_dark_bg</item>
+        <item name="cellbackColor">@color/mb_dark_bg</item>
+        <item name="searchHeaderBackground">@color/mb_dark_bg</item>
+        <item name="normalTextColor">@color/mb_dark_text</item>
+        <item name="normalTextColorNonTinted">@color/mb_dark_text</item>
+        <item name="cellTextColor">@color/mb_dark_text</item>
+        <item name="cellTextColorSubdued">@color/mb_dark_text_secondary</item>
+        <item name="cellTextColorMoreSubdued">@color/mb_dark_text_secondary</item>
+        <item name="cellStroke">@color/mb_dark_outline</item>
+        <item name="settingsDividerColor">@color/mb_dark_outline</item>
+        <item name="slightestContrastColor">@color/mb_dark_raised</item>
+        <item name="searchTabPillInactiveColor">@color/mb_dark_raised</item>
+        <item name="searchBarColor">@color/mb_dark_raised</item>
+        <item name="mainTextColor">@color/mb_dark_accent</item>
+        <item name="mainTextColorHintedFlair">@color/mb_dark_accent</item>
+        <item name="sectionHeaderTextColor">@color/mb_dark_accent</item>
+        <item name="checkBoxColor">@color/mb_dark_accent</item>
 
-        <item name="navItemSelectedColor">#c9ceff</item>
-        <item name="navItemUnselectedColor">#cac4d0</item>
-        <!-- same fill as the checked MaterialSwitch track -->
-        <item name="checkCircleSelectedColor">#595BFF</item>
-        <item name="checkCircleCheckColor">#FFFFFF</item>
-        <item name="batchSelectHighlightColor">#40528FDC</item>
+        <item name="appBarColor">@color/mb_dark_surface</item>
+        <item name="appBarIconColor">@color/mb_dark_text</item>
+        <item name="whitePurpleForNavBar">@color/mb_dark_accent_container</item>
+        <item name="filterBottomSheetBackground">@color/mb_dark_raised</item>
+        <item name="surface_variant1">@color/mb_dark_raised</item>
+        <item name="dialog_background">@color/mb_dark_raised</item>
+        <item name="download_dialog_background">@color/mb_dark_raised</item>
+        <item name="mainPurple">@color/mb_dark_accent</item>
+
+        <item name="navItemSelectedColor">@color/mb_dark_accent</item>
+        <item name="navItemUnselectedColor">@color/mb_dark_text_secondary</item>
+        <item name="checkCircleSelectedColor">@color/mb_dark_accent</item>
+        <item name="checkCircleCheckColor">@color/mb_dark_on_accent</item>
+        <item name="batchSelectHighlightColor">#40FFB454</item>
+        <item name="snackbarActionColor">@color/mb_light_accent</item>
     </style>
 
     <style name="DefaultDark_Blue" parent="DefaultDark">

@@ -1,5 +1,7 @@
 ﻿/*
  * Copyright 2021 Seeker
+ * Copyright (c) 2026 Arsen
+ * Modified: new tab layout, mini player, optional download folder prompt
  *
  * This file is part of Seeker
  *
@@ -205,6 +207,7 @@ namespace Seeker
             //relies on long-lived fragments via SearchFragment.Instance / BrowseFragment.Instance etc.
             pager.OffscreenPageLimit = 3;
             pager.RegisterOnPageChangeCallback(new OnPageChangeLister1());
+            Seeker.Player.MiniPlayer.Attach(this);
             //this is a relatively safe way that prevents rotates from redoing the intent.
             bool alreadyHandled = Intent.GetBooleanExtra("ALREADY_HANDLED", false);
             Intent = Intent.PutExtra("ALREADY_HANDLED", true);
@@ -312,7 +315,7 @@ namespace Seeker
                     ActivityCompat.RequestPermissions(this, new string[] { Manifest.Permission.WriteExternalStorage }, WRITE_EXTERNAL_LEGACY);
                 }
             }
-            else if (StorageState.RootDocumentFile == null)
+            else if (StorageState.RootDocumentFile == null && !GetSharedPreferences("musicbay_player", FileCreationMode.Private).GetBoolean(SkipDownloadFolderPromptKey, false))
             {
                 // StorageState.LoadFromPreferences could not write the download directory —
                 // permission was revoked. Ask the user to re-select one.
@@ -345,10 +348,15 @@ namespace Seeker
                     }
                 });
                 dialogBuilder.SetPositiveButton(Resource.String.okay, eventHandler);
+                // listening to local music needs no download folder; the Home screen keeps a row for choosing one later
+                dialogBuilder.SetNegativeButton(Resource.String.not_now, (s, e) =>
+                    GetSharedPreferences("musicbay_player", FileCreationMode.Private).Edit().PutBoolean(SkipDownloadFolderPromptKey, true).Apply());
                 dialogBuilder.SetCancelable(false);
                 dialogBuilder.Show();
             }
         }
+
+        private const string SkipDownloadFolderPromptKey = "skip_download_folder_prompt";
 
 
         private void HandleWishlistIntent()
@@ -999,6 +1007,20 @@ namespace Seeker
             base.OnSaveInstanceState(outState);
         }
 
+        public void GoToTab(int position) => pager.SetCurrentItem(position, false);
+
+        // Pages keep their original indexes because Soulseek flows jump to them by number. Browse has no nav item of its own and sits under Search.
+        private static int NavItemForPage(int position)
+        {
+            switch (position)
+            {
+                case 0: return Resource.Id.navigation_home;
+                case 2: return Resource.Id.navigation_transfers;
+                case 4: return Resource.Id.navigation_library;
+                default: return Resource.Id.navigation_search;
+            }
+        }
+
         public static int goToSearchTab = int.MaxValue;
         public void SyncToPage(int position)
         {
@@ -1009,8 +1031,9 @@ namespace Seeker
             var navigator = FindViewById<BottomNavigationView>(Resource.Id.navigation);
             if (navigator != null)
             {
-                navigator.Menu.GetItem(position).SetCheckable(true); //necessary if side scrolling...
-                navigator.Menu.GetItem(position).SetChecked(true);
+                var navItem = navigator.Menu.FindItem(NavItemForPage(position));
+                navItem.SetCheckable(true); //necessary if side scrolling...
+                navItem.SetChecked(true);
             }
             //Gate options-menu visibility to the current tab. FragmentStateAdapter (unlike
             //FragmentPagerAdapter) does not call setMenuVisibility per primary item, so without this
@@ -1062,7 +1085,7 @@ namespace Seeker
 
                     this.SupportActionBar.SetDisplayShowCustomEnabled(false);
                     this.SupportActionBar.SetDisplayShowTitleEnabled(true);
-                    this.SupportActionBar.Title = this.GetString(Resource.String.home_tab);
+                    this.SupportActionBar.Title = this.GetString(Resource.String.app_name);
                     this.SupportActionBar.SubtitleFormatted = null;
                     break;
                 case 1:
@@ -1100,6 +1123,14 @@ namespace Seeker
                     this.SupportActionBar.SetDisplayShowCustomEnabled(false);
                     this.SupportActionBar.SetDisplayShowTitleEnabled(true);
                     BrowseFragment.SetActionBarTitle();
+                    break;
+                case 4:
+                    this.SupportActionBar.SetDisplayHomeAsUpEnabled(false);
+                    this.SupportActionBar.SetHomeButtonEnabled(false);
+                    this.SupportActionBar.SetDisplayShowCustomEnabled(false);
+                    this.SupportActionBar.SetDisplayShowTitleEnabled(true);
+                    this.SupportActionBar.Title = this.GetString(Resource.String.library_tab);
+                    this.SupportActionBar.SubtitleFormatted = null;
                     break;
             }
             RefreshBackCallbackState();
@@ -1189,8 +1220,8 @@ namespace Seeker
                 case Resource.Id.navigation_transfers:
                     pager.SetCurrentItem(2, false);
                     break;
-                case Resource.Id.navigation_browse:
-                    pager.SetCurrentItem(3, false);
+                case Resource.Id.navigation_library:
+                    pager.SetCurrentItem(4, false);
                     break;
             }
             return true;

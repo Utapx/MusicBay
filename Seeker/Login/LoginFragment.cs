@@ -1,5 +1,7 @@
 /*
  * Copyright 2021 Seeker
+ * Copyright (c) 2026 Arsen
+ * Modified: Home shows the music section above the Soulseek account section
  *
  * This file is part of Seeker
  *
@@ -92,6 +94,7 @@ namespace Seeker
             ServerMessageService.Changed += OnServerMessageChanged;
             RenderFromState();
             UpdateServerMessage();
+            Seeker.Player.HomeMusicSection.Bind(rootView, Activity);
         }
 
         public override void OnPause()

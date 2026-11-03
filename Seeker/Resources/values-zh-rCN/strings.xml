@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Seeker</string>
+    <string name="app_name">MusicBay</string>
     <string name="com.google.firebase.crashlytics.mapping_file_id">1.0</string>
     <string name="home_tab">首页</string>
     <string name="transfer_tab">传输</string>
@@ -26,8 +26,8 @@
     <string name="search_user_">搜索用户 {0}</string>
     <string name="wishlist_search">心愿单搜索</string>
     <string name="no_account">没有账户？ 只需输入一个独特的用户名，就会为你创建一个。</string>
-    <string name="keep_alive_service_subtitle">允许 Seeker 在后台运行以执行搜索请求（分享）、接收聊天消息等活动</string>
-    <string name="privileges_more_info">权限有助于支持 Soulseek 网络及该应用依赖的中央服务器。\n\n它们还允许你在下载队列中跳过非特权用户。\n\n注意：捐款不支付给该非官方Android客户端（Seeker）的创建者，我目前不接受捐款。</string>
+    <string name="keep_alive_service_subtitle">允许 MusicBay 在后台运行以执行搜索请求（分享）、接收聊天消息等活动</string>
+    <string name="privileges_more_info">权限有助于支持 Soulseek 网络及该应用依赖的中央服务器。\n\n它们还允许你在下载队列中跳过非特权用户。\n\n注意：捐款不支付给该非官方Android客户端（MusicBay）的创建者，我目前不接受捐款。</string>
     <string name="no_messages">没有消息。点击\"+\"开始操作。</string>
     <string name="no_messages_subtitle">来自用户的消息将会出现在这</string>
     <string name="no_users_added">暂未添加用户</string>
@@ -114,7 +114,7 @@
     <string name="create_chatroom_private">设为私密</string>
     <string name="search_here">点击搜索</string>
     <string name="seeker_needs_dl_dir">Choose download location</string>
-    <string name="seeker_needs_dl_dir_content">Select a folder where Seeker will save downloaded files</string>
+    <string name="seeker_needs_dl_dir_content">Select a folder where MusicBay will save downloaded files</string>
     <string name="seeker_needs_dl_dir_error">必须选择一个目录来保存下载的文件</string>
     <string name="seeker_needs_dl_dir_choose_settings">请在设置中设置下载目录。</string>
     <string name="seeker_cannot_access_files">无法访问文件系统。您必须在登录页面或在设置中选择下载目录。</string>
@@ -195,7 +195,7 @@
     <string name="restore_default_settings">恢复默认设置</string>
     <string name="restore_default_settings_body">This will reset all settings to their defaults. This can\'t be undone.</string>
     <string name="restore_defaults_subtitle">Resets every setting to factory state</string>
-    <string name="force_filesystem_subtitle">Android\'s standard folder permissions don\'t always persist. If Seeker keeps re-prompting for Download or Shared Folder access, this will grant persisted full-storage access via system settings.\n\nThe Play Store version cannot request this permission — requires F-droid (IzzyOnDroid) or GitHub release version.</string>
+    <string name="force_filesystem_subtitle">Android\'s standard folder permissions don\'t always persist. If MusicBay keeps re-prompting for Download or Shared Folder access, this will grant persisted full-storage access via system settings.\n\nThe Play Store version cannot request this permission — requires F-droid (IzzyOnDroid) or GitHub release version.</string>
     <string name="get_fdroid_build">Get F-Droid (IzzyOnDroid) build</string>
     <string name="get_github_build">Get GitHub release build</string>
     <string name="user_has_no_bio">User has no bio.</string>
@@ -206,7 +206,7 @@
     <string name="success_set_pic">Successfully set picture</string>
     <string name="error_no_file_manager_image">错误 - 没有安装能够选择图像的文件管理器。请安装一个。</string>
     <string name="error_no_file_manager_dir">错误 - 未安装能够选择目录的文件管理器。请安装一个。</string>
-    <string name="error_no_file_manager_dir_manage_storage">错误 - 没有安装能够选择目录的文件管理器。请安装一个。 如果您的设备没有实现 OPEN_DOCUMENT_TREE 意图，请从拥有管理外部存储权限的 Fdroid (IzzyOnDroid 仓库) 安装Seeker。</string>
+    <string name="error_no_file_manager_dir_manage_storage">错误 - 没有安装能够选择目录的文件管理器。请安装一个。 如果您的设备没有实现 OPEN_DOCUMENT_TREE 意图，请从拥有管理外部存储权限的 Fdroid (IzzyOnDroid 仓库) 安装MusicBay。</string>
     <string name="error_image_doesnt_exist">图像不存在</string>
     <string name="error_image_too_large">图片过大。请选择一个较小的图片。(&lt;5MB)。</string>
     <string name="no_room_tickers">No room tickers yet...</string>
@@ -474,8 +474,8 @@
     <!--Notification-->
     <string name="download_in_progress">正在下载</string>
     <string name="transfers_in_progress">正在传输……</string>
-    <string name="seeker_running">Seeker正在运行中</string>
-    <string name="seeker_running_content">Seeker正在后台运行</string>
+    <string name="seeker_running">MusicBay正在运行中</string>
+    <string name="seeker_running_content">MusicBay正在后台运行</string>
     <!--Privileges-->
     <string name="yes">是</string>
     <string name="seconds_left">{0} 秒</string>
@@ -534,7 +534,7 @@
     <string name="subfolders_warning_queue_paused">This folder contains subfolders, would you like to queue all files in those subfolders as well ({0}) or only the files in the current folder ({1})?</string>
     <string name="current_folder_only">Current folder only</string>
     <string name="must_be_logged_in_to_give_privileges">Must be logged in to give privileges</string>
-    <string name="about_body">Seeker is a free and open source Soulseek client for Android. It will never have ads or paid features.</string>
+    <string name="about_body">MusicBay is a free and open source Soulseek client for Android. It will never have ads or paid features.</string>
     <string name="about_link_source_title">Source code</string>
     <string name="about_link_translate_title">Help translate</string>
     <string name="must_be_logged_in_to_get_dir_contents">Must be logged in to get directory contents</string>
@@ -724,7 +724,7 @@
     <string name="DeleteSelected">Delete selected</string>
     <string name="deleted_selected_message_histories">Deleted {0} conversation(s)</string>
     <string name="ExportClientData">Export client data</string>
-    <string name="successfully_exported">Successfully exported Seeker client data.</string>
+    <string name="successfully_exported">Successfully exported MusicBay client data.</string>
     <string name="ForceFilesystemPermission">Force filesystem permissions</string>
     <string name="permission_already_successfully_granted">Permission has already been successfully granted</string>
     <string name="permission_successfully_granted">Permission successfully granted</string>
@@ -737,7 +737,7 @@
     <string name="must_be_logged_in_to_change_password">Must be logged in to change password</string>
     <string name="failed_to_change_password">Failed to change password</string>
     <string name="password_successfully_updated">Password successfully updated</string>
-    <string name="error_dialog_content">Seeker has encountered an issue. \n\nPlease consider sending a report to the developer. \n\nAny information about the steps / conditions leading up to the issue is much appreciated.</string>
+    <string name="error_dialog_content">MusicBay has encountered an issue. \n\nPlease consider sending a report to the developer. \n\nAny information about the steps / conditions leading up to the issue is much appreciated.</string>
     <string name="folder_request_user_returned_empty_response">User returned an empty response for this folder</string>
     <string name="just_now">just now</string>
     <!-- Modern settings screen -->

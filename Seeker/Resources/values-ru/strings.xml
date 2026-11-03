@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Seeker</string>
+    <string name="app_name">MusicBay</string>
     <string name="com.google.firebase.crashlytics.mapping_file_id">1.0</string>
 
     <string name="home_tab">Главная</string>
@@ -27,7 +27,7 @@
     <string name="privileges_more_info">
         Привилегии позволяют поддерживать создателя Soulseek (Nir) и центральный сервер, от которого зависит это приложение.
 \n\nЭто также позволяет опережать в очереди на загрузку пользователей, не имеющих привилегий.
-\n\nПримечание: любые пожертвования не идут создателю этого неофициального клиента для андроид, Seeker. В настоящее время я не принимаю пожертвования.
+\n\nПримечание: любые пожертвования не идут создателю этого неофициального клиента для андроид, MusicBay. В настоящее время я не принимаю пожертвования.
     </string>
 
     <string name="no_messages">Нет сообщений. Нажмите «+», чтобы начать.</string>
@@ -81,7 +81,7 @@
     <string name="search_here">Поиск</string>
 
     <string name="seeker_needs_dl_dir">
-        Seeker нуждается в доступе к каталогу для сохранения загруженных файлов
+        MusicBay нуждается в доступе к каталогу для сохранения загруженных файлов
     </string>
     <string name="seeker_needs_dl_dir_content">
         Пожалуйста, выберите директорию загрузки (по умолчанию это папка с музыкой)
@@ -171,7 +171,7 @@
         ОШИБКА - не установлен файловый менеджер, способный выбрать каталог. Пожалуйста, установите его.
     </string>
     <string name="error_no_file_manager_dir_manage_storage">
-        ОШИБКА - не установлен файловый менеджер, способный выбрать каталог. Пожалуйста, установите его. Еслина вашем устройстве нету опции (всплывающего меню) \"выбрать приложение\", тогда, пожалуйста, установите Seeker из Fdroid (IzzyOnDroid), у которого будет доступ к вашему внешнему накопителею.
+        ОШИБКА - не установлен файловый менеджер, способный выбрать каталог. Пожалуйста, установите его. Еслина вашем устройстве нету опции (всплывающего меню) \"выбрать приложение\", тогда, пожалуйста, установите MusicBay из Fdroid (IzzyOnDroid), у которого будет доступ к вашему внешнему накопителею.
     </string>
     <string name="error_image_doesnt_exist">Изображение не существует</string>
     <string name="error_image_too_large">
@@ -567,9 +567,9 @@
 
     <string name="download_in_progress">Идет загрузка</string>
     <string name="transfers_in_progress">Выполняется передач...</string>
-    <string name="seeker_running">Seeker запущен</string>
+    <string name="seeker_running">MusicBay запущен</string>
     <string name="seeker_running_content">
-        Seeker работает в фоновом режиме
+        MusicBay работает в фоновом режиме
     </string>
 
     <string name="yes">Да</string>
@@ -650,7 +650,7 @@
         Необходимо войти в систему для предоставления привилегий
     </string>
 
-    <string name="about_body">Seeker - бесплатный android-клиент Soulseek с открытым исходным кодом. Здесь никогда не будет рекламы или платных функций.</string>
+    <string name="about_body">MusicBay - бесплатный android-клиент Soulseek с открытым исходным кодом. Здесь никогда не будет рекламы или платных функций.</string>
     <string name="must_be_logged_in_to_get_dir_contents">
         Необходимо войти в систему, чтобы получить содержимое каталога
     </string>
@@ -1002,7 +1002,7 @@
         Пароль успешно обновлён
     </string>
     <string name="error_dialog_content">
-        Seeker столкнулся с проблемой. \n\nПожалуйста, поделитесь отчетом с разработчиками. \n\nЛюбая дополнительная информация, а также описание шагов для воспроизведения приветствуются.
+        MusicBay столкнулся с проблемой. \n\nПожалуйста, поделитесь отчетом с разработчиками. \n\nЛюбая дополнительная информация, а также описание шагов для воспроизведения приветствуются.
     </string>
     <string name="section_downloads">Downloads</string>
     <string name="section_search">Search</string>

@@ -1,4 +1,7 @@
-﻿using Android.App;
+// Copyright (c) 2026 Arsen
+// Modified: renamed the service for the MusicBay package
+
+using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
@@ -16,7 +19,7 @@ using System.Text;
 namespace Seeker
 {
     //Services are natural singletons. There will be 0 or 1 instance of your service at any given time.
-    [Service(Name = "com.companyname.andriodapp1.SeekerKeepAliveService", ForegroundServiceType = Android.Content.PM.ForegroundService.TypeDataSync | Android.Content.PM.ForegroundService.TypeSpecialUse)]
+    [Service(Name = "app.musicbay.SeekerKeepAliveService", ForegroundServiceType = Android.Content.PM.ForegroundService.TypeDataSync | Android.Content.PM.ForegroundService.TypeSpecialUse)]
     [MetaData(Constants.AndroidForegroundSpecialUseMetadata, Value = Constants.AndroidForegroundSpecialUseDescription)]
     public class SeekerKeepAliveService : Service
     {

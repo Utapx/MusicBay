@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Seeker</string>
+    <string name="app_name">MusicBay</string>
     <string name="com.google.firebase.crashlytics.mapping_file_id">1.0</string>
 
     <string name="home_tab">Início</string>
@@ -27,7 +27,7 @@
     <string name="privileges_more_info">
         Os privilégios permitem apoiar o criador do Soulseek (Nir) e o servidor central do qual este aplicativo depende.
  \n\nTambém permite que alguém seja colocado na fila antes de usuários não privilegiados na fila de download.
- \n\nNota: quaisquer doações não vão para o criador deste cliente Android não oficial, Seeker. No momento não aceito doações.
+ \n\nNota: quaisquer doações não vão para o criador deste cliente Android não oficial, MusicBay. No momento não aceito doações.
     </string>
 
     <string name="no_messages">Sem mensagens. Aperte \"+\" para começar.</string>
@@ -80,7 +80,7 @@
     <string name="search_here">Pesquise aqui</string>
 
     <string name="seeker_needs_dl_dir">
-        O Seeker precisa de acesso a um diretório para salvar os arquivos baixados
+        O MusicBay precisa de acesso a um diretório para salvar os arquivos baixados
     </string>
     <string name="seeker_needs_dl_dir_content">
         Escolha um diretório de transferência (padrão é a pasta Music)
@@ -170,7 +170,7 @@
         ERRO - Nenhum gerenciador de arquivos instalado capaz de escolher um diretório. Por favor, instale um.
     </string>
     <string name="error_no_file_manager_dir_manage_storage">
-        ERRO - Nenhum gerenciador de arquivos instalado capaz de escolher um diretório. Por favor, instale um. Se o seu dispositivo não implementar a intenção OPEN_DOCUMENT_TREE, instale o Seeker do Fdroid (IzzyOnDroid Repo) que tem a permissão gerenciar armazenamento externo.
+        ERRO - Nenhum gerenciador de arquivos instalado capaz de escolher um diretório. Por favor, instale um. Se o seu dispositivo não implementar a intenção OPEN_DOCUMENT_TREE, instale o MusicBay do Fdroid (IzzyOnDroid Repo) que tem a permissão gerenciar armazenamento externo.
     </string>
     <string name="error_image_doesnt_exist">A imagem não existe</string>
     <string name="error_image_too_large">
@@ -566,9 +566,9 @@
 
     <string name="download_in_progress">Downloads em andamento</string>
     <string name="transfers_in_progress">Transferências em andamento...</string>
-    <string name="seeker_running">O Seeker está rodando</string>
+    <string name="seeker_running">O MusicBay está rodando</string>
     <string name="seeker_running_content">
-        O Seeker está sendo executado em segundo plano
+        O MusicBay está sendo executado em segundo plano
     </string>
 
     <string name="yes">Sim</string>
@@ -649,7 +649,7 @@
         Deve estar logado para conceder privilégios
     </string>
 
-    <string name="about_body">Seeker é um cliente Soulseek gratuito e de código aberto para Android. Ele nunca terá anúncios ou recursos pagos.</string>
+    <string name="about_body">MusicBay é um cliente Soulseek gratuito e de código aberto para Android. Ele nunca terá anúncios ou recursos pagos.</string>
     <string name="must_be_logged_in_to_get_dir_contents">
         Deve estar logado para obter o conteúdo do diretório
     </string>
@@ -968,9 +968,9 @@
 
     <string name="Num_Selected">{0} selecionado(s)</string>
 
-    <string name="ExportClientData">Exportar dados do Seeker</string>
+    <string name="ExportClientData">Exportar dados do MusicBay</string>
     <string name="successfully_exported">
-        Os dados do Seeker foram exportados com sucesso.
+        Os dados do MusicBay foram exportados com sucesso.
     </string>
 
     <string name="ForceFilesystemPermission">
@@ -1001,7 +1001,7 @@
         Senha atualizada com sucesso
     </string>
     <string name="error_dialog_content">
-        O Seeker encontrou um problema.  \n\nPor favor, considere enviar um relatório ao desenvolvedor.  \n\nQualquer informação sobre as etapas/condições que levaram ao problema será muito apreciada.
+        O MusicBay encontrou um problema.  \n\nPor favor, considere enviar um relatório ao desenvolvedor.  \n\nQualquer informação sobre as etapas/condições que levaram ao problema será muito apreciada.
     </string>
     <string name="section_downloads">Downloads</string>
     <string name="section_search">Search</string>

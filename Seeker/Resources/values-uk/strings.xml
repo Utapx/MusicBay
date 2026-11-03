@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Seeker</string>
+    <string name="app_name">MusicBay</string>
     <string name="com.google.firebase.crashlytics.mapping_file_id">1.0</string>
 
     <string name="home_tab">Головна</string>
@@ -27,7 +27,7 @@
     <string name="privileges_more_info">
         Привілеї дозволяють підтримувати творця Soulseek (Nir) і центральний сервер, від якого залежить ця програма.
 \n\nЦе також дозволяє стати в чергу перед непривілейованими користувачами в черзі завантаження.
-\n\nУвага: жодні донати не надходять творцю цього неофіційного клієнта для Android, Seeker. Зараз я не приймаю донатів.
+\n\nУвага: жодні донати не надходять творцю цього неофіційного клієнта для Android, MusicBay. Зараз я не приймаю донатів.
     </string>
 
     <string name="no_messages">Немає повідомлень. Натисніть «+», щоб написати кому-небудь.</string>
@@ -80,7 +80,7 @@
     <string name="search_here">Пошук</string>
 
     <string name="seeker_needs_dl_dir">
-        Seeker потрібен доступ до каталогу для збереження завантажених файлів
+        MusicBay потрібен доступ до каталогу для збереження завантажених файлів
     </string>
     <string name="seeker_needs_dl_dir_content">
         Будь ласка, виберіть каталог для завантаження (за замовчуванням це папка з музикою)
@@ -170,7 +170,7 @@
         ПОМИЛКА - Не встановлено файловий менеджер, який би міг вибрати каталог. Будь ласка, встановіть один.
     </string>
     <string name="error_no_file_manager_dir_manage_storage">
-        ПОМИЛКА - Не встановлено файловий менеджер, який би міг вибирати каталог. Будь ласка, встановіть один. Якщо ваш пристрій не підтримує намір OPEN_DOCUMENT_TREE, інсталюйте Seeker із Fdroid (IzzyOnDroid Repo), який має дозвіл на керування зовнішньою пам\'яттю.
+        ПОМИЛКА - Не встановлено файловий менеджер, який би міг вибирати каталог. Будь ласка, встановіть один. Якщо ваш пристрій не підтримує намір OPEN_DOCUMENT_TREE, інсталюйте MusicBay із Fdroid (IzzyOnDroid Repo), який має дозвіл на керування зовнішньою пам\'яттю.
     </string>
     <string name="error_image_doesnt_exist">Зображення не існує</string>
     <string name="error_image_too_large">
@@ -566,9 +566,9 @@
 
     <string name="download_in_progress">Триває завантаження</string>
     <string name="transfers_in_progress">Передачі тривають...</string>
-    <string name="seeker_running">Seeker запущено</string>
+    <string name="seeker_running">MusicBay запущено</string>
     <string name="seeker_running_content">
-        Seeker працює у фоновому режимі
+        MusicBay працює у фоновому режимі
     </string>
 
     <string name="yes">Так</string>
@@ -649,7 +649,7 @@
         Щоб надати привілеї, необхідно увійти в систему
     </string>
 
-    <string name="about_body">Seeker — це безплатний клієнт Soulseek з відкритим кодом для Android. У ньому ніколи не буде реклами чи платних функцій.</string>
+    <string name="about_body">MusicBay — це безплатний клієнт Soulseek з відкритим кодом для Android. У ньому ніколи не буде реклами чи платних функцій.</string>
     <string name="must_be_logged_in_to_get_dir_contents">
         Щоб отримати вміст каталогу, необхідно увійти в систему
     </string>
@@ -970,7 +970,7 @@
 
     <string name="ExportClientData">Експорт даних клієнта</string>
     <string name="successfully_exported">
-        Дані клієнта Seeker успішно експортовано.
+        Дані клієнта MusicBay успішно експортовано.
     </string>
 
     <string name="ForceFilesystemPermission">
@@ -1001,7 +1001,7 @@
         Password successfully updated
     </string>
     <string name="error_dialog_content">
-        Seeker has encountered an issue.  \n\nPlease consider sending a report to the developer.  \n\nAny information about the steps / conditions leading up to the issue is much appreciated.
+        MusicBay has encountered an issue.  \n\nPlease consider sending a report to the developer.  \n\nAny information about the steps / conditions leading up to the issue is much appreciated.
     </string>
     <string name="section_downloads">Downloads</string>
     <string name="section_search">Search</string>

@@ -1,5 +1,7 @@
 ﻿/*
  * Copyright 2021 Seeker
+ * Copyright (c) 2026 Arsen
+ * Modified: MusicBay client version identifier
  *
  * This file is part of Seeker
  *
@@ -330,7 +332,7 @@ namespace Seeker
                 }
             #else
                 SeekerState.SoulseekClient = new SoulseekClient(
-                    128,
+                    7319, // LICENSE Additional Terms 5: each client needs its own identifier; 128 belongs to Seeker
                     new SoulseekClientOptions(
 #if ADB_LOGCAT
                         minimumDiagnosticLevel: Soulseek.Diagnostics.DiagnosticLevel.Debug,

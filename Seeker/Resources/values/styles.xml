@@ -37,6 +37,9 @@
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <!-- Android 12+ system splash; ignored on older versions. Always dark so it matches the icon. -->
+        <item name="android:windowSplashScreenBackground">@color/mb_dark_bg</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground_vec</item>
         <item name="colorPrimary">#4f58c4</item>
         <item name="colorSecondaryContainer">#e4e6f6</item>
         <item name="mainPurple">#4f58c4</item>

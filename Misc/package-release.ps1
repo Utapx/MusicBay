@@ -24,7 +24,7 @@ if ([string]::IsNullOrWhiteSpace($Version)) {
     throw "Version is required."
 }
 
-$pkg     = "com.companyname.andriodapp1"
+$pkg     = "app.musicbay"
 $csproj  = "./Seeker/Seeker.csproj"
 $config  = "Release IzzySoft"
 $tfm     = (dotnet msbuild $csproj -getProperty:TargetFramework -v:q).Trim()

@@ -1,3 +1,6 @@
+// Copyright (c) 2026 Arsen
+// Modified: links point to the MusicBay repository
+
 using Android.OS;
 using Android.Views;
 using Android.Widget;
@@ -8,8 +11,7 @@ namespace Seeker.Settings.Rows
 {
     public sealed class AboutBottomSheet : BottomSheetDialogFragment
     {
-        private const string SourceUrl = "https://github.com/jackBonadies/SeekerAndroid";
-        private const string TranslateUrl = "https://crowdin.com/project/seeker";
+        private const string SourceUrl = "https://github.com/Utapx/MusicBay";
 
         private readonly struct AboutLink
         {
@@ -42,7 +44,6 @@ namespace Seeker.Settings.Rows
             var links = new List<AboutLink>
             {
                 new AboutLink(Resource.Drawable.code_tags, SourceUrl, Resource.String.about_link_source_title),
-                new AboutLink(Resource.Drawable.web, TranslateUrl, Resource.String.about_link_translate_title),
             };
 
             var linkContainer = view.FindViewById<LinearLayout>(Resource.Id.about_links);

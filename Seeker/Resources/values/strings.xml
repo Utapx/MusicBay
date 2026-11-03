@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Seeker</string>
+    <string name="app_name">MusicBay</string>
     <string name="com.google.firebase.crashlytics.mapping_file_id">1.0</string>
 
     <string name="home_tab">Home</string>
@@ -32,9 +32,9 @@
     <string name="wishlist_search">Wishlist search</string>
 
     <string name="no_account">Don\'t have an account?  Simply enter a unique username and one will be created for you.</string>
-    <string name="keep_alive_service_subtitle">Allows Seeker respond to search requests (share), receive chat messages, and run wishlist searches while in background</string> 
+    <string name="keep_alive_service_subtitle">Allows MusicBay respond to search requests (share), receive chat messages, and run wishlist searches while in background</string> 
 		
-    <string name="privileges_more_info">Privileges help support the Soulseek Network and the central server this app depends on.\n\nThey also let you skip ahead of non-privileged users in download queues.\n\nNote: donations do not go to the creator of this unofficial Android client (Seeker). I do not currently accept donations.</string>
+    <string name="privileges_more_info">Privileges help support the Soulseek Network and the central server this app depends on.\n\nThey also let you skip ahead of non-privileged users in download queues.\n\nNote: donations do not go to the creator of this unofficial Android client (MusicBay, based on Seeker by jackBonadies). I do not currently accept donations.</string>
 
     <string name="no_messages">No messages</string>
     <string name="no_messages_subtitle">Messages from users will appear here</string>
@@ -130,7 +130,7 @@
     <string name="search_here">Search here</string>
 
     <string name="seeker_needs_dl_dir">Choose download location</string>
-    <string name="seeker_needs_dl_dir_content">Select a folder where Seeker will save downloaded files</string>
+    <string name="seeker_needs_dl_dir_content">Select a folder where MusicBay will save downloaded files</string>
     <string name="seeker_needs_dl_dir_error">A download folder is required to save files</string>
     <string name="seeker_needs_dl_dir_choose_settings">Please set a download directory in Settings.</string>
     <string name="seeker_cannot_access_files">Cannot access filesystem.  You must select a download directory, either in the login page or in settings.</string>
@@ -224,7 +224,7 @@
     <string name="restore_default_settings">Restore default settings</string>
     <string name="restore_default_settings_body">This will reset all settings to their defaults. This can\'t be undone.</string>
     <string name="restore_defaults_subtitle">Resets every setting to factory state</string>
-    <string name="force_filesystem_subtitle">Android\'s standard folder permissions don\'t always persist. If Seeker keeps re-prompting for Download or Shared Folder access, this will grant persisted full-storage access via system settings.\n\nThe Play Store version cannot request this permission — requires F-droid (IzzyOnDroid) or GitHub release version.</string>
+    <string name="force_filesystem_subtitle">Android\'s standard folder permissions don\'t always persist. If MusicBay keeps re-prompting for Download or Shared Folder access, this will grant persisted full-storage access via system settings.\n\nThe Play Store version cannot request this permission — requires F-droid (IzzyOnDroid) or GitHub release version.</string>
     <string name="get_fdroid_build">Get F-Droid (IzzyOnDroid) build</string>
     <string name="get_github_build">Get GitHub release build</string>
 
@@ -237,7 +237,7 @@
     <string name="success_set_pic">Successfully set picture</string>
     <string name="error_no_file_manager_image">ERROR - No file manager installed that is capable of choosing an image. Please install one.</string>
     <string name="error_no_file_manager_dir">ERROR - No file manager installed that is capable of choosing a directory. Please install one.</string>
-    <string name="error_no_file_manager_dir_manage_storage">ERROR - No file manager installed that is capable of choosing a directory. Please install one. If your device does not implement OPEN_DOCUMENT_TREE intent, please install Seeker from Fdroid (IzzyOnDroid Repo) which has the Manage External Storage permission.</string>
+    <string name="error_no_file_manager_dir_manage_storage">ERROR - No file manager installed that is capable of choosing a directory. Please install one. If your device does not implement OPEN_DOCUMENT_TREE intent, please install MusicBay from Fdroid (IzzyOnDroid Repo) which has the Manage External Storage permission.</string>
     <string name="error_image_doesnt_exist">Image does not exist</string>
     <string name="error_image_too_large">Image is too large. Please choose a smaller image. ( &lt; 5MB).</string>
 
@@ -558,8 +558,8 @@
     <!--Notification-->
     <string name="download_in_progress">Downloads in progress</string>
     <string name="transfers_in_progress">Transfers in progress...</string>
-    <string name="seeker_running">Seeker is running</string>
-    <string name="seeker_running_content">Seeker is currently running in background</string>
+    <string name="seeker_running">MusicBay is running</string>
+    <string name="seeker_running_content">MusicBay is currently running in background</string>
 
     <!--Privileges-->
     <string name="yes">Yes</string>
@@ -637,7 +637,7 @@
     <string name="current_folder_only">Current folder only</string>
     <string name="must_be_logged_in_to_give_privileges">Must be logged in to give privileges</string>
 
-    <string name="about_body">Seeker is a free and open source Soulseek client for Android. It will never have ads or paid features.</string>
+    <string name="about_body">MusicBay is a free and open source music player and Soulseek client for Android, based on Seeker by jackBonadies (GPL-3.0). This is a modified version of Seeker and of the Soulseek.NET library. It is not an official release of either, and is not maintained by, endorsed by, or affiliated with those projects or their authors. It will never have ads or paid features.</string>
     <string name="about_link_source_title">Source code</string>
     <string name="about_link_translate_title">Help translate</string>
     <string name="must_be_logged_in_to_get_dir_contents">Must be logged in to get directory contents</string>
@@ -906,7 +906,7 @@
     <string name="deleted_selected_message_histories">Deleted {0} conversation(s)</string>
 
     <string name="ExportClientData">Export client data</string>
-    <string name="successfully_exported">Successfully exported Seeker client data.</string>
+    <string name="successfully_exported">Successfully exported MusicBay client data.</string>
 
     <string name="ForceFilesystemPermission">Force filesystem permissions</string>
     <string name="permission_already_successfully_granted">Permission has already been successfully granted</string>
@@ -925,7 +925,7 @@
 
     <string name="failed_to_change_password">Failed to change password</string>
     <string name="password_successfully_updated">Password successfully updated</string>
-    <string name="error_dialog_content">Seeker has encountered an issue.  \n\nPlease consider sending a report to the developer.  \n\nAny information about the steps / conditions leading up to the issue is much appreciated.</string>
+    <string name="error_dialog_content">MusicBay has encountered an issue.  \n\nPlease consider sending a report to the developer.  \n\nAny information about the steps / conditions leading up to the issue is much appreciated.</string>
 
     <string name="folder_request_user_returned_empty_response">User returned an empty response for this folder</string>
 	
@@ -1001,4 +1001,102 @@
     <string name="keywords_edit_user_info">profile bio</string>
     <string name="keywords_restore_defaults">reset factory</string>
 
+    <string name="library_tab">Library</string>
+    <string name="library_empty">No music found on this device</string>
+    <string name="library_no_permission">MusicBay needs access to your music to show your library</string>
+    <string name="library_grant">Allow access</string>
+    <string name="unknown_artist">Unknown artist</string>
+    <string name="player_channel_name">Playback</string>
+    <string name="player_play">Play</string>
+    <string name="player_pause">Pause</string>
+    <string name="player_next">Next</string>
+    <string name="player_previous">Previous</string>
+    <string name="player_close">Close</string>
+    <string name="player_shuffle">Shuffle</string>
+    <string name="player_repeat">Repeat</string>
+    <string name="player_seek">Playback position</string>
+    <string name="queue_title">Queue</string>
+    <string name="greeting_morning">Good morning</string>
+    <string name="greeting_afternoon">Good afternoon</string>
+    <string name="greeting_evening">Good evening</string>
+    <string name="greeting_night">Good night</string>
+    <string name="home_recently_played">Recently played</string>
+    <string name="home_recently_added">Recently added</string>
+    <string name="downloads_tab">Downloads</string>
+    <string name="library_songs">Songs</string>
+    <string name="library_playlists">Playlists</string>
+    <string name="library_folders_title">Folders in your library</string>
+    <string name="library_folders_action">Choose folders</string>
+    <string name="library_all_hidden">Every folder is hidden from your library</string>
+    <plurals name="song_count">
+        <item quantity="one">%d song</item>
+        <item quantity="other">%d songs</item>
+    </plurals>
+    <plurals name="playlist_count">
+        <item quantity="one">%d playlist</item>
+        <item quantity="other">%d playlists</item>
+    </plurals>
+    <string name="song_more">More options</string>
+    <string name="playlists_empty">No playlists yet</string>
+    <string name="playlist_empty">No songs yet. In Songs, use a song\'s menu to add it here.</string>
+    <string name="playlist_new">New playlist</string>
+    <string name="playlist_name_hint">Playlist name</string>
+    <string name="playlist_save">Save</string>
+    <string name="playlist_add_to">Add to playlist</string>
+    <string name="playlist_added">Added to %1$s</string>
+    <string name="playlist_already">Already in %1$s</string>
+    <string name="playlist_remove_song">Remove from this playlist</string>
+    <string name="playlist_rename">Rename</string>
+    <string name="playlist_delete">Delete</string>
+    <string name="playlist_delete_confirm">Delete %1$s? Your songs stay on the device.</string>
+    <string name="sound_title">Sound</string>
+    <string name="sound_back">Back</string>
+    <string name="sound_playing_on">Playing on</string>
+    <string name="output_bluetooth">Bluetooth</string>
+    <string name="output_bluetooth_named">Bluetooth · %1$s</string>
+    <string name="output_usb">USB audio</string>
+    <string name="output_usb_named">USB · %1$s</string>
+    <string name="output_wired">Wired headphones</string>
+    <string name="output_hdmi">HDMI</string>
+    <string name="output_phone">Phone speaker</string>
+    <string name="bitperfect_title">Bit-perfect</string>
+    <string name="bitperfect_description">Sends audio to your USB DAC with no mixing or resampling. Turns the equalizer off.</string>
+    <string name="bitperfect_needs_android14">Needs Android 14 or newer.</string>
+    <string name="bitperfect_no_dac">Connect a USB DAC to use this. Bluetooth and the phone speaker always go through the system mixer.</string>
+    <string name="bitperfect_next_song">Starts when a song starts.</string>
+    <string name="bitperfect_active">Active: %1$s, untouched.</string>
+    <string name="bitperfect_refused">Android refused bit-perfect for %1$s. Playing through the system mixer.</string>
+    <string name="bitperfect_no_mode">Your DAC has no bit-perfect mode for %1$s. Playing through the system mixer.</string>
+    <string name="bitperfect_hires">Not bit-perfect: %1$s is above 16-bit, which this player cannot pass untouched yet.</string>
+    <string name="bitperfect_unknown_format">Could not read this file\'s format. Playing through the system mixer.</string>
+    <string name="eq_title">Equalizer</string>
+    <string name="eq_off_for_bitperfect">Off while bit-perfect is active.</string>
+    <string name="eq_needs_android9">Needs Android 9 or newer.</string>
+    <string name="eq_flat">Flat</string>
+    <string name="eq_bass">Bass</string>
+    <string name="eq_warm">Warm</string>
+    <string name="eq_vocal">Vocal</string>
+    <string name="eq_bright">Bright</string>
+    <string name="eq_vshape">V-shape</string>
+    <string name="not_now">Not now</string>
+    <string name="library_albums">Albums</string>
+    <string name="library_artists">Artists</string>
+    <string name="library_search_hint">Search your library</string>
+    <string name="library_search_clear">Clear search</string>
+    <string name="library_no_results">Nothing found for %1$s</string>
+    <string name="various_artists">Various artists</string>
+    <plurals name="album_count">
+        <item quantity="one">%d album</item>
+        <item quantity="other">%d albums</item>
+    </plurals>
+    <plurals name="artist_count">
+        <item quantity="one">%d artist</item>
+        <item quantity="other">%d artists</item>
+    </plurals>
+    <string name="queue_play_next">Play next</string>
+    <string name="queue_add">Add to queue</string>
+    <string name="queue_added_next">Plays next</string>
+    <string name="queue_added">Added to queue</string>
+    <string name="covers_title">Use cover images from your folders?</string>
+    <string name="covers_message">MusicBay can use an image like cover.jpg in an album folder as its cover. Android calls this access to photos. It only looks for covers.</string>
 </resources>

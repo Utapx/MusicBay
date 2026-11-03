@@ -1,5 +1,7 @@
 ﻿/*
  * Copyright 2021 Seeker
+ * Copyright (c) 2026 Arsen
+ * Modified: added the Library tab
  *
  * This file is part of Seeker
  *
@@ -43,7 +45,7 @@ namespace Seeker
         {
         }
 
-        public override int ItemCount => 4;
+        public override int ItemCount => 5;
 
         //FragmentStateAdapter owns the fragment instances; this just produces a fresh fragment for a
         //given tab. The page titles that used to live here are gone with the (unused) TabLayout —
@@ -60,6 +62,8 @@ namespace Seeker
                     return new TransfersFragment();
                 case 3:
                     return new BrowseFragment();
+                case 4:
+                    return new Seeker.Player.LibraryFragment();
                 default:
                     throw new System.Exception("Invalid Tab");
             }

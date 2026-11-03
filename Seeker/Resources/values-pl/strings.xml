@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Seeker</string>
+    <string name="app_name">MusicBay</string>
     <string name="com.google.firebase.crashlytics.mapping_file_id">1.0</string>
 
     <string name="home_tab">Start</string>
@@ -27,7 +27,7 @@
     <string name="privileges_more_info">
         Uprawnienia pozwalają na wspieranie twórcy Soulseek (Nir) oraz głównego serwera, na którym ta aplikacja jest oparta.
 \n\nDaje to również możliwość priorytetowego ustawienia w kolejce pobierania przed użytkownikami bez uprawnień.
-\n\nUwaga: wszelkie datki nie trafiają do twórcy tej nieoficjalnej aplikacji na Androida, Seeker. Aktualnie nie przyjmuję datków.
+\n\nUwaga: wszelkie datki nie trafiają do twórcy tej nieoficjalnej aplikacji na Androida, MusicBay. Aktualnie nie przyjmuję datków.
     </string>
 
     <string name="no_messages">Brak wiadomości. Naciśnij \"+\", aby rozpocząć.</string>
@@ -170,7 +170,7 @@
         BŁĄD - Brak zainstalowanego menedżera plików, który może wybrać katalog. Proszę zainstalować go.
     </string>
     <string name="error_no_file_manager_dir_manage_storage">
-        BŁĄD - Brak zainstalowanego menedżera plików, który może wybrać katalog. Proszę zainstalować go. Jeśli twoje urządzenie nie implementuje intencji OPEN_DOCUMENT_TREE, zainstaluj Seeker z Fdroid (IzzyOnDroid Repo), który ma uprawnienia zarządzania zewnętrznym przechowywaniem.
+        BŁĄD - Brak zainstalowanego menedżera plików, który może wybrać katalog. Proszę zainstalować go. Jeśli twoje urządzenie nie implementuje intencji OPEN_DOCUMENT_TREE, zainstaluj MusicBay z Fdroid (IzzyOnDroid Repo), który ma uprawnienia zarządzania zewnętrznym przechowywaniem.
     </string>
     <string name="error_image_doesnt_exist">Wybrane zdjęcie nie istnieje</string>
     <string name="error_image_too_large">
@@ -566,9 +566,9 @@
 
     <string name="download_in_progress">Downloads in progress</string>
     <string name="transfers_in_progress">Transfery w toku...</string>
-    <string name="seeker_running">Seeker is running</string>
+    <string name="seeker_running">MusicBay is running</string>
     <string name="seeker_running_content">
-        Seeker is currently running in background
+        MusicBay is currently running in background
     </string>
 
     <string name="yes">Yes</string>
@@ -649,7 +649,7 @@
         Must be logged in to give privileges
     </string>
 
-    <string name="about_body">Seeker is a free and open source Soulseek client for Android. It will never have ads or paid features.</string>
+    <string name="about_body">MusicBay is a free and open source Soulseek client for Android. It will never have ads or paid features.</string>
     <string name="must_be_logged_in_to_get_dir_contents">
         Must be logged in to get directory contents
     </string>
@@ -970,7 +970,7 @@
 
     <string name="ExportClientData">Export client data</string>
     <string name="successfully_exported">
-        Successfully exported Seeker client data.
+        Successfully exported MusicBay client data.
     </string>
 
     <string name="ForceFilesystemPermission">
@@ -1001,7 +1001,7 @@
         Password successfully updated
     </string>
     <string name="error_dialog_content">
-        Seeker has encountered an issue.  \n\nPlease consider sending a report to the developer.  \n\nAny information about the steps / conditions leading up to the issue is much appreciated.
+        MusicBay has encountered an issue.  \n\nPlease consider sending a report to the developer.  \n\nAny information about the steps / conditions leading up to the issue is much appreciated.
     </string>
     <string name="section_downloads">Downloads</string>
     <string name="section_search">Search</string>

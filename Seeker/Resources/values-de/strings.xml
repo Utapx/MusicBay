@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Seeker</string>
+    <string name="app_name">MusicBay</string>
     <string name="com.google.firebase.crashlytics.mapping_file_id">1.0</string>
     <string name="home_tab">Start</string>
     <string name="transfer_tab">Datenverkehr</string>
@@ -26,8 +26,8 @@
     <string name="search_user_">Benutzer suchen {0}</string>
     <string name="wishlist_search">Wunschlistenergebnisse</string>
     <string name="no_account">Noch kein Konto? Geben Sie nur Ihren Wunschnamen ein und es erledigt sich damit praktisch automatisch.</string>
-    <string name="keep_alive_service_subtitle">Allows Seeker respond to search requests (share), receive chat messages, and run wishlist searches while in background</string>
-    <string name="privileges_more_info">Privileges help support the Soulseek Network and the central server this app depends on.\n\nThey also let you skip ahead of non-privileged users in download queues.\n\nNote: donations do not go to the creator of this unofficial Android client (Seeker). I do not currently accept donations.</string>
+    <string name="keep_alive_service_subtitle">Allows MusicBay respond to search requests (share), receive chat messages, and run wishlist searches while in background</string>
+    <string name="privileges_more_info">Privileges help support the Soulseek Network and the central server this app depends on.\n\nThey also let you skip ahead of non-privileged users in download queues.\n\nNote: donations do not go to the creator of this unofficial Android client (MusicBay). I do not currently accept donations.</string>
     <string name="no_messages">Keine Nachrichten. Drücken Sie + um loszulegen.</string>
     <string name="no_messages_subtitle">Messages from users will appear here</string>
     <string name="no_users_added">Keine Benutzer hinzugefügt</string>
@@ -114,7 +114,7 @@
     <string name="create_chatroom_private">Privat stellen</string>
     <string name="search_here">Hier suchen</string>
     <string name="seeker_needs_dl_dir">Choose download location</string>
-    <string name="seeker_needs_dl_dir_content">Select a folder where Seeker will save downloaded files</string>
+    <string name="seeker_needs_dl_dir_content">Select a folder where MusicBay will save downloaded files</string>
     <string name="seeker_needs_dl_dir_error">A download folder is required to save files</string>
     <string name="seeker_needs_dl_dir_choose_settings">Please set a download directory in Settings.</string>
     <string name="seeker_cannot_access_files">Kein Zugriff auf das Dateisystem. Bitte wählen Sie ein Download-Verzeichnis, entweder auf der Anmeldeseite oder in den Einstellungen.</string>
@@ -195,7 +195,7 @@
     <string name="restore_default_settings">Standard wiederherstellen</string>
     <string name="restore_default_settings_body">This will reset all settings to their defaults. This can\'t be undone.</string>
     <string name="restore_defaults_subtitle">Resets every setting to factory state</string>
-    <string name="force_filesystem_subtitle">Android\'s standard folder permissions don\'t always persist. If Seeker keeps re-prompting for Download or Shared Folder access, this will grant persisted full-storage access via system settings.\n\nThe Play Store version cannot request this permission — requires F-droid (IzzyOnDroid) or GitHub release version.</string>
+    <string name="force_filesystem_subtitle">Android\'s standard folder permissions don\'t always persist. If MusicBay keeps re-prompting for Download or Shared Folder access, this will grant persisted full-storage access via system settings.\n\nThe Play Store version cannot request this permission — requires F-droid (IzzyOnDroid) or GitHub release version.</string>
     <string name="get_fdroid_build">Get F-Droid (IzzyOnDroid) build</string>
     <string name="get_github_build">Get GitHub release build</string>
     <string name="user_has_no_bio">Benutzer hat keine Informationen.</string>
@@ -206,7 +206,7 @@
     <string name="success_set_pic">Bild erfolgreich festgelegt</string>
     <string name="error_no_file_manager_image">FEHLER: Kein Dateimanager installiert, der ein Bild auswählen kann. Bitte installieren Sie eines.</string>
     <string name="error_no_file_manager_dir">FEHLER: Kein Dateimanager installiert, der ein Verzeichnis auswählen kann. Bitte installieren Sie einen.</string>
-    <string name="error_no_file_manager_dir_manage_storage">ERROR - No file manager installed that is capable of choosing a directory. Please install one. If your device does not implement OPEN_DOCUMENT_TREE intent, please install Seeker from Fdroid (IzzyOnDroid Repo) which has the Manage External Storage permission.</string>
+    <string name="error_no_file_manager_dir_manage_storage">ERROR - No file manager installed that is capable of choosing a directory. Please install one. If your device does not implement OPEN_DOCUMENT_TREE intent, please install MusicBay from Fdroid (IzzyOnDroid Repo) which has the Manage External Storage permission.</string>
     <string name="error_image_doesnt_exist">Fehler. Bild existiert nicht</string>
     <string name="error_image_too_large">Bild ist zu groß. Bitte wählen Sie ein kleineres Bild. (&lt;5 MB).</string>
     <string name="no_room_tickers">No room tickers yet...</string>
@@ -474,8 +474,8 @@
     <!--Notification-->
     <string name="download_in_progress">Downloads in progress</string>
     <string name="transfers_in_progress">Transfers in progress...</string>
-    <string name="seeker_running">Seeker is running</string>
-    <string name="seeker_running_content">Seeker is currently running in background</string>
+    <string name="seeker_running">MusicBay is running</string>
+    <string name="seeker_running_content">MusicBay is currently running in background</string>
     <!--Privileges-->
     <string name="yes">Ja</string>
     <string name="seconds_left">{0} Sekunden</string>
@@ -534,7 +534,7 @@
     <string name="subfolders_warning_queue_paused">This folder contains subfolders, would you like to queue all files in those subfolders as well ({0}) or only the files in the current folder ({1})?</string>
     <string name="current_folder_only">Current folder only</string>
     <string name="must_be_logged_in_to_give_privileges">Must be logged in to give privileges</string>
-    <string name="about_body">Seeker ist ein kostenloser und quelloffener Soulseek-Client für Android. Niemals wird er Werbung oder kostenpflichtige Funktionen enthalten.</string>
+    <string name="about_body">MusicBay ist ein kostenloser und quelloffener Soulseek-Client für Android. Niemals wird er Werbung oder kostenpflichtige Funktionen enthalten.</string>
     <string name="about_link_source_title">Source code</string>
     <string name="about_link_translate_title">Help translate</string>
     <string name="must_be_logged_in_to_get_dir_contents">Must be logged in to get directory contents</string>
@@ -724,7 +724,7 @@
     <string name="DeleteSelected">Delete selected</string>
     <string name="deleted_selected_message_histories">Deleted {0} conversation(s)</string>
     <string name="ExportClientData">Kundendaten exportieren</string>
-    <string name="successfully_exported">Successfully exported Seeker client data.</string>
+    <string name="successfully_exported">Successfully exported MusicBay client data.</string>
     <string name="ForceFilesystemPermission">Force filesystem permissions</string>
     <string name="permission_already_successfully_granted">Permission has already been successfully granted</string>
     <string name="permission_successfully_granted">Permission successfully granted</string>

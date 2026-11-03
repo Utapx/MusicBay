@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp">
+
+    <TextView
+        android:id="@+id/band_frequency"
+        android:layout_width="64dp"
+        android:layout_height="wrap_content"
+        android:textColor="?attr/cellTextColorSubdued"
+        android:textSize="13sp" />
+
+    <SeekBar
+        android:id="@+id/band_seek"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_weight="1"
+        android:progressBackgroundTint="?attr/cellTextColorSubdued"
+        android:progressTint="?attr/mainPurple"
+        android:thumbTint="?attr/mainPurple" />
+
+    <TextView
+        android:id="@+id/band_value"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:textColor="?attr/cellTextColor"
+        android:textSize="13sp" />
+</LinearLayout>

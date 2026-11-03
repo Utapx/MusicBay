@@ -1,3 +1,6 @@
+// Copyright (c) 2026 Arsen
+// Modified: links point to the MusicBay repository, removed the Seeker F-Droid link
+
 using Android.Content;
 using Android.OS;
 using Android.Views;
@@ -20,16 +23,13 @@ namespace Seeker.Settings.Rows
         {
             var view = inflater.Inflate(Resource.Layout.force_filesystem_more_info_sheet, container, false);
 
-            view.FindViewById<Button>(Resource.Id.get_izzydroid_build).Click += (s, e) =>
-            {
-                Dismiss();
-                CommonHelpers.ViewUri(Android.Net.Uri.Parse("https://apt.izzysoft.de/fdroid/index/apk/com.companyname.andriodapp1"), this.Context);
-            };
+            // MusicBay has no F-Droid listing, and the old button opened the original app's page
+            view.FindViewById<Button>(Resource.Id.get_izzydroid_build).Visibility = ViewStates.Gone;
 
             view.FindViewById<Button>(Resource.Id.get_github_build).Click += (s, e) =>
             {
                 Dismiss();
-                CommonHelpers.ViewUri(Android.Net.Uri.Parse("https://github.com/jackBonadies/SeekerAndroid/releases"), this.Context);
+                CommonHelpers.ViewUri(Android.Net.Uri.Parse("https://github.com/Utapx/MusicBay/releases"), this.Context);
             };
 
             return view;
