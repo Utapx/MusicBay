@@ -103,7 +103,7 @@
     </style>
 
     <style name="SeekerButtonStyle">
-        <item name="android:textColor">#ffffff</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
         <item name="android:paddingLeft">10dp</item>
         <item name="android:paddingRight">10dp</item>
         <item name="android:background">@drawable/rounded_button</item>
@@ -246,5 +246,124 @@
     <style name="AppPopupMenu" parent="Widget.Material3.PopupMenu">
         <item name="android:popupBackground">@drawable/popup_menu_bg</item>
         <item name="android:popupElevation" tools:targetApi="21">8dp</item>
+    </style>
+
+    <style name="MB.NavTitle" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="MB.Segment" parent="">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@drawable/bg_segment</item>
+        <item name="android:button">@null</item>
+        <item name="android:gravity">center</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textColor">@color/mb_segment_text</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="MB.Slider" parent="Widget.AppCompat.SeekBar">
+        <item name="android:maxHeight">4dp</item>
+        <item name="android:minHeight">4dp</item>
+        <item name="android:progressDrawable">@drawable/ios_slider_track</item>
+        <item name="android:thumb">@drawable/ios_slider_thumb</item>
+        <item name="android:splitTrack">false</item>
+    </style>
+
+    <style name="MB.Switch" parent="Widget.Material3.CompoundButton.MaterialSwitch">
+        <item name="thumbTint">@android:color/white</item>
+        <item name="trackTint">@color/mb_switch_track</item>
+        <item name="trackDecorationTint">@android:color/transparent</item>
+    </style>
+
+    <style name="MB.ListActionButton" parent="Widget.Material3.Button">
+        <item name="android:textColor">?attr/mainPurple</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="backgroundTint">?attr/surface_variant1</item>
+        <item name="cornerRadius">12dp</item>
+        <item name="iconGravity">textStart</item>
+        <item name="iconTint">?attr/mainPurple</item>
+    </style>
+
+    <style name="MB.PopupMenu" parent="@android:style/Widget.Material.PopupMenu">
+        <item name="android:popupBackground">@drawable/bg_popup</item>
+        <item name="android:popupElevation">12dp</item>
+    </style>
+
+    <style name="MB.Toolbar" parent="Widget.AppCompat.Toolbar">
+        <item name="titleTextAppearance">@style/MB.NavTitle</item>
+    </style>
+
+    <style name="MB.TextView" parent="android:Widget.TextView">
+        <item name="android:letterSpacing">-0.01</item>
+    </style>
+
+    <style name="MB.ActivityAnimation" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/mb_push_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/mb_push_out</item>
+        <item name="android:activityCloseEnterAnimation">@anim/mb_pop_in</item>
+        <item name="android:activityCloseExitAnimation">@anim/mb_pop_out</item>
+    </style>
+
+    <style name="MB.Pill" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginEnd">8dp</item>
+        <item name="android:background">@drawable/bg_pill</item>
+        <item name="android:button">@null</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingStart">14dp</item>
+        <item name="android:paddingEnd">14dp</item>
+        <item name="android:textColor">@color/mb_pill_text</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="MB.SectionTitle" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginTop">24dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:letterSpacing">-0.02</item>
+        <item name="android:textColor">?attr/cellTextColor</item>
+        <item name="android:textSize">21sp</item>
+    </style>
+
+    <style name="MB.HomeSection" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <style name="MB.HomeRow" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:clipToPadding">false</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">4dp</item>
+    </style>
+
+    <style name="MB.PrimaryButton" parent="Widget.Material3.Button">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textColor">@color/mb_primary_button_text</item>
+        <item name="backgroundTint">@color/mb_primary_button_bg</item>
+        <item name="cornerRadius">12dp</item>
+    </style>
+
+    <style name="MB.TextField" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusBottomEnd">12dp</item>
+        <item name="boxCornerRadiusBottomStart">12dp</item>
+        <item name="boxCornerRadiusTopEnd">12dp</item>
+        <item name="boxCornerRadiusTopStart">12dp</item>
+        <item name="boxBackgroundColor">?attr/colorSurfaceContainer</item>
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="boxStrokeWidthFocused">0dp</item>
     </style>
 </resources>

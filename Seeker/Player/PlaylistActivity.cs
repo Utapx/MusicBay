@@ -56,6 +56,7 @@ namespace Seeker.Player
             empty = FindViewById<TextView>(Resource.Id.playlist_empty);
             list = FindViewById<RecyclerView>(Resource.Id.playlist_list);
             list.SetLayoutManager(new LinearLayoutManager(this));
+            list.AddItemDecoration(new InsetDivider(this));
             new ItemTouchHelper(new Reorder(this)).AttachToRecyclerView(list);
 
             playButton = FindViewById(Resource.Id.playlist_play);

@@ -39,7 +39,7 @@
                     android:text="@string/sound_title"
                     android:textColor="?attr/cellTextColor"
                     android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:fontFamily="sans-serif-medium" />
             </LinearLayout>
 
             <LinearLayout
@@ -62,7 +62,7 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:importantForAccessibility="no"
-                    android:tint="?attr/mainPurple" />
+                    android:tint="?attr/cellTextColor" />
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -104,10 +104,11 @@
                     android:text="@string/bitperfect_title"
                     android:textColor="?attr/cellTextColor"
                     android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:fontFamily="sans-serif-medium" />
 
                 <com.google.android.material.materialswitch.MaterialSwitch
                     android:id="@+id/sound_bitperfect_switch"
+                    style="@style/MB.Switch"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:contentDescription="@string/bitperfect_title" />
@@ -139,10 +140,11 @@
                     android:text="@string/eq_title"
                     android:textColor="?attr/cellTextColor"
                     android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:fontFamily="sans-serif-medium" />
 
                 <com.google.android.material.materialswitch.MaterialSwitch
                     android:id="@+id/sound_eq_switch"
+                    style="@style/MB.Switch"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:contentDescription="@string/eq_title" />

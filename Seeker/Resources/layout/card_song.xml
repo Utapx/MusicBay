@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="140dp"
+    android:layout_width="150dp"
     android:layout_height="wrap_content"
     android:layout_marginEnd="12dp"
     android:background="?attr/selectableItemBackground"
@@ -10,8 +10,8 @@
 
     <ImageView
         android:id="@+id/song_art"
-        android:layout_width="140dp"
-        android:layout_height="140dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:background="@drawable/bg_artwork"
         android:clipToOutline="true"
         android:importantForAccessibility="no" />
@@ -22,15 +22,16 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:ellipsize="end"
+        android:fontFamily="sans-serif-medium"
         android:maxLines="1"
         android:textColor="?attr/cellTextColor"
-        android:textSize="15sp" />
+        android:textSize="14sp" />
 
     <TextView
         android:id="@+id/song_subtitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="1dp"
         android:ellipsize="end"
         android:maxLines="1"
         android:textColor="?attr/cellTextColorSubdued"

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_checked="true">
+        <inset android:insetTop="6dp" android:insetBottom="6dp">
+            <shape android:shape="rectangle">
+                <solid android:color="?attr/cellTextColor" />
+                <corners android:radius="16dp" />
+            </shape>
+        </inset>
+    </item>
+    <item>
+        <inset android:insetTop="6dp" android:insetBottom="6dp">
+            <shape android:shape="rectangle">
+                <solid android:color="?attr/surface_variant1" />
+                <corners android:radius="16dp" />
+            </shape>
+        </inset>
+    </item>
+</selector>

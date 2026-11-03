@@ -72,11 +72,82 @@ namespace Seeker
         private const int ChildLoading = 1;
         private const int ChildLoggedIn = 2;
 
-        public override void OnCreateOptionsMenu(IMenu menu, MenuInflater inflater)
+        private View accountPanel;
+        private ClosePanelOnBack closePanelOnBack;
+
+        private sealed class ClosePanelOnBack : AndroidX.Activity.OnBackPressedCallback
         {
-            inflater.Inflate(Resource.Menu.account_menu, menu);
-            base.OnCreateOptionsMenu(menu, inflater);
+            private readonly LoginFragment fragment;
+            public ClosePanelOnBack(LoginFragment fragment) : base(false) { this.fragment = fragment; }
+            public override void HandleOnBackPressed() => fragment.CloseAccountPanel();
         }
+
+        /// <summary>Shows the account and the app-level destinations, which used to live in the top bar.</summary>
+        public void OpenAccountPanel()
+        {
+            if (accountPanel == null) { return; }
+            accountPanel.Visibility = ViewStates.Visible;
+            closePanelOnBack.Enabled = true;
+        }
+
+        public void CloseAccountPanel()
+        {
+            if (accountPanel == null) { return; }
+            accountPanel.Visibility = ViewStates.Gone;
+            closePanelOnBack.Enabled = false;
+        }
+
+        private void SetUpAccountPanel()
+        {
+            accountPanel = rootView.FindViewById(Resource.Id.account_panel);
+            closePanelOnBack = new ClosePanelOnBack(this);
+            rootView.FindViewById(Resource.Id.account_done).Click += (s, e) => CloseAccountPanel();
+
+            // one list holds these, for signed-in and signed-out alike
+            menuManageUserList.Visibility = ViewStates.Gone;
+            menuMessages.Visibility = ViewStates.Gone;
+            menuSettings.Visibility = ViewStates.Gone;
+            rootView.FindViewById(Resource.Id.menuCommunicationHeader).Visibility = ViewStates.Gone;
+
+            var rows =rootView.FindViewById<LinearLayout>(Resource.Id.account_rows);
+            void Action(int actionId) => SeekerState.MainActivityRef.HandleAccountAction(actionId);
+            var messages = AddAccountRow(rows, Resource.Drawable.baseline_chat_bubble_white_24, Resource.String.messages, () => Action(Resource.Id.messages_action));
+            messagesUnreadBadge = messages.FindViewById<TextView>(Resource.Id.account_row_badge);
+            AddAccountRow(rows, Resource.Drawable.outline_forum_white_24, Resource.String.chatrooms, () => Action(Resource.Id.chatroom_action));
+            AddAccountRow(rows, Resource.Drawable.baseline_group_white_24, Resource.String.target_user_list, () => Action(Resource.Id.user_list_action));
+            AddAccountRow(rows, Resource.Drawable.baseline_folder_white_24, Resource.String.browse_tab, () =>
+            {
+                CloseAccountPanel();
+                SeekerState.MainActivityRef.GoToTab(BrowsePage);
+            });
+            AddAccountRow(rows, Resource.Drawable.ic_equalizer_24, Resource.String.sound_title, () => StartActivity(new Intent(Activity, typeof(Seeker.Player.SoundActivity))));
+            AddAccountRow(rows, Resource.Drawable.baseline_settings_white_24, Resource.String.settings, () => Action(Resource.Id.settings_action));
+            AddAccountRow(rows, Resource.Drawable.ic_tab_downloads, Resource.String.update_check, () => Seeker.Player.AppUpdater.CheckNow(Activity));
+            AddAccountRow(rows, Resource.Drawable.information_outline, Resource.String.about_title, () => Action(Resource.Id.about_action));
+            AddAccountRow(rows, Resource.Drawable.power_settings_new_28dp, Resource.String.shutdown, () => Action(Resource.Id.shutdown_action));
+        }
+
+        private View AddAccountRow(LinearLayout rows, int icon, int title, Action onClick)
+        {
+            var row = LayoutInflater.From(rows.Context).Inflate(Resource.Layout.row_account, rows, false);
+            row.FindViewById<ImageView>(Resource.Id.account_row_icon).SetImageResource(icon);
+            row.FindViewById<TextView>(Resource.Id.account_row_title).SetText(title);
+            row.Click += (s, e) => onClick();
+            if (rows.ChildCount > 0)
+            {
+                var line = new View(rows.Context);
+                var value = new Android.Util.TypedValue();
+                rows.Context.Theme.ResolveAttribute(Resource.Attribute.cellStroke, value, true);
+                line.SetBackgroundColor(new Android.Graphics.Color(value.Data));
+                var size = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MatchParent, 1);
+                size.LeftMargin = (int)(52 * rows.Resources.DisplayMetrics.Density);
+                rows.AddView(line, size);
+            }
+            rows.AddView(row);
+            return row;
+        }
+
+        private const int BrowsePage = 3;
 
         public override void OnResume()
         {
@@ -158,7 +229,6 @@ namespace Seeker
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            HasOptionsMenu = true;
             Logger.Debug("LoginFragmentOnCreateView");
             SeekerState.LoginFragmentRef = this;
 
@@ -167,6 +237,7 @@ namespace Seeker
 
             SetUpLoginFormViews();
             SetUpLoggedInViews();
+            SetUpAccountPanel();
 
             ReconnectIfNeeded();
             RenderFromState();
@@ -226,6 +297,7 @@ namespace Seeker
         public override void OnViewCreated(View view, Bundle savedInstanceState)
         {
             base.OnViewCreated(view, savedInstanceState);
+            RequireActivity().OnBackPressedDispatcher.AddCallback(ViewLifecycleOwner, closePanelOnBack);
             SeekerState.ManualResetEvent.Set();
         }
 
@@ -301,6 +373,7 @@ namespace Seeker
                     passwordTextEdit.Text = string.Empty;
                 }
                 viewFlipper.DisplayedChild = ChildLoginForm;
+                Seeker.Player.HomeMusicSection.UpdateAccount(rootView);
             });
             if (SeekerApplication.OnUIThread())
             {
@@ -331,6 +404,7 @@ namespace Seeker
                 }
 
                 viewFlipper.DisplayedChild = ChildLoggedIn;
+                Seeker.Player.HomeMusicSection.UpdateAccount(rootView);
             });
             if (SeekerApplication.OnUIThread())
             {

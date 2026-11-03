@@ -57,8 +57,7 @@ namespace Seeker
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", LaunchMode = Android.Content.PM.LaunchMode.SingleTop, MainLauncher = true, Exported = true, WindowSoftInputMode = Android.Views.SoftInput.AdjustPan)]
     public partial class MainActivity :
         ThemeableActivity, 
-        ActivityCompat.IOnRequestPermissionsResultCallback, 
-        BottomNavigationView.IOnNavigationItemSelectedListener
+        ActivityCompat.IOnRequestPermissionsResultCallback
     {
 
 
@@ -70,7 +69,7 @@ namespace Seeker
         {
             if (isShown)
             {
-                SeekerState.MainActivityRef.FindViewById<BottomNavigationView>(Resource.Id.navigation).Animate().Alpha(0f).SetDuration(250).SetListener(new BottomNavigationViewAnimationListener());
+                SeekerState.MainActivityRef.FindViewById<View>(Resource.Id.glass_bars).Animate().Alpha(0f).SetDuration(250).SetListener(new BottomNavigationViewAnimationListener());
                 //it will be left at 0% opacity! even when unhiding it!
 
                 //SeekerState.MainActivityRef.FindViewById<BottomNavigationView>(Resource.Id.navigation).Visibility = ViewStates.Gone;
@@ -78,8 +77,8 @@ namespace Seeker
             else
             {
                 //SeekerState.MainActivityRef.FindViewById<BottomNavigationView>(Resource.Id.navigation).Animate().Alpha(100).SetDuration(250).SetListener(new BottomNavigationViewAnimationListener());
-                SeekerState.MainActivityRef.FindViewById<BottomNavigationView>(Resource.Id.navigation).Visibility = ViewStates.Visible;
-                SeekerState.MainActivityRef.FindViewById<BottomNavigationView>(Resource.Id.navigation).Animate().Alpha(1f).SetDuration(300).SetListener(null);
+                SeekerState.MainActivityRef.FindViewById<View>(Resource.Id.glass_bars).Visibility = ViewStates.Visible;
+                SeekerState.MainActivityRef.FindViewById<View>(Resource.Id.glass_bars).Animate().Alpha(1f).SetDuration(300).SetListener(null);
                 //SeekerState.MainActivityRef.FindViewById<BottomNavigationView>(Resource.Id.navigation).Visibility = ViewStates.Visible;
             }
         }
@@ -178,8 +177,7 @@ namespace Seeker
             AndroidX.Core.View.ViewCompat.SetOnApplyWindowInsetsListener(
                 FindViewById(Resource.Id.main_root), new HorizontalInsetsListener());
 
-            BottomNavigationView navigation = FindViewById<BottomNavigationView>(Resource.Id.navigation);
-            navigation.SetOnNavigationItemSelectedListener(this);
+            FindViewById<Seeker.Player.GlassTabBar>(Resource.Id.navigation).PageSelected = page => pager.SetCurrentItem(page, false);
 
 
             AndroidX.AppCompat.Widget.Toolbar myToolbar = (AndroidX.AppCompat.Widget.Toolbar)FindViewById(Resource.Id.toolbar);
@@ -208,6 +206,11 @@ namespace Seeker
             pager.OffscreenPageLimit = 3;
             pager.RegisterOnPageChangeCallback(new OnPageChangeLister1());
             Seeker.Player.MiniPlayer.Attach(this);
+            Seeker.Player.GlassBars.Install(this);
+            if (!reborn)
+            {
+                Seeker.Player.AppUpdater.CheckOnLaunch(this);
+            }
             //this is a relatively safe way that prevents rotates from redoing the intent.
             bool alreadyHandled = Intent.GetBooleanExtra("ALREADY_HANDLED", false);
             Intent = Intent.PutExtra("ALREADY_HANDLED", true);
@@ -610,7 +613,13 @@ namespace Seeker
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
-            switch (item.ItemId)
+            return HandleAccountAction(item.ItemId) || base.OnOptionsItemSelected(item);
+        }
+
+        /// <summary>The app-level destinations, opened from the Account panel.</summary>
+        public bool HandleAccountAction(int actionId)
+        {
+            switch (actionId)
             {
                 case Resource.Id.user_list_action:
                     Intent intent = new Intent(SeekerState.MainActivityRef, typeof(UserListActivity));
@@ -643,7 +652,7 @@ namespace Seeker
                     return true;
             }
 
-            return base.OnOptionsItemSelected(item);
+            return false;
         }
 
         // Intent extra keys — all intent extras targeting MainActivity are defined here.
@@ -757,6 +766,7 @@ namespace Seeker
                         loginFrag.ShowLoginForm(prefill: true);
                     }
                     loginFrag.ShowMustSelectDirectoryButton(MustSelectDirectoryClick);
+                    loginFrag.OpenAccountPanel();
                 });
 
                 if (NEW_WRITE_EXTERNAL_VIA_LEGACY_Settings_Screen == requestCode)
@@ -1009,18 +1019,6 @@ namespace Seeker
 
         public void GoToTab(int position) => pager.SetCurrentItem(position, false);
 
-        // Pages keep their original indexes because Soulseek flows jump to them by number. Browse has no nav item of its own and sits under Search.
-        private static int NavItemForPage(int position)
-        {
-            switch (position)
-            {
-                case 0: return Resource.Id.navigation_home;
-                case 2: return Resource.Id.navigation_transfers;
-                case 4: return Resource.Id.navigation_library;
-                default: return Resource.Id.navigation_search;
-            }
-        }
-
         public static int goToSearchTab = int.MaxValue;
         public void SyncToPage(int position)
         {
@@ -1028,13 +1026,7 @@ namespace Seeker
             {
                 return;
             }
-            var navigator = FindViewById<BottomNavigationView>(Resource.Id.navigation);
-            if (navigator != null)
-            {
-                var navItem = navigator.Menu.FindItem(NavItemForPage(position));
-                navItem.SetCheckable(true); //necessary if side scrolling...
-                navItem.SetChecked(true);
-            }
+            FindViewById<Seeker.Player.GlassTabBar>(Resource.Id.navigation)?.Select(position);
             //Gate options-menu visibility to the current tab. FragmentStateAdapter (unlike
             //FragmentPagerAdapter) does not call setMenuVisibility per primary item, so without this
             //every resident tab fragment contributes its OnCreateOptionsMenu to the action bar at once.
@@ -1049,6 +1041,12 @@ namespace Seeker
 
         public void OnPagerPageSelected(int position)
         {
+            // Home and Library carry their own controls; only Search, Downloads and Browse have actions for the bar
+            FindViewById(Resource.Id.toolbar).Visibility = position == 0 || position == 4 ? ViewStates.Gone : ViewStates.Visible;
+            if (position != 0)
+            {
+                SeekerState.LoginFragmentRef?.CloseAccountPanel();
+            }
             //if we are changing modes and the transfers action mode is not null (i.e. is active)
             //then we need to get out of it.
             if (TransfersFragment.TransfersActionMode != null)
@@ -1159,7 +1157,7 @@ namespace Seeker
             {
                 if (TransfersViewState.Instance.CurrentlySelectedDLFolder == null)
                 {
-                    this.SupportActionBar.Title = this.GetString(Resource.String.Downloads);
+                    this.SupportActionBar.Title = string.Empty; // the tab already says where you are
                     this.SupportActionBar.SubtitleFormatted = null;
                     this.SupportActionBar.SetDisplayHomeAsUpEnabled(false);
                     this.SupportActionBar.SetHomeButtonEnabled(false);
@@ -1205,26 +1203,6 @@ namespace Seeker
                     break;
             }
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-        }
-
-        public bool OnNavigationItemSelected(IMenuItem item)
-        {
-            switch (item.ItemId)
-            {
-                case Resource.Id.navigation_home:
-                    pager.SetCurrentItem(0, false);
-                    break;
-                case Resource.Id.navigation_search:
-                    pager.SetCurrentItem(1, false);
-                    break;
-                case Resource.Id.navigation_transfers:
-                    pager.SetCurrentItem(2, false);
-                    break;
-                case Resource.Id.navigation_library:
-                    pager.SetCurrentItem(4, false);
-                    break;
-            }
-            return true;
         }
 
         #if DEBUG

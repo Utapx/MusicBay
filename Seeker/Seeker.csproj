@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidMessageHandler</AndroidHttpClientHandlerType>
@@ -139,6 +139,9 @@
   </ItemGroup>
   <PropertyGroup />
   <!-- Adds MANAGE_EXTERNAL_STORAGE for non Playstore -->
+  <ItemGroup Condition="'$(Configuration)' == 'Debug Mock'">
+    <AndroidManifestOverlay Include="Properties\AndroidManifest.Mock.xml" />
+  </ItemGroup>
   <ItemGroup Condition="'$(Configuration)' == 'Release IzzySoft'">
     <AndroidManifestOverlay Include="Properties\AndroidManifest.IzzySoft.xml" />
   </ItemGroup>

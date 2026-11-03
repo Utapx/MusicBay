@@ -194,9 +194,9 @@
         <item name="colorSurfaceContainer">@color/mb_light_surface</item>
         <item name="elevationOverlayEnabled">false</item>
         <item name="colorSurface">@color/mb_light_bg</item>
-        <item name="colorSurfaceLogin">@color/mb_light_bg</item>
+        <item name="colorSurfaceLogin">@color/mb_light_surface</item>
         <item name="mainPurple">@color/mb_light_accent</item>
-        <item name="mainTextColor">@color/mb_light_accent</item>
+        <item name="mainTextColor">@color/mb_light_text</item>
         <item name="checkBoxColor">@color/mb_light_accent</item>
         <item name="normalTextColor">@color/mb_light_text</item>
         <item name="normalTextColorNonTinted">@color/mb_light_text</item>
@@ -208,9 +208,9 @@
         <item name="slightestContrastColor">@color/mb_light_raised</item>
         <item name="searchTabPillInactiveColor">@color/mb_light_raised</item>
         <item name="mainTextColorHintedFlair">@color/mb_light_accent</item>
-        <item name="sectionHeaderTextColor">@color/mb_light_accent</item>
+        <item name="sectionHeaderTextColor">@color/mb_light_text_secondary</item>
 
-        <item name="appBarColor">@color/mb_light_surface</item>
+        <item name="appBarColor">@color/mb_light_bg</item>
         <item name="appBarIconColor">@color/mb_light_text</item>
         <item name="appBarTextColor">@color/mb_light_text</item>
         <item name="appBarHintColor">@color/mb_light_text_secondary</item>
@@ -221,17 +221,26 @@
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:windowLightNavigationBar" tools:targetApi="27">true</item>
 
-        <item name="whitePurpleForNavBar">@color/mb_light_accent_container</item>
+        <item name="whitePurpleForNavBar">@color/mb_light_glass_pill</item>
         <item name="navItemSelectedColor">@color/mb_light_accent</item>
-        <item name="navItemUnselectedColor">@color/mb_light_text_secondary</item>
+        <item name="navItemUnselectedColor">@color/mb_light_glass_label</item>
         <item name="filterBottomSheetBackground">@color/mb_light_surface</item>
         <item name="dialog_background">@color/mb_light_surface</item>
         <item name="surface_variant1">@color/mb_light_raised</item>
+        <item name="mbSegmentSelected">@color/mb_light_surface</item>
+        <item name="android:popupMenuStyle">@style/MB.PopupMenu</item>
+        <item name="selectableItemBackground">@drawable/mb_press</item>
+        <item name="android:selectableItemBackground">@drawable/mb_press</item>
+        <item name="selectableItemBackgroundBorderless">@drawable/mb_press_round</item>
+        <item name="android:selectableItemBackgroundBorderless">@drawable/mb_press_round</item>
+        <item name="android:windowAnimationStyle">@style/MB.ActivityAnimation</item>
+        <item name="toolbarStyle">@style/MB.Toolbar</item>
+        <item name="android:textViewStyle">@style/MB.TextView</item>
         <item name="roomStatusesColor">@color/mb_light_raised</item>
 
         <item name="checkCircleSelectedColor">@color/mb_light_accent</item>
         <item name="checkCircleCheckColor">@color/mb_light_on_accent</item>
-        <item name="batchSelectHighlightColor">#409A5200</item>
+        <item name="batchSelectHighlightColor">#40D30F45</item>
 
         <item name="snackbarActionColor">@color/mb_dark_accent</item>
     </style>
@@ -326,7 +335,7 @@
         <item name="colorSurfaceContainer">@color/mb_dark_surface</item>
         <item name="elevationOverlayEnabled">false</item>
         <item name="colorSurface">@color/mb_dark_surface</item>
-        <item name="colorSurfaceLogin">@color/mb_dark_bg</item>
+        <item name="colorSurfaceLogin">@color/mb_dark_surface</item>
         <item name="pseudo_window_background_color">@color/mb_dark_bg</item>
         <item name="cellback">@color/mb_dark_bg</item>
         <item name="cellbackColor">@color/mb_dark_bg</item>
@@ -341,25 +350,34 @@
         <item name="slightestContrastColor">@color/mb_dark_raised</item>
         <item name="searchTabPillInactiveColor">@color/mb_dark_raised</item>
         <item name="searchBarColor">@color/mb_dark_raised</item>
-        <item name="mainTextColor">@color/mb_dark_accent</item>
+        <item name="mainTextColor">@color/mb_dark_text</item>
         <item name="mainTextColorHintedFlair">@color/mb_dark_accent</item>
-        <item name="sectionHeaderTextColor">@color/mb_dark_accent</item>
+        <item name="sectionHeaderTextColor">@color/mb_dark_text_secondary</item>
         <item name="checkBoxColor">@color/mb_dark_accent</item>
 
-        <item name="appBarColor">@color/mb_dark_surface</item>
+        <item name="appBarColor">@color/mb_dark_bg</item>
         <item name="appBarIconColor">@color/mb_dark_text</item>
-        <item name="whitePurpleForNavBar">@color/mb_dark_accent_container</item>
+        <item name="whitePurpleForNavBar">@color/mb_dark_glass_pill</item>
         <item name="filterBottomSheetBackground">@color/mb_dark_raised</item>
         <item name="surface_variant1">@color/mb_dark_raised</item>
+        <item name="mbSegmentSelected">#636366</item>
+        <item name="android:popupMenuStyle">@style/MB.PopupMenu</item>
+        <item name="selectableItemBackground">@drawable/mb_press</item>
+        <item name="android:selectableItemBackground">@drawable/mb_press</item>
+        <item name="selectableItemBackgroundBorderless">@drawable/mb_press_round</item>
+        <item name="android:selectableItemBackgroundBorderless">@drawable/mb_press_round</item>
+        <item name="android:windowAnimationStyle">@style/MB.ActivityAnimation</item>
+        <item name="toolbarStyle">@style/MB.Toolbar</item>
+        <item name="android:textViewStyle">@style/MB.TextView</item>
         <item name="dialog_background">@color/mb_dark_raised</item>
         <item name="download_dialog_background">@color/mb_dark_raised</item>
         <item name="mainPurple">@color/mb_dark_accent</item>
 
         <item name="navItemSelectedColor">@color/mb_dark_accent</item>
-        <item name="navItemUnselectedColor">@color/mb_dark_text_secondary</item>
+        <item name="navItemUnselectedColor">@color/mb_dark_glass_label</item>
         <item name="checkCircleSelectedColor">@color/mb_dark_accent</item>
         <item name="checkCircleCheckColor">@color/mb_dark_on_accent</item>
-        <item name="batchSelectHighlightColor">#40FFB454</item>
+        <item name="batchSelectHighlightColor">#40FF375F</item>
         <item name="snackbarActionColor">@color/mb_light_accent</item>
     </style>
 

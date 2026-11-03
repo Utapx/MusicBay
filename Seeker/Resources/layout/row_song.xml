@@ -63,7 +63,7 @@
         android:layout_height="48dp"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:contentDescription="@string/song_more"
-        android:src="@drawable/ic_more_vert_24"
+        android:src="@drawable/ic_more_horiz_24"
         android:tint="?attr/cellTextColorSubdued"
         android:visibility="gone" />
 </LinearLayout>

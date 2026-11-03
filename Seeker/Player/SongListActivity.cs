@@ -36,7 +36,7 @@ namespace Seeker.Player
     {
         public const string ExtraFolder = "album_folder";
         public const string ExtraArtist = "artist_name";
-        const int CoverDp = 200;
+        const int CoverDp = 240;
 
         List<Song> songs = new List<Song>();
         RecyclerView list;
@@ -53,6 +53,7 @@ namespace Seeker.Player
             cover = FindViewById<ImageView>(Resource.Id.playlist_cover);
             list = FindViewById<RecyclerView>(Resource.Id.playlist_list);
             list.SetLayoutManager(new LinearLayoutManager(this));
+            list.AddItemDecoration(new InsetDivider(this));
 
             FindViewById(Resource.Id.playlist_back).Click += (s, e) => Finish();
             FindViewById(Resource.Id.playlist_more).Click += (s, e) => { if (songs.Count > 0) { SongActions.AddToPlaylist(this, songs); } };

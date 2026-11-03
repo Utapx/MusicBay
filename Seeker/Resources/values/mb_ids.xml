@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="glass_base_padding" type="id" />
+    <attr name="mbSegmentSelected" format="color" />
+</resources>

@@ -444,7 +444,7 @@ namespace Seeker
         {
             if (!state.HasResponse() || state.IsAnonymousSelf)
             {
-                return context.GetString(Resource.String.browse_tab);
+                return string.Empty; // nothing to name yet, so the bar shows only its actions
             }
             return context.GetString(Resource.String.browse_tab) + ": " + state.CurrentUsername;
         }

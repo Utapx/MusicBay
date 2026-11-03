@@ -28,7 +28,6 @@ using AndroidX.Core.Content;
 using AndroidX.Fragment.App;
 using AndroidX.RecyclerView.Widget;
 using Google.Android.Material.BottomSheet;
-using Google.Android.Material.Chip;
 using Google.Android.Material.Dialog;
 using System;
 using System.Collections.Generic;
@@ -46,6 +45,7 @@ namespace Seeker.Player
         const string AskedImagesKey = "asked_images_permission";
         const int AlbumArtDp = 200;
         const int MinAlbumColumnDp = 160;
+        const int ArtistArtDp = 48;
 
         enum Section { Songs, Albums, Artists, Playlists }
 
@@ -57,7 +57,7 @@ namespace Seeker.Player
         Button messageAction;
         ImageButton action, clearSearch;
         EditText search;
-        ChipGroup sections;
+        RadioGroup sections;
         Action onMessageAction;
         Section section = Section.Songs;
         List<Song> allSongs = new List<Song>();
@@ -94,11 +94,12 @@ namespace Seeker.Player
             search.EditorAction += (s, e) => HideKeyboard();
             list.AddOnScrollListener(new HideKeyboardOnDrag(this));
 
-            sections = view.FindViewById<ChipGroup>(Resource.Id.library_sections);
+            list.AddItemDecoration(new InsetDivider(Context));
+            sections = view.FindViewById<RadioGroup>(Resource.Id.library_sections);
             sections.CheckedChange += (s, e) =>
             {
-                int id = sections.CheckedChipId;
-                section = id == Resource.Id.library_chip_albums ? Section.Albums
+                int id = e.CheckedId;
+                section = id ==Resource.Id.library_chip_albums ? Section.Albums
                     : id == Resource.Id.library_chip_artists ? Section.Artists
                     : id == Resource.Id.library_chip_playlists ? Section.Playlists
                     : Section.Songs;
@@ -215,7 +216,9 @@ namespace Seeker.Player
                 case Section.Albums:
                     var albums = allAlbums.Where(a => Matches(a.Title, a.Artist)).ToList();
                     UseGrid();
-                    list.SetAdapter(new AlbumAdapter(albums, a => StartActivity(new Intent(Context, typeof(SongListActivity)).PutExtra(SongListActivity.ExtraFolder, a.Folder))));
+                    list.SetAdapter(new CoverCardAdapter(albums.Count, i => albums[i].Title, i => albums[i].Artist,
+                        (art, i) => ArtLoader.LoadAlbum(art, albums[i], AlbumArtDp),
+                        i => StartActivity(new Intent(Context, typeof(SongListActivity)).PutExtra(SongListActivity.ExtraFolder, albums[i].Folder)), 0));
                     shown = albums.Count;
                     countText = Resources.GetQuantityString(Resource.Plurals.album_count, shown, shown);
                     break;
@@ -225,7 +228,8 @@ namespace Seeker.Player
                     list.SetAdapter(new CollectionAdapter(artists.Count, i => artists[i].Name,
                         i => Resources.GetQuantityString(Resource.Plurals.song_count, artists[i].Songs.Count, artists[i].Songs.Count),
                         Resource.Drawable.ic_person_24,
-                        i => StartActivity(new Intent(Context, typeof(SongListActivity)).PutExtra(SongListActivity.ExtraArtist, artists[i].Name))));
+                        i => StartActivity(new Intent(Context, typeof(SongListActivity)).PutExtra(SongListActivity.ExtraArtist, artists[i].Name)),
+                        i => artists[i].Songs[0]));
                     shown = artists.Count;
                     countText = Resources.GetQuantityString(Resource.Plurals.artist_count, shown, shown);
                     break;
@@ -334,49 +338,6 @@ namespace Seeker.Player
             }
         }
 
-        class AlbumAdapter : RecyclerView.Adapter
-        {
-            readonly List<MediaLibrary.Album> albums;
-            readonly Action<MediaLibrary.Album> onClick;
-
-            public AlbumAdapter(List<MediaLibrary.Album> albums, Action<MediaLibrary.Album> onClick)
-            {
-                this.albums = albums;
-                this.onClick = onClick;
-            }
-
-            public override int ItemCount => albums.Count;
-
-            public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
-            {
-                var row = LayoutInflater.From(parent.Context).Inflate(Resource.Layout.card_album, parent, false);
-                var holder = new AlbumHolder(row);
-                row.Click += (s, e) => { if (holder.BindingAdapterPosition >= 0) { onClick(albums[holder.BindingAdapterPosition]); } };
-                return holder;
-            }
-
-            public override void OnBindViewHolder(RecyclerView.ViewHolder viewHolder, int position)
-            {
-                var holder = (AlbumHolder)viewHolder;
-                var album = albums[position];
-                holder.Title.Text = album.Title;
-                holder.Artist.Text = album.Artist;
-                ArtLoader.LoadAlbum(holder.Art, album, AlbumArtDp);
-            }
-
-            class AlbumHolder : RecyclerView.ViewHolder
-            {
-                public TextView Title, Artist;
-                public ImageView Art;
-                public AlbumHolder(View v) : base(v)
-                {
-                    Title = v.FindViewById<TextView>(Resource.Id.album_title);
-                    Artist = v.FindViewById<TextView>(Resource.Id.album_artist);
-                    Art = v.FindViewById<ImageView>(Resource.Id.album_art);
-                }
-            }
-        }
-
         class FolderAdapter : RecyclerView.Adapter
         {
             readonly Context context;
@@ -432,9 +393,11 @@ namespace Seeker.Player
             readonly Func<int, string> name, detail;
             readonly int icon;
             readonly Action<int> onClick;
+            readonly Func<int, Song> artOf;
 
-            public CollectionAdapter(int itemCount, Func<int, string> name, Func<int, string> detail, int icon, Action<int> onClick)
+            public CollectionAdapter(int itemCount, Func<int, string> name, Func<int, string> detail, int icon, Action<int> onClick, Func<int, Song> artOf = null)
             {
+                this.artOf = artOf;
                 this.itemCount = itemCount;
                 this.name = name;
                 this.detail = detail;
@@ -458,6 +421,13 @@ namespace Seeker.Player
                 var context = holder.ItemView.Context;
                 holder.Name.Text = name(position);
                 holder.Detail.Text = detail(position);
+                if (artOf != null)
+                {
+                    // iOS draws people round and albums square
+                    holder.Art.SetBackgroundResource(Resource.Drawable.bg_art_round);
+                    ArtLoader.Load(holder.Art, artOf(position), ArtistArtDp);
+                    return;
+                }
                 holder.Art.SetImageResource(icon);
                 holder.Art.SetColorFilter(new Android.Graphics.Color(PlayerFormat.ThemeColor(context, Resource.Attribute.cellTextColorSubdued)));
                 int pad = (int)(14 * context.Resources.DisplayMetrics.Density);
@@ -474,7 +444,13 @@ namespace Seeker.Player
                     Detail = v.FindViewById<TextView>(Resource.Id.song_subtitle);
                     Art = v.FindViewById<ImageView>(Resource.Id.song_art);
                     v.FindViewById(Resource.Id.song_duration).Visibility = ViewStates.Gone;
-                    v.FindViewById(Resource.Id.song_more).Visibility = ViewStates.Gone;
+                    // the iOS disclosure chevron: it only says "this opens", the whole row takes the tap
+                    var chevron = v.FindViewById<ImageButton>(Resource.Id.song_more);
+                    chevron.Visibility = ViewStates.Visible;
+                    chevron.SetImageResource(Resource.Drawable.chevron_right);
+                    chevron.Clickable = false;
+                    chevron.Focusable = false;
+                    chevron.ImportantForAccessibility = ImportantForAccessibility.No;
                 }
             }
         }

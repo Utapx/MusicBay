@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingStart="12dp"
+    android:paddingTop="4dp"
+    android:paddingEnd="16dp"
+    android:paddingBottom="4dp">
+
+    <FrameLayout
+        android:id="@+id/home_avatar"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:contentDescription="@string/account_title"
+        android:focusable="true">
+
+        <FrameLayout
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_art_round">
+
+            <ImageView
+                android:id="@+id/home_avatar_icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_person_24" />
+
+            <TextView
+                android:id="@+id/home_avatar_initial"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="sans-serif-medium"
+                android:importantForAccessibility="no"
+                android:textColor="?attr/cellTextColor"
+                android:textSize="15sp"
+                android:visibility="gone" />
+        </FrameLayout>
+    </FrameLayout>
+
+    <RadioGroup
+        android:id="@+id/home_filters"
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:layout_marginStart="4dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/home_filter_all"
+            style="@style/MB.Pill"
+            android:checked="true"
+            android:text="@string/home_all" />
+
+        <RadioButton
+            android:id="@+id/home_filter_albums"
+            style="@style/MB.Pill"
+            android:text="@string/library_albums" />
+
+        <RadioButton
+            android:id="@+id/home_filter_playlists"
+            style="@style/MB.Pill"
+            android:text="@string/library_playlists" />
+    </RadioGroup>
+</LinearLayout>

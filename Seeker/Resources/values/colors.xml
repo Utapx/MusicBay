@@ -14,24 +14,28 @@
     <color name="androidStockMessagesNewBlue">#0B57D0</color>
 
     <!-- MusicBay design tokens. Themes reference these; do not use raw hex in layouts. -->
-    <color name="mb_dark_bg">#0B0B0E</color>
-    <color name="mb_dark_surface">#141418</color>
-    <color name="mb_dark_raised">#1D1D23</color>
-    <color name="mb_dark_outline">#2A2A31</color>
-    <color name="mb_dark_text">#F2F0EC</color>
-    <color name="mb_dark_text_secondary">#A09DA6</color>
-    <color name="mb_dark_accent">#FFB454</color>
-    <color name="mb_dark_on_accent">#1A1206</color>
-    <color name="mb_dark_accent_container">#3A2D17</color>
-    <color name="mb_light_bg">#F7F5F2</color>
+    <color name="mb_dark_bg">#000000</color>
+    <color name="mb_dark_surface">#1C1C1E</color>
+    <color name="mb_dark_raised">#2C2C2E</color>
+    <color name="mb_dark_outline">#38383A</color>
+    <color name="mb_dark_text">#FFFFFF</color>
+    <color name="mb_dark_text_secondary">#98989F</color>
+    <color name="mb_dark_accent">#FF375F</color>
+    <color name="mb_dark_on_accent">#000000</color>
+    <color name="mb_dark_accent_container">#2C2C2E</color>
+    <color name="mb_light_bg">#F2F2F7</color>
     <color name="mb_light_surface">#FFFFFF</color>
-    <color name="mb_light_raised">#EFECE8</color>
-    <color name="mb_light_outline">#D9D5CF</color>
-    <color name="mb_light_text">#17171A</color>
-    <color name="mb_light_text_secondary">#6A676F</color>
-    <color name="mb_light_accent">#9A5200</color>
+    <color name="mb_light_raised">#E5E5EA</color>
+    <color name="mb_light_outline">#C6C6C8</color>
+    <color name="mb_light_text">#000000</color>
+    <color name="mb_light_text_secondary">#6C6C70</color>
+    <color name="mb_light_accent">#D30F45</color>
     <color name="mb_light_on_accent">#FFFFFF</color>
-    <color name="mb_light_accent_container">#F1E3CF</color>
+    <color name="mb_light_accent_container">#E5E5EA</color>
+    <color name="mb_dark_glass_label">#D9FFFFFF</color>
+    <color name="mb_light_glass_label">#BF000000</color>
+    <color name="mb_dark_glass_pill">#29FFFFFF</color>
+    <color name="mb_light_glass_pill">#14000000</color>
 
     <color name="defaultTextColor">#ff737373</color>
 

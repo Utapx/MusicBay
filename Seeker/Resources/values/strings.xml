@@ -1099,4 +1099,17 @@
     <string name="queue_added">Added to queue</string>
     <string name="covers_title">Use cover images from your folders?</string>
     <string name="covers_message">MusicBay can use an image like cover.jpg in an album folder as its cover. Android calls this access to photos. It only looks for covers.</string>
+    <string name="home_all">All</string>
+    <string name="home_signin">Sign in to Soulseek to search and download</string>
+    <string name="account_title">Account</string>
+    <string name="account_done">Done</string>
+    <string name="update_available">Update available</string>
+    <string name="update_version">Version %1$s</string>
+    <string name="update_now">Update</string>
+    <string name="update_later">Later</string>
+    <string name="update_downloading">Downloading update</string>
+    <string name="update_failed">Could not download the update. Check your connection and try again.</string>
+    <string name="update_check">Check for updates</string>
+    <string name="update_up_to_date">MusicBay is up to date</string>
+    <string name="update_check_failed">Could not check for updates</string>
 </resources>

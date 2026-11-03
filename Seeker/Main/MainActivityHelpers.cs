@@ -51,7 +51,7 @@ namespace Seeker
 
             public void OnAnimationEnd(Animator animation)
             {
-                SeekerState.MainActivityRef.FindViewById<BottomNavigationView>(Resource.Id.navigation).Visibility = ViewStates.Gone;
+                SeekerState.MainActivityRef.FindViewById<View>(Resource.Id.glass_bars).Visibility = ViewStates.Gone;
             }
 
             public void OnAnimationRepeat(Animator animation)

@@ -361,26 +361,6 @@ namespace Seeker.Settings.Rows
                 OnClick = (h, r) => SettingPickers.PickDayNightMode(h, r),
             });
 
-            rows.Add(new ValueRow
-            {
-                Id = "appearance.day_variant",
-                TitleRes = Resource.String.DayVarient_,
-                KeywordsRes = Resource.String.keywords_day_variant,
-                IconRes = Resource.Drawable.palette_28dp,
-                ValueProvider = ctx => SettingValueFormat.DayVariantLabel(ctx, PreferencesState.DayModeVariant),
-                OnClick = (h, r) => SettingPickers.PickDayVariant(h, r),
-            });
-
-            rows.Add(new ValueRow
-            {
-                Id = "appearance.night_variant",
-                TitleRes = Resource.String.NightVarient_,
-                KeywordsRes = Resource.String.keywords_night_variant,
-                IconRes = Resource.Drawable.palette_28dp,
-                ValueProvider = ctx => SettingValueFormat.NightVariantLabel(ctx, PreferencesState.NightModeVariant),
-                OnClick = (h, r) => SettingPickers.PickNightVariant(h, r),
-            });
-
             // ============================== SHARING ==============================
             rows.Add(new HeaderRow { Id = "h.sharing", TitleRes = Resource.String.section_sharing });
 

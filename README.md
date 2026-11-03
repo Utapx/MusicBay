@@ -31,8 +31,7 @@
 
 <blockquote>
   <p>
-    <strong>Project status:</strong> MusicBay is in active development and has no published release yet.
-    Build it from source to try it.
+    <strong>Project status:</strong> MusicBay is an early preview. Download the latest APK from <a href="https://github.com/Utapx/MusicBay/releases/latest">Releases</a>, for 64-bit Android phones. The app offers new versions when it opens.
   </p>
 </blockquote>
 
@@ -70,6 +69,10 @@
   <tr>
     <td><strong>Bit-perfect</strong></td>
     <td>Sends audio to a USB DAC with no mixing or resampling on Android 14 or newer. Files up to 16-bit only for now. Bluetooth and the phone speaker always use the system mixer.</td>
+  </tr>
+  <tr>
+    <td><strong>Updates</strong></td>
+    <td>When a new version is out, the app offers it on launch. You choose Update or Later, and Android asks before installing.</td>
   </tr>
   <tr>
     <td><strong>Soulseek</strong></td>

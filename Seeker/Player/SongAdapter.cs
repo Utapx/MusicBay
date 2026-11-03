@@ -47,7 +47,8 @@ namespace Seeker.Player
     internal class SongAdapter : RecyclerView.Adapter
     {
         const int RowArtDp = 48;
-        const int CardArtDp = 140;
+        const int QuickArtDp = 56;
+        const int CardArtDp = 150;
 
         readonly List<Song> items;
         readonly Action<int> onClick;
@@ -89,7 +90,7 @@ namespace Seeker.Player
             // the narrow home cards only have room for the artist
             holder.Subtitle.Text = string.IsNullOrEmpty(song.Album) || layout != Resource.Layout.row_song ? song.Artist : song.Artist + " · " + song.Album;
             holder.Duration.Text = PlayerFormat.Duration(song.DurationMs);
-            ArtLoader.Load(holder.Art, song, layout == Resource.Layout.row_song ? RowArtDp : CardArtDp);
+            ArtLoader.Load(holder.Art, song, layout == Resource.Layout.row_song ? RowArtDp : layout == Resource.Layout.card_quick ? QuickArtDp : CardArtDp);
         }
 
         class Holder : RecyclerView.ViewHolder

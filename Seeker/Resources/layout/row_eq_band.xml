@@ -16,12 +16,10 @@
 
     <SeekBar
         android:id="@+id/band_seek"
+        style="@style/MB.Slider"
         android:layout_width="0dp"
         android:layout_height="48dp"
-        android:layout_weight="1"
-        android:progressBackgroundTint="?attr/cellTextColorSubdued"
-        android:progressTint="?attr/mainPurple"
-        android:thumbTint="?attr/mainPurple" />
+        android:layout_weight="1" />
 
     <TextView
         android:id="@+id/band_value"

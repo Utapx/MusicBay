@@ -37,10 +37,14 @@ namespace Seeker.Player
     public class NowPlayingActivity : ThemeableActivity
     {
         const int ArtDp = 512;
-        const float ArtTintAmount = 0.3f;
+        const int BackdropPixels = 32; // scaled back up, these few pixels are the blur
+        const float BackdropBlurDp = 24f;
+        const int ScrimTopAlpha = 90;
+        const int ScrimMiddleAlpha = 170;
 
-        View root;
-        ImageView art, outputIcon;
+        View scrim;
+        GestureDetector closeGesture;
+        ImageView backdrop, art, outputIcon;
         TextView title, artist, format, elapsed, total, outputLabel;
         SeekBar seek;
         ImageButton play, shuffle, repeat;
@@ -54,8 +58,16 @@ namespace Seeker.Player
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_now_playing);
 
-            root = FindViewById(Resource.Id.np_root);
-            art = FindViewById<ImageView>(Resource.Id.np_art);
+            OverridePendingTransition(Resource.Animation.mb_sheet_in, 0);
+            closeGesture = new GestureDetector(this, new FlingDownToClose(this));
+            scrim = FindViewById(Resource.Id.np_scrim);
+            backdrop = FindViewById<ImageView>(Resource.Id.np_backdrop);
+            if (OperatingSystem.IsAndroidVersionAtLeast(31))
+            {
+                float blur = BackdropBlurDp * Resources.DisplayMetrics.Density;
+                backdrop.SetRenderEffect(RenderEffect.CreateBlurEffect(blur, blur, Shader.TileMode.Clamp));
+            }
+            art =FindViewById<ImageView>(Resource.Id.np_art);
             title = FindViewById<TextView>(Resource.Id.np_title);
             artist = FindViewById<TextView>(Resource.Id.np_artist);
             format = FindViewById<TextView>(Resource.Id.np_format);
@@ -148,14 +160,37 @@ namespace Seeker.Player
         // the artwork's average colour fades into the page, ending above the title so text contrast never depends on the artwork
         void SetBackdrop(Bitmap bitmap)
         {
+            backdrop.SetImageBitmap(bitmap == null ? null : Bitmap.CreateScaledBitmap(bitmap, BackdropPixels, BackdropPixels, true));
             int page = PlayerFormat.ThemeColor(this, Android.Resource.Attribute.ColorBackground);
-            int top = page;
-            if (bitmap != null)
+            scrim.Background = new GradientDrawable(GradientDrawable.Orientation.TopBottom,
+                new[] { ColorUtils.SetAlphaComponent(page, ScrimTopAlpha), ColorUtils.SetAlphaComponent(page, ScrimMiddleAlpha), page, page });
+        }
+
+        // Screen edges swipe the app away on most phones, so a downward fling anywhere closes this sheet, like iOS.
+        public override bool DispatchTouchEvent(MotionEvent e)
+        {
+            closeGesture.OnTouchEvent(e);
+            return base.DispatchTouchEvent(e);
+        }
+
+        public override void Finish()
+        {
+            base.Finish();
+            OverridePendingTransition(0, Resource.Animation.mb_sheet_out);
+        }
+
+        class FlingDownToClose : GestureDetector.SimpleOnGestureListener
+        {
+            const float MinFlingVelocity = 1500f;
+            readonly Activity activity;
+            public FlingDownToClose(Activity activity) { this.activity = activity; }
+
+            public override bool OnFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY)
             {
-                using var pixel = Bitmap.CreateScaledBitmap(bitmap, 1, 1, true);
-                top = ColorUtils.BlendARGB(page, pixel.GetPixel(0, 0), ArtTintAmount);
+                if (velocityY < MinFlingVelocity || Math.Abs(velocityY) < Math.Abs(velocityX)) { return false; }
+                activity.Finish();
+                return true;
             }
-            root.Background = new GradientDrawable(GradientDrawable.Orientation.TopBottom, new[] { top, page, page });
         }
 
         void LoadFormat(Song song)

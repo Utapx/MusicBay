@@ -1,17 +1,76 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ScrollView
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"
 >
 <LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical"
 >
-<include layout="@layout/home_music_section" />
+    <include layout="@layout/home_header" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+    >
+        <include layout="@layout/home_music_section" />
+    </ScrollView>
+</LinearLayout>
+<LinearLayout
+    android:id="@+id/account_panel"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground"
+    android:clickable="true"
+    android:orientation="vertical"
+    android:visibility="gone"
+>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+    >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/account_title"
+            android:textColor="?attr/cellTextColor"
+            android:textSize="17sp"
+        />
+        <TextView
+            android:id="@+id/account_done"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/account_done"
+            android:textColor="?attr/mainPurple"
+            android:textSize="17sp"
+        />
+    </FrameLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+    >
+
 <ViewFlipper
     android:id="@+id/loginViewFlipper"
     android:layout_width="match_parent"
@@ -30,7 +89,7 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:text="@string/login"
-			android:layout_marginTop="25dp"
+			android:layout_marginTop="8dp"
 			android:id="@+id/textView"
             android:textStyle="bold"
             android:textColor="?attr/mainTextColor"
@@ -50,7 +109,7 @@
 		<com.google.android.material.textfield.TextInputLayout
 			android:id="@+id/usernameTextInputLayout"
 			android:layout_marginTop="20dp"
-			style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+			style="@style/MB.TextField"
 			app:errorEnabled="false"
 			app:hintEnabled="false"
 			android:layout_marginLeft="40dp"
@@ -60,7 +119,7 @@
         >
 			<com.google.android.material.textfield.TextInputEditText
 				android:textColorHighlight="?attr/mainTextColor"
-				android:textColorHint="?attr/mainTextColor"
+				android:textColorHint="?attr/cellTextColorSubdued"
 				android:layout_marginLeft="4dp"
 				android:layout_marginRight="4dp"
 				android:singleLine="true"
@@ -78,7 +137,7 @@
 			android:id="@+id/passwordTextInputLayout"
 			android:layout_marginTop="15dp"
 			app:passwordToggleEnabled="true"
-			style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+			style="@style/MB.TextField"
 			app:errorEnabled="false"
 			app:hintEnabled="false"
 			android:singleLine="true"
@@ -89,7 +148,7 @@
         >
 			<EditText
 				android:textColorHighlight="?attr/mainTextColor"
-				android:textColorHint="?attr/mainTextColor"
+				android:textColorHint="?attr/cellTextColorSubdued"
 				android:layout_marginBottom="0dp"
 				android:layout_marginTop="0dp"
 				android:layout_marginLeft="4dp"
@@ -112,15 +171,15 @@
 			android:layout_marginTop="20dp"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:foreground="?android:attr/selectableItemBackground"
-			style="@style/SeekerButtonStyle"
+			style="@style/MB.PrimaryButton"
 			android:text="@string/signin"
 			android:id="@+id/buttonLogin"
 			android:layout_below="@+id/passwordTextInputLayout"
         />
 
 		<TextView
-			android:layout_marginStart="6dp"
+			android:layout_marginStart="24dp"
+			android:layout_marginEnd="24dp"
 			android:layout_marginTop="6dp"
 			android:layout_marginBottom="6dp"
 			android:layout_width="match_parent"
@@ -181,7 +240,7 @@
         android:id="@+id/loggedInLayout"
     >
         <com.google.android.material.card.MaterialCardView
-            style="@style/Widget.Material3.CardView.Elevated"
+            style="@style/Widget.Material3.CardView.Filled"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardCornerRadius="12dp"
@@ -269,7 +328,7 @@
                 <!-- Server message (GlobalAdminMessage) -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/serverMessageCard"
-                    style="@style/Widget.Material3.CardView.Elevated"
+                    style="@style/Widget.Material3.CardView.Filled"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:cardCornerRadius="12dp"
@@ -357,7 +416,7 @@
                 <!-- Select Download Directory row -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/mustSelectDirectory"
-                    style="@style/Widget.Material3.CardView.Elevated"
+                    style="@style/Widget.Material3.CardView.Filled"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:cardCornerRadius="12dp"
@@ -407,7 +466,7 @@
                 <!-- Set Up Sharing row -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/menuSetUpSharing"
-                    style="@style/Widget.Material3.CardView.Elevated"
+                    style="@style/Widget.Material3.CardView.Filled"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:cardCornerRadius="12dp"
@@ -457,7 +516,7 @@
                 <!-- Manage User List row -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/menuManageUserList"
-                    style="@style/Widget.Material3.CardView.Elevated"
+                    style="@style/Widget.Material3.CardView.Filled"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:cardCornerRadius="12dp"
@@ -520,7 +579,7 @@
                 <!-- Messages row -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/menuMessages"
-                    style="@style/Widget.Material3.CardView.Elevated"
+                    style="@style/Widget.Material3.CardView.Filled"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:cardCornerRadius="12dp"
@@ -592,7 +651,7 @@
                 <!-- Settings row -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/menuSettings"
-                    style="@style/Widget.Material3.CardView.Elevated"
+                    style="@style/Widget.Material3.CardView.Filled"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:cardCornerRadius="12dp"
@@ -641,7 +700,7 @@
                 <!-- Log Out row -->
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/menuLogout"
-                    style="@style/Widget.Material3.CardView.Elevated"
+                    style="@style/Widget.Material3.CardView.Filled"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:cardCornerRadius="12dp"
@@ -691,5 +750,19 @@
         </FrameLayout>
     </RelativeLayout>
 </ViewFlipper>
+        <LinearLayout
+            android:id="@+id/account_rows"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/bg_account_group"
+            android:clipToOutline="true"
+            android:orientation="vertical"
+        />
+    </LinearLayout>
+    </ScrollView>
 </LinearLayout>
-</ScrollView>
+</FrameLayout>
