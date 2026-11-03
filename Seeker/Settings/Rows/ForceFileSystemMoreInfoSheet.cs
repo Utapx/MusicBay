@@ -29,7 +29,7 @@ namespace Seeker.Settings.Rows
             view.FindViewById<Button>(Resource.Id.get_github_build).Click += (s, e) =>
             {
                 Dismiss();
-                CommonHelpers.ViewUri(Android.Net.Uri.Parse("https://github.com/Utapx/MusicBay/releases"), this.Context);
+                CommonHelpers.ViewUri(Android.Net.Uri.Parse("https://github.com/ssenwako/MusicBay/releases"), this.Context);
             };
 
             return view;

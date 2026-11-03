@@ -11,7 +11,7 @@ namespace Seeker.Settings.Rows
 {
     public sealed class AboutBottomSheet : BottomSheetDialogFragment
     {
-        private const string SourceUrl = "https://github.com/Utapx/MusicBay";
+        private const string SourceUrl = "https://github.com/ssenwako/MusicBay";
 
         private readonly struct AboutLink
         {

@@ -31,7 +31,7 @@
 
 <blockquote>
   <p>
-    <strong>Project status:</strong> MusicBay is an early preview. Download the latest APK from <a href="https://github.com/Utapx/MusicBay/releases/latest">Releases</a>, for 64-bit Android phones. The app offers new versions when it opens.
+    <strong>Project status:</strong> MusicBay is an early preview. Download the latest APK from <a href="https://github.com/ssenwako/MusicBay/releases/latest">Releases</a>, for 64-bit Android phones. The app offers new versions when it opens.
   </p>
 </blockquote>
 
@@ -107,7 +107,7 @@
 
 <h3>Steps</h3>
 
-<pre><code>git clone https://github.com/Utapx/MusicBay.git
+<pre><code>git clone https://github.com/ssenwako/MusicBay.git
 cd MusicBay
 dotnet workload restore Seeker/Seeker.csproj
 

@@ -40,7 +40,7 @@ namespace Seeker.Player
 #if MOCK
         const string LatestReleaseUrl = "http://localhost:8765/latest.json";
 #else
-        const string LatestReleaseUrl = "https://api.github.com/repos/Utapx/MusicBay/releases/latest";
+        const string LatestReleaseUrl = "https://api.github.com/repos/ssenwako/MusicBay/releases/latest";
 #endif
         const string PrefsName = "musicbay_player";
         const string SkippedVersionKey = "update_skipped_version";
