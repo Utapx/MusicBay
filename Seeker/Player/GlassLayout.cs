@@ -394,7 +394,7 @@ half4 main(float2 xy) {
     [Register("app.musicbay.GlassTabBar")]
     public class GlassTabBar : FrameLayout
     {
-        const int BrowsePage = 3; // Browse has no tab of its own and sits under Search
+        const int BrowsePage = 3; // Browse and streaming mode have no tab of their own and sit under Search
         const int SearchTabIndex = 1;
         const int LensInsetDp = 4;
         const long LensMoveMs = 300;
@@ -442,7 +442,7 @@ half4 main(float2 xy) {
         /// <summary>Follows the pager when something other than a tap changed the page.</summary>
         public void Select(int page)
         {
-            int index = page == BrowsePage ? SearchTabIndex : Array.FindIndex(Tabs, t => t.Page == page);
+            int index = page == BrowsePage || page == StreamFragment.Page ? SearchTabIndex : Array.FindIndex(Tabs, t => t.Page == page);
             if (index >= 0) { MoveTo(index, true); }
         }
 
@@ -517,6 +517,8 @@ half4 main(float2 xy) {
             {
                 var child = parent.GetChildAt(i);
                 if (parent.GetChildAdapterPosition(child) == last) { continue; }
+                // rows are layouts; section titles (a TextView) and a nested row of covers get no hairline
+                if (!(child is ViewGroup) || child is RecyclerView) { continue; }
                 c.DrawLine(inset, child.Bottom, parent.Width, child.Bottom, paint);
             }
         }

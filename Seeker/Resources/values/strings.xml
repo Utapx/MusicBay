@@ -1002,6 +1002,27 @@
     <string name="keywords_restore_defaults">reset factory</string>
 
     <string name="library_tab">Library</string>
+    <string name="stream_source">YouTube Music</string>
+    <string name="stream_enter">Enter streaming mode</string>
+    <string name="stream_back">Back to Soulseek search</string>
+    <string name="stream_mode_title">Streaming mode</string>
+    <string name="stream_mode_message">Streaming mode plays music from YouTube Music instead of searching the Soulseek network. Search for a song, album or artist and it plays right away in MusicBay’s player, with no ads and with your equalizer. Nothing is downloaded.\n\nIt is an extra, not part of Soulseek. It does not use YouTube’s official app, so it can stop working when YouTube changes.\n\nIt stays on when you switch tabs. To return to Soulseek search, tap the back arrow.</string>
+    <string name="stream_search_hint">Search YouTube Music</string>
+    <string name="stream_intro">Search for a song or album to stream it from YouTube Music. Songs you play show up here.</string>
+    <string name="stream_all">All</string>
+    <string name="stream_albums_empty">Albums you open in streaming mode show up here.</string>
+    <string name="stream_playlists_signin">Sign in to see your YouTube Music playlists and Liked Music.</string>
+    <string name="stream_sign_in">Sign in</string>
+    <string name="stream_searching">Searching…</string>
+    <string name="stream_search_failed">Couldn’t reach YouTube Music. Check your connection and try again.</string>
+    <string name="stream_failed">Couldn’t play %1$s</string>
+    <string name="stream_account">YouTube Music account</string>
+    <string name="stream_signin_title">Use a spare Google account</string>
+    <string name="stream_signin_message">Sign in with a spare Gmail account made for this, not your main one.\n\nWhy:\n• Google does not allow other apps to use YouTube Music this way, so it may flag or suspend the account. On your main account that would also lock you out of Gmail, Photos, Drive and anything you bought.\n• Signing in gives MusicBay the account’s session. It stays on this phone, encrypted, and is only sent to YouTube, but with a spare account your personal email and files are never at stake.\n\nYour password goes to Google only. Sign out removes the session.</string>
+    <string name="stream_signin_continue">Continue</string>
+    <string name="stream_signed_in">Signed in to YouTube Music</string>
+    <string name="stream_signed_in_message">You are signed in. Signing out removes the session from this phone.</string>
+    <string name="stream_sign_out">Sign out</string>
     <string name="library_empty">No music found on this device</string>
     <string name="library_no_permission">MusicBay needs access to your music to show your library</string>
     <string name="library_grant">Allow access</string>

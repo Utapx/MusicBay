@@ -111,6 +111,7 @@
       <Version>1.2.0.1</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Google.Android.Material" Version="1.13.0.1" />
+    <PackageReference Include="YoutubeExplode" Version="6.6.3" />
     <PackageReference Include="Xamarin.AndroidX.Legacy.Support.Core.Utils" Version="1.0.0.35" />
     <PackageReference Include="Xamarin.AndroidX.DocumentFile">
       <Version>1.1.0.2</Version>

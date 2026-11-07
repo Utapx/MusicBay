@@ -23,10 +23,12 @@ using Android.Media;
 using Android.Media.Session;
 using Android.OS;
 using Android.Provider;
+using Android.Widget;
 using AndroidX.Core.Content;
 using Seeker.Helpers;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Seeker.Player
@@ -41,7 +43,24 @@ namespace Seeker.Player
         public long AlbumId;
         public string Folder;
         public int Track;
+        /// <summary>YouTube video ID for a song streamed from YouTube Music; null for a file on the phone.</summary>
+        public string StreamId;
+        public string ArtUrl;
+        /// <summary>Codec and bitrate of the stream, known once it has been opened.</summary>
+        public string StreamFormat;
         public Android.Net.Uri Uri => ContentUris.WithAppendedId(MediaStore.Audio.Media.ExternalContentUri, Id);
+
+        // negative so it never matches a MediaStore ID; screens compare songs by ID
+        public static Song FromStream(Common.YtItem item) => new Song
+        {
+            Id = -1 - (long)(uint)item.VideoId.GetHashCode(),
+            StreamId = item.VideoId,
+            Title = item.Title,
+            Artist = item.Artist,
+            Album = item.Album,
+            DurationMs = item.DurationMs,
+            ArtUrl = item.ThumbUrl,
+        };
     }
 
     /// <summary>Queue + state shared between the UI and PlayerService. The service is the only writer of IsPlaying.</summary>
@@ -183,7 +202,7 @@ namespace Seeker.Player
         {
             var song = Playback.Current;
             if (song == null) { Stop(); return; }
-            MediaLibrary.AddRecent(this, song.Id);
+            if (song.StreamId == null) { MediaLibrary.AddRecent(this, song.Id); } else { StreamHistory.Add(this, song); }
             LoadSessionArt(song);
 
             player?.Release();
@@ -205,6 +224,12 @@ namespace Seeker.Player
             player.Completion += (s, e) => { if (Playback.Repeat == Playback.RepeatMode.One) { StartCurrent(); } else { Advance(1); } };
             // an unplayable file must not stall the queue
             player.Error += (s, e) => { e.Handled = true; Advance(1, skipUnplayable: true); };
+            if (song.StreamId != null)
+            {
+                OpenStream(player, song);
+                Refresh();
+                return;
+            }
             try
             {
                 player.SetDataSource(this, song.Uri);
@@ -217,6 +242,35 @@ namespace Seeker.Player
                 return;
             }
             Refresh();
+        }
+
+        static readonly YoutubeExplode.YoutubeClient youtube = new YoutubeExplode.YoutubeClient(new System.Net.Http.HttpClient(new System.Net.Http.SocketsHttpHandler()));
+
+        async void OpenStream(MediaPlayer target, Song song)
+        {
+            try
+            {
+                // off the main thread: Android's HTTP handler connects on the calling thread
+                var watch = System.Diagnostics.Stopwatch.StartNew();
+                var manifest = await Task.Run(async () => await youtube.Videos.Streams.GetManifestAsync(song.StreamId));
+                Logger.Debug("stream manifest in " + watch.ElapsedMilliseconds + " ms");
+                // AAC in MP4 plays on every Android version; opus in WebM only when no MP4 stream is offered
+                var audio = manifest.GetAudioOnlyStreams()
+                    .OrderByDescending(s => s.Container == YoutubeExplode.Videos.Streams.Container.Mp4)
+                    .ThenByDescending(s => s.Bitrate.BitsPerSecond)
+                    .First();
+                if (player != target) { return; } // skipped to another song meanwhile
+                song.StreamFormat = (audio.Container == YoutubeExplode.Videos.Streams.Container.Mp4 ? "AAC" : "Opus") + " · " + (int)audio.Bitrate.KiloBitsPerSecond + " kbps";
+                target.SetDataSource(audio.Url);
+                target.PrepareAsync();
+            }
+            catch (Exception ex)
+            {
+                if (player != target) { return; }
+                Logger.Debug("stream could not open " + song.Title + ": " + ex.Message);
+                Toast.MakeText(this, GetString(Resource.String.stream_failed, song.Title), ToastLength.Short).Show();
+                Advance(1, skipUnplayable: true);
+            }
         }
 
         void Toggle()

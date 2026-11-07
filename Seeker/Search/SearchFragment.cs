@@ -1,4 +1,5 @@
-﻿using Seeker.Chatroom;
+﻿// Part of Seeker; modified for MusicBay. Copyright (c) 2026 Arsen. Modified: the Search menu opens streaming mode.
+using Seeker.Chatroom;
 using Seeker.Services;
 using Seeker.Extensions.SearchResponseExtensions;
 using Seeker.Helpers;
@@ -419,6 +420,9 @@ namespace Seeker
                 //    return true;
                 case Resource.Id.action_add_to_wishlist:
                     AddSearchToWishlist();
+                    return true;
+                case Resource.Id.action_streaming_mode:
+                    Seeker.Player.StreamFragment.Enter(Activity);
                     return true;
             }
             return base.OnOptionsItemSelected(item);

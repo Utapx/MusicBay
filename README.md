@@ -64,7 +64,11 @@
   </tr>
   <tr>
     <td><strong>Equalizer</strong></td>
-    <td>15 bands from 25 Hz to 16 kHz, &plusmn;12 dB, with six presets. Requires Android 9 or newer.</td>
+    <td>15 bands from 25 Hz to 16 kHz, &plusmn;15 dB, with a preamp and twelve presets. Boosts lower the overall level instead of clipping. Requires Android 9 or newer.</td>
+  </tr>
+  <tr>
+    <td><strong>Streaming mode</strong></td>
+    <td>An extra, not a main feature: open it from the &#8942; menu on the Search tab (<em>Enter streaming mode</em>), and leave it with the back arrow; it stays on while you switch tabs. Before a search it reads like Home: recently played, albums you opened, and your playlists. A search shows songs and albums together, or albums only. Search YouTube Music for songs and albums, open albums and artists, and stream them through MusicBay's own player, with no ads and with the equalizer. Nothing is downloaded. Optionally sign in to see your YouTube Music playlists and Liked Music. Use a spare Google account for this, not your main one: Google does not allow third-party apps to use YouTube Music this way and may suspend the account. The session is stored encrypted on the phone.</td>
   </tr>
   <tr>
     <td><strong>Bit-perfect</strong></td>
@@ -142,6 +146,10 @@ dotnet build Seeker/Seeker.csproj -c Release -f net10.0-android36.0 -t:SignAndro
     The unofficial <a href="https://nicotine-plus.github.io/nicotine-plus/doc/SLSKPROTOCOL.html">Soulseek Protocol Documentation</a>
     by the developers of the <a href="https://github.com/nicotine-plus/nicotine-plus">Nicotine+</a> client.
   </li>
+  <li>
+    <a href="https://github.com/Tyrrrz/YoutubeExplode">YoutubeExplode</a> by Oleksii Holub (LGPL-3.0), used to find the
+    audio streams for songs from YouTube Music.
+  </li>
 </ul>
 
 <p>
@@ -156,6 +164,11 @@ dotnet build Seeker/Seeker.csproj -c Release -f net10.0-android36.0 -t:SignAndro
 <p>
   MusicBay is a modified version of Seeker. It is not maintained by, endorsed by, or affiliated with the Seeker project or
   its author. You are responsible for following the law and the rules of the Soulseek network when you use it.
+</p>
+
+<p>
+  MusicBay is not affiliated with, endorsed by, or connected to YouTube or Google. Streaming from YouTube Music does not
+  go through YouTube's official app, so it can stop working whenever YouTube changes its service.
 </p>
 
 <h2 id="license">License</h2>

@@ -45,8 +45,31 @@ namespace Seeker.Player
         }
 
         /// <summary>Blocking; call off the UI thread.</summary>
-        public static Bitmap ReadForSong(Context context, Song song, int size) =>
-            ReadEmbedded(context, song, size) ?? ReadFolderCover(context, song.Folder, size);
+        public static Bitmap ReadForSong(Context context, Song song, int size) => song.ArtUrl != null
+            ? ReadUrl(song.ArtUrl, size)
+            : ReadEmbedded(context, song, size) ?? ReadFolderCover(context, song.Folder, size);
+
+        /// <summary>Artwork from the web, such as YouTube Music covers.</summary>
+        public static void LoadUrl(ImageView view, string url, int sizeDp)
+        {
+            Load(view, "url:" + url, sizeDp, (context, size) => url == null ? null : ReadUrl(url, size), null);
+        }
+
+        static readonly System.Net.Http.HttpClient http = new System.Net.Http.HttpClient { Timeout = TimeSpan.FromSeconds(20) };
+
+        static Bitmap ReadUrl(string url, int size)
+        {
+            try
+            {
+                var bytes = http.GetByteArrayAsync(url).GetAwaiter().GetResult();
+                var bitmap = BitmapFactory.DecodeByteArray(bytes, 0, bytes.Length);
+                return bitmap == null || bitmap.Width <= size ? bitmap : Bitmap.CreateScaledBitmap(bitmap, size, bitmap.Height * size / bitmap.Width, true);
+            }
+            catch (Exception)
+            {
+                return null; // offline or the image is gone: keep the placeholder
+            }
+        }
 
         static void Load(ImageView view, string id, int sizeDp, Func<Context, int, Bitmap> read, Action<Bitmap> onLoaded)
         {

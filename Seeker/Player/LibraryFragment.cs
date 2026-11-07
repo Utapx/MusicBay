@@ -387,7 +387,7 @@ namespace Seeker.Player
         }
 
         /// <summary>Artist and playlist rows: an icon, a name and a song count.</summary>
-        class CollectionAdapter : RecyclerView.Adapter
+        internal class CollectionAdapter : RecyclerView.Adapter
         {
             readonly int itemCount;
             readonly Func<int, string> name, detail;

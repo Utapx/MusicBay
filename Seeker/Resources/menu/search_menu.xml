@@ -13,6 +13,11 @@
 
     <!-- Settings, should always be in the overflow -->
     <item
+        android:id="@+id/action_streaming_mode"
+        android:title="@string/stream_enter"
+        app:showAsAction="never"
+    />
+    <item
         android:id="@+id/action_search_target"
         android:title="@string/change_target"
         app:showAsAction="never"

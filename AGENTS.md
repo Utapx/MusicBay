@@ -32,20 +32,23 @@ Everything MusicBay added is in `Seeker/Player/`. The rest is mostly Seeker's So
 | `SongListActivity.cs`, `PlaylistActivity.cs` | Album or artist page, playlist page |
 | `NowPlayingActivity.cs`, `MiniPlayer.cs`, `SoundActivity.cs` | Player screen, mini player, output and EQ screen |
 | `AppUpdater.cs` | Update prompt |
+| `StreamFragment.cs` | Streaming mode (Search menu, no tab): YouTube Music search. Pages come from `Common/YtMusic.cs`; `PlayerService.OpenStream` finds the audio with YoutubeExplode |
 
 The Account panel, the Soulseek login and the Home screen host are in `Seeker/Login/LoginFragment.cs`, with `HomeMusicSection` filling the music part.
 
 ## Rules that are easy to break
 
-- **Tab pages are numbered, and Soulseek flows jump by number:** 0 Home (`LoginFragment`), 1 Search, 2 Transfers, 3 Browse, 4 Library. Do not reorder them. Browse has no tab and shows under Search in `GlassTabBar`. The visual tab order differs from the page order.
+- **Tab pages are numbered, and Soulseek flows jump by number:** 0 Home (`LoginFragment`), 1 Search, 2 Transfers, 3 Browse, 4 Library, 5 streaming mode. Do not reorder them; add new pages at the end. Browse and streaming mode have no tab and show under Search in `GlassTabBar`; streaming mode opens from the Search menu, stays on across tab changes (`StreamFragment.Active`: the Search tab then opens page 5), and back returns to page 1. The visual tab order differs from the page order.
 - **Tabs change by tapping only.** Pager swiping is off on purpose, and `SidewaysDragGuard` stops sideways drags from counting as taps on rows. Do not turn swiping back on.
 - **Glass bars float over the pager, so content scrolls behind them.** `GlassBars.Reserve` adds the space. Scroll views get bottom padding on their child, never on themselves: padding on the scroll view makes drags from tappable rows stop scrolling. Wrap-content lists such as the search chips get none, or a gap opens under them.
 - **Blur needs Android 12, the lens effect Android 13.** Older phones get a nearly opaque capsule, so keep that fallback.
-- **The toolbar is hidden on Home and Library** (`OnPagerPageSelected` in `MainActivity`). Top-bar actions for those screens belong in the Account panel, through `HandleAccountAction`.
+- **The toolbar is hidden on Home, Library and streaming mode** (`OnPagerPageSelected` in `MainActivity`). Top-bar actions for those screens belong in the Account panel, through `HandleAccountAction`.
 - **Only the `*_Modern` themes are in use.** Theme choice was removed: users pick light, dark, or system. Colors come from `mb_*` tokens in `Resources/values/colors.xml`: neutrals plus one accent. The theme attribute `mainPurple` is that accent, despite the name. Test both themes.
 - **The Soulseek client ID in `Seeker/SeekerApplication.cs` must stay unique to MusicBay,** as `LICENSE` requires. Do not set it back to Seeker's.
 - **An album is one music folder,** not a tag value.
 - **Bit-perfect is limited to USB DACs on Android 14+ and files up to 16-bit.** It refuses anything else rather than claiming it. Do not widen this without testing on a real DAC.
+- **Streamed songs are `Song`s with `StreamId` set and a negative `Id`.** They never reach MediaStore code: no recents, no playlists, no bit-perfect. `YtMusic` sends a desktop User-Agent on purpose: Android's default gets a layout without durations.
+- **The YouTube Music sign-in cookies are account access.** `YtAccount` keeps them only encrypted with an Android keystore key and clears the WebView's copy; never log them or store them elsewhere. The spare-account warning shows before every sign-in on purpose.
 - **Updates read `update.json` from the latest GitHub release** (`AppUpdater.cs`). Every failure must throw, so a failed check is never reported as "up to date". Mock builds read `localhost:8765` instead.
 
 ## Build and test gotchas

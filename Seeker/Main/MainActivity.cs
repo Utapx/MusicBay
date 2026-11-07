@@ -1,7 +1,7 @@
 ﻿/*
  * Copyright 2021 Seeker
  * Copyright (c) 2026 Arsen
- * Modified: new tab layout, mini player, optional download folder prompt
+ * Modified: new tab layout, mini player, optional download folder prompt, streaming mode
  *
  * This file is part of Seeker
  *
@@ -160,6 +160,10 @@ namespace Seeker
                 {
                     consumable = TransfersViewState.Instance.GetCurrentlySelectedFolder() != null;
                 }
+                else if (pager.CurrentItem == Seeker.Player.StreamFragment.Page)
+                {
+                    consumable = true; // back leaves streaming mode for Soulseek search
+                }
             }
             backPressedCallback.Enabled = consumable;
         }
@@ -177,7 +181,7 @@ namespace Seeker
             AndroidX.Core.View.ViewCompat.SetOnApplyWindowInsetsListener(
                 FindViewById(Resource.Id.main_root), new HorizontalInsetsListener());
 
-            FindViewById<Seeker.Player.GlassTabBar>(Resource.Id.navigation).PageSelected = page => pager.SetCurrentItem(page, false);
+            FindViewById<Seeker.Player.GlassTabBar>(Resource.Id.navigation).PageSelected = page => pager.SetCurrentItem(page == 1 && Seeker.Player.StreamFragment.Active ? Seeker.Player.StreamFragment.Page : page, false);
 
 
             AndroidX.AppCompat.Widget.Toolbar myToolbar = (AndroidX.AppCompat.Widget.Toolbar)FindViewById(Resource.Id.toolbar);
@@ -705,6 +709,10 @@ namespace Seeker
                 {
                     BrowseFragment.Instance?.BackButton();
                 }
+                else if (pager.CurrentItem == Seeker.Player.StreamFragment.Page)
+                {
+                    pager.SetCurrentItem(1, false);
+                }
                 else if (pager.CurrentItem == 2) //transfer tab
                 {
                     if (TransfersViewState.Instance.GetCurrentlySelectedFolder() != null)
@@ -1055,8 +1063,11 @@ namespace Seeker
 
         public void OnPagerPageSelected(int position)
         {
-            // Home and Library carry their own controls; only Search, Downloads and Browse have actions for the bar
-            FindViewById(Resource.Id.toolbar).Visibility = position == 0 || position == 4 ? ViewStates.Gone : ViewStates.Visible;
+            // streaming mode stays on across tab changes until something shows Soulseek search again
+            if (position == Seeker.Player.StreamFragment.Page) { Seeker.Player.StreamFragment.Active = true; }
+            else if (position == 1) { Seeker.Player.StreamFragment.Active = false; }
+            // Home, Library and Stream carry their own controls; only Search, Downloads and Browse have actions for the bar
+            FindViewById(Resource.Id.toolbar).Visibility = position == 0 || position >= 4 ? ViewStates.Gone : ViewStates.Visible;
             if (position != 0)
             {
                 SeekerState.LoginFragmentRef?.CloseAccountPanel();

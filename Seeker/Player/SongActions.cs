@@ -41,7 +41,8 @@ namespace Seeker.Player
             var popup = new PopupMenu(context, anchor);
             popup.Menu.Add(0, MenuPlayNext, 0, Resource.String.queue_play_next);
             popup.Menu.Add(0, MenuAddToQueue, 1, Resource.String.queue_add);
-            popup.Menu.Add(0, MenuAddToPlaylist, 2, Resource.String.playlist_add_to);
+            // shortcut: playlists hold MediaStore IDs only, so streamed songs cannot join them yet
+            if (song.StreamId == null) { popup.Menu.Add(0, MenuAddToPlaylist, 2, Resource.String.playlist_add_to); }
             if (onRemove != null) { popup.Menu.Add(0, MenuRemove, 3, Resource.String.playlist_remove_song); }
             popup.MenuItemClick += (s, e) =>
             {

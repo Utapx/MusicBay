@@ -152,7 +152,7 @@ namespace Seeker.Player
                 return;
             }
 
-            var format = TrackFormat.Read(context, song.Uri);
+            var format = song.StreamId == null ? TrackFormat.Read(context, song.Uri) : null; // a stream is always resampled
             if (format == null || format.SampleRate == 0)
             {
                 audio.ClearPreferredMixerAttributes(attributes, dac);

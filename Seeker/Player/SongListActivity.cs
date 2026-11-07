@@ -23,6 +23,7 @@ using Android.OS;
 using Android.Views;
 using Android.Widget;
 using AndroidX.RecyclerView.Widget;
+using Seeker.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,6 +37,10 @@ namespace Seeker.Player
     {
         public const string ExtraFolder = "album_folder";
         public const string ExtraArtist = "artist_name";
+        public const string ExtraStreamBrowseId = "stream_browse_id";
+        public const string ExtraStreamTitle = "stream_title";
+        public const string ExtraStreamArtist = "stream_artist";
+        public const string ExtraStreamArt = "stream_art";
         const int CoverDp = 240;
 
         List<Song> songs = new List<Song>();
@@ -66,6 +71,7 @@ namespace Seeker.Player
         protected override void OnResume()
         {
             base.OnResume();
+            if (Intent.GetStringExtra(ExtraStreamBrowseId) != null) { LoadStream(); return; }
             string folder = Intent.GetStringExtra(ExtraFolder);
             string artist = Intent.GetStringExtra(ExtraArtist);
             Task.Run(() =>
@@ -96,6 +102,40 @@ namespace Seeker.Player
             }
             list.SetAdapter(new SongAdapter(songs, PlayFrom, position => songs[position].Id == Playback.Current?.Id, Resource.Layout.row_song,
                 (anchor, position) => SongActions.ShowMenu(this, anchor, songs[position])));
+        }
+
+        async void LoadStream()
+        {
+            if (songs.Count > 0) { return; } // already loaded; coming back from Now Playing should not fetch again
+            YtAccount.Load(this); // the app may have been restarted straight onto this page
+            FindViewById(Resource.Id.playlist_more).Visibility = ViewStates.Gone; // playlists hold phone songs only
+            name.Text = Intent.GetStringExtra(ExtraStreamTitle);
+            string art = Intent.GetStringExtra(ExtraStreamArt);
+            if (art != null)
+            {
+                cover.Visibility = ViewStates.Visible;
+                ArtLoader.LoadUrl(cover, art, CoverDp);
+            }
+            try
+            {
+                var found = await Common.YtMusic.SongsAsync(Intent.GetStringExtra(ExtraStreamBrowseId));
+                if (IsFinishing || IsDestroyed) { return; }
+                songs = found.Select(Song.FromStream).ToList();
+                string artist = Intent.GetStringExtra(ExtraStreamArtist);
+                string count = Resources.GetQuantityString(Resource.Plurals.song_count, songs.Count, songs.Count);
+                detail.Text = string.IsNullOrEmpty(artist) ? count : artist + " · " + count;
+                empty.Visibility = songs.Count == 0 ? ViewStates.Visible : ViewStates.Gone;
+                empty.Text = GetString(Resource.String.library_empty);
+                list.SetAdapter(new SongAdapter(songs, PlayFrom, position => songs[position].Id == Playback.Current?.Id, Resource.Layout.row_song,
+                    (anchor, position) => SongActions.ShowMenu(this, anchor, songs[position])));
+            }
+            catch (Exception ex)
+            {
+                if (IsFinishing || IsDestroyed) { return; }
+                Logger.Debug("YouTube Music page failed: " + ex.Message);
+                empty.Visibility = ViewStates.Visible;
+                empty.Text = GetString(Resource.String.stream_search_failed);
+            }
         }
 
         void PlayFrom(int position)

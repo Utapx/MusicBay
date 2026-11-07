@@ -154,6 +154,7 @@ namespace Seeker.Player
                 ArtLoader.Load(art, song, ArtDp, SetBackdrop);
                 LoadFormat(song);
             }
+            if (song.StreamId != null) { format.Text = GetString(Resource.String.stream_source) + (song.StreamFormat == null ? "" : " · " + song.StreamFormat); }
             RefreshOutput();
         }
 
@@ -196,6 +197,7 @@ namespace Seeker.Player
         void LoadFormat(Song song)
         {
             format.Text = "";
+            if (song.StreamId != null) { return; }
             long id = song.Id;
             var uri = song.Uri;
             Task.Run(() =>
