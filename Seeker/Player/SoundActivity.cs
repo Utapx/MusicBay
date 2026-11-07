@@ -38,6 +38,7 @@ namespace Seeker.Player
         const int SeekStepsPerDb = 2;
 
         readonly List<(SeekBar Seek, TextView Value)> bands = new List<(SeekBar, TextView)>();
+        (SeekBar Seek, TextView Value) preamp;
         ChipGroup presets;
         EqCurveView curve;
         MaterialSwitch eqSwitch, bitPerfectSwitch;
@@ -112,30 +113,34 @@ namespace Seeker.Player
         void BuildBands()
         {
             var holder = FindViewById<LinearLayout>(Resource.Id.sound_bands);
+            preamp = AddSlider(holder, GetString(Resource.String.eq_preamp), Eq.Preamp(this), db => Eq.SetPreamp(this, db));
             var gains = Eq.Gains(this);
             for (int i = 0; i < Eq.Frequencies.Length; i++)
             {
                 int band = i;
-                var row = LayoutInflater.Inflate(Resource.Layout.row_eq_band, holder, false);
-                string frequency = FormatFrequency(Eq.Frequencies[i]);
-                row.FindViewById<TextView>(Resource.Id.band_frequency).Text = frequency;
-                var value = row.FindViewById<TextView>(Resource.Id.band_value);
-                var seek = row.FindViewById<SeekBar>(Resource.Id.band_seek);
-                seek.ContentDescription = frequency;
-                seek.Max = (int)(2 * Eq.MaxGainDb * SeekStepsPerDb);
-                seek.Progress = ToProgress(gains[i]);
-                value.Text = FormatDb(gains[i]);
-                seek.ProgressChanged += (s, e) =>
-                {
-                    if (applyingPreset || !e.FromUser) { return; }
-                    float db = e.Progress / (float)SeekStepsPerDb - Eq.MaxGainDb;
-                    Eq.SetGain(this, band, db);
-                    value.Text = FormatDb(db);
-                    RefreshState();
-                };
-                bands.Add((seek, value));
-                holder.AddView(row);
+                bands.Add(AddSlider(holder, FormatFrequency(Eq.Frequencies[i]), gains[i], db => { Eq.SetGain(this, band, db); RefreshState(); }));
             }
+        }
+
+        (SeekBar Seek, TextView Value) AddSlider(LinearLayout holder, string label, float db, Action<float> changed)
+        {
+            var row = LayoutInflater.Inflate(Resource.Layout.row_eq_band, holder, false);
+            row.FindViewById<TextView>(Resource.Id.band_frequency).Text = label;
+            var value = row.FindViewById<TextView>(Resource.Id.band_value);
+            var seek = row.FindViewById<SeekBar>(Resource.Id.band_seek);
+            seek.ContentDescription = label;
+            seek.Max = (int)(2 * Eq.MaxGainDb * SeekStepsPerDb);
+            seek.Progress = ToProgress(db);
+            value.Text = FormatDb(db);
+            seek.ProgressChanged += (s, e) =>
+            {
+                if (applyingPreset || !e.FromUser) { return; }
+                float newDb = e.Progress / (float)SeekStepsPerDb - Eq.MaxGainDb;
+                value.Text = FormatDb(newDb);
+                changed(newDb);
+            };
+            holder.AddView(row);
+            return (seek, value);
         }
 
         static int ToProgress(float db) => (int)Math.Round((db + Eq.MaxGainDb) * SeekStepsPerDb);
@@ -178,6 +183,7 @@ namespace Seeker.Player
 
             bool usable = !blocked && eqSwitch.Checked;
             foreach (var band in bands) { band.Seek.Enabled = usable; }
+            preamp.Seek.Enabled = usable;
             for (int i = 0; i < presets.ChildCount; i++) { presets.GetChildAt(i).Enabled = usable; }
 
             var gains = Eq.Gains(this);

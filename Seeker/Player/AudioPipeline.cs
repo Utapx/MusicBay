@@ -186,9 +186,10 @@ namespace Seeker.Player
     /// <summary>15-band graphic equalizer. DynamicsProcessing sets its own bands, unlike the platform Equalizer whose bands are fixed by the phone (usually 5).</summary>
     internal static class Eq
     {
-        public const float MaxGainDb = 12f;
+        public const float MaxGainDb = 15f;
         const string EnabledKey = "eq_enabled";
         const string GainsKey = "eq_gains";
+        const string PreampKey = "eq_preamp";
 
         public static readonly int[] Frequencies = { 25, 40, 63, 100, 160, 250, 400, 630, 1000, 1600, 2500, 4000, 6300, 10000, 16000 };
 
@@ -200,6 +201,12 @@ namespace Seeker.Player
             (Resource.String.eq_vocal,  new float[] { -3, -3, -2, -1, 0, 1, 2, 3, 4, 4, 3, 2, 1, 0, 0 }),
             (Resource.String.eq_bright, new float[] { 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 5, 6, 6 }),
             (Resource.String.eq_vshape, new float[] { 6, 5, 4, 2, 0, -2, -3, -3, -2, 0, 2, 3, 4, 5, 5 }),
+            (Resource.String.eq_rock,   new float[] { 5, 5, 4, 3, 1, -1, -2, -2, -1, 1, 2, 3, 4, 4, 4 }),
+            (Resource.String.eq_pop,    new float[] { -1, -1, 0, 1, 3, 4, 4, 3, 1, 0, -1, -1, 0, 1, 1 }),
+            (Resource.String.eq_hiphop, new float[] { 7, 7, 6, 4, 2, 0, -1, -1, 0, 1, 1, 2, 2, 2, 2 }),
+            (Resource.String.eq_electronic, new float[] { 7, 6, 5, 3, 1, 0, -1, -1, 0, 1, 2, 3, 4, 4, 5 }),
+            (Resource.String.eq_acoustic, new float[] { 3, 3, 3, 2, 1, 0, 0, 1, 2, 2, 3, 3, 2, 2, 1 }),
+            (Resource.String.eq_classical, new float[] { 3, 3, 2, 2, 1, 0, 0, 0, 0, 0, 1, 2, 2, 3, 3 }),
         };
 
         static float[] gains;
@@ -232,11 +239,27 @@ namespace Seeker.Player
             if (effect != null) { effect.SetEnabled(enabled); }
         }
 
+        public static float Preamp(Context context) => Prefs(context).GetFloat(PreampKey, 0f);
+
+        public static void SetPreamp(Context context, float db)
+        {
+            Prefs(context).Edit().PutFloat(PreampKey, db).Apply();
+            ApplyInputGain(context);
+        }
+
+        // Lowers the input by the largest boost, so boosted bands get louder relative to the rest instead of
+        // hitting the limiter, which would squash them back down on loud masters.
+        static void ApplyInputGain(Context context)
+        {
+            effect?.SetInputGainAllChannelsTo(Preamp(context) - Math.Max(0f, Gains(context).Max()));
+        }
+
         public static void SetGain(Context context, int band, float db)
         {
             Gains(context)[band] = db;
             Prefs(context).Edit().PutString(GainsKey, string.Join(",", gains.Select(g => g.ToString(System.Globalization.CultureInfo.InvariantCulture)))).Apply();
             effect?.SetPreEqBandAllChannelsTo(band, Band(band, db));
+            ApplyInputGain(context);
         }
 
         // A band's "cutoff" is its upper edge: halfway (on a log scale) to the next band's centre.
@@ -253,12 +276,15 @@ namespace Seeker.Player
             if (!Supported || BitPerfect.Active) { return; }
             try
             {
-                // the limiter keeps boosted bands from clipping
+                // The default 10 ms frame resolves only ~100 Hz, merging the 25-100 Hz bands; 40 ms resolves ~25 Hz.
                 var config = new DynamicsProcessing.Config.Builder((int)VariantType.FavorFrequencyResolution, 2,
-                    true, Frequencies.Length, false, 0, false, 0, true).Build();
+                    true, Frequencies.Length, false, 0, false, 0, true).SetPreferredFrameDuration(40f).Build();
+                // only catches peaks above -0.5 dBFS (a positive preamp); the default -2 dB threshold flattened boosts
+                config.SetLimiterAllChannelsTo(new DynamicsProcessing.Limiter(true, true, 0, 1f, 60f, 10f, -0.5f, 0f));
                 effect = new DynamicsProcessing(0, audioSessionId, config);
                 var current = Gains(context);
                 for (int i = 0; i < current.Length; i++) { effect.SetPreEqBandAllChannelsTo(i, Band(i, current[i])); }
+                ApplyInputGain(context);
                 effect.SetEnabled(Enabled(context));
             }
             catch (Java.Lang.Exception ex)

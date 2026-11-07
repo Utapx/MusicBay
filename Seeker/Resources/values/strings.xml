@@ -1078,6 +1078,13 @@
     <string name="eq_vocal">Vocal</string>
     <string name="eq_bright">Bright</string>
     <string name="eq_vshape">V-shape</string>
+    <string name="eq_rock">Rock</string>
+    <string name="eq_pop">Pop</string>
+    <string name="eq_hiphop">Hip-hop</string>
+    <string name="eq_electronic">Electronic</string>
+    <string name="eq_acoustic">Acoustic</string>
+    <string name="eq_classical">Classical</string>
+    <string name="eq_preamp">Preamp</string>
     <string name="not_now">Not now</string>
     <string name="library_albums">Albums</string>
     <string name="library_artists">Artists</string>
