@@ -75,6 +75,10 @@
     <td>Sends audio to a USB DAC with no mixing or resampling on Android 14 or newer. Files up to 16-bit only for now. Bluetooth and the phone speaker always use the system mixer.</td>
   </tr>
   <tr>
+    <td><strong>First-run tour</strong></td>
+    <td>On a new install, a short walkthrough lights up each part of the app in turn: Home, Search, Library, Downloads, and Account. People who update from an older version don't see it.</td>
+  </tr>
+  <tr>
     <td><strong>Updates</strong></td>
     <td>When a new version is out, the app offers it on launch. You choose Update or Later, and Android asks before installing.</td>
   </tr>

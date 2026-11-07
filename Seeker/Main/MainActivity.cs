@@ -1,7 +1,7 @@
 ﻿/*
  * Copyright 2021 Seeker
  * Copyright (c) 2026 Arsen
- * Modified: new tab layout, mini player, optional download folder prompt, streaming mode
+ * Modified: new tab layout, mini player, optional download folder prompt, streaming mode, first-run tour
  *
  * This file is part of Seeker
  *
@@ -217,6 +217,7 @@ namespace Seeker
             if (!reborn)
             {
                 Seeker.Player.AppUpdater.CheckOnLaunch(this);
+                Seeker.Player.Walkthrough.StartIfNew(this);
             }
             //this is a relatively safe way that prevents rotates from redoing the intent.
             bool alreadyHandled = Intent.GetBooleanExtra("ALREADY_HANDLED", false);

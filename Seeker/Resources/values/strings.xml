@@ -1003,6 +1003,17 @@
 
     <string name="library_tab">Library</string>
     <string name="stream_source">YouTube Music</string>
+    <string name="walk_skip">Skip</string>
+    <string name="walk_next">Next</string>
+    <string name="walk_done">Got it</string>
+    <string name="walk_step">%1$d of %2$d</string>
+    <string name="walk_welcome_title">Welcome to MusicBay</string>
+    <string name="walk_welcome">A music player for the songs on your phone, with Soulseek to find and download more. Here’s a quick tour.</string>
+    <string name="walk_home">Your recently played songs, albums and playlists, one tap away.</string>
+    <string name="walk_search">Search the Soulseek network to find and download music. Its ⋮ menu also opens streaming mode for YouTube Music.</string>
+    <string name="walk_library">All the music on this phone: songs, albums, artists and playlists. Choose which folders show up here.</string>
+    <string name="walk_downloads">Your Soulseek downloads, while they arrive and after.</string>
+    <string name="walk_account">Sign in to Soulseek, change settings and check for updates.</string>
     <string name="stream_enter">Enter streaming mode</string>
     <string name="stream_back">Back to Soulseek search</string>
     <string name="stream_mode_title">Streaming mode</string>

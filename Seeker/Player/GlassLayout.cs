@@ -439,6 +439,13 @@ half4 main(float2 xy) {
 
         protected GlassTabBar(IntPtr handle, JniHandleOwnership transfer) : base(handle, transfer) { }
 
+        /// <summary>The tab that opens a pager page, or null if the page has no tab.</summary>
+        public View TabFor(int page)
+        {
+            int index = Array.FindIndex(Tabs, t => t.Page == page);
+            return index < 0 ? null : row.GetChildAt(index);
+        }
+
         /// <summary>Follows the pager when something other than a tap changed the page.</summary>
         public void Select(int page)
         {
