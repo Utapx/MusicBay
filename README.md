@@ -16,6 +16,7 @@
   <a href="#features">Features</a> &nbsp;&middot;&nbsp;
   <a href="#screenshots">Screenshots</a> &nbsp;&middot;&nbsp;
   <a href="#build-from-source">Build</a> &nbsp;&middot;&nbsp;
+  <a href="#contributing">Contributing</a> &nbsp;&middot;&nbsp;
   <a href="#credits">Credits</a> &nbsp;&middot;&nbsp;
   <a href="#license">License</a>
 </p>
@@ -25,8 +26,9 @@
 <hr>
 
 <p>
-  MusicBay brings your local music library and Soulseek discovery together in one app.
-  It has no ads, no account requirement for local playback, and no paid features.
+  MusicBay brings your local music library and Soulseek discovery together in one app, with a clean, iOS-style design
+  in light and dark. It has no ads, no account requirement for local playback, and no paid features. An optional
+  streaming mode plays music from YouTube Music through the same player.
 </p>
 
 <blockquote>
@@ -37,10 +39,16 @@
 
 <h2 id="features">Features</h2>
 
+<h3>Music player</h3>
+
 <table>
   <tr>
-    <th align="left" width="180">Area</th>
+    <th align="left" width="180">Feature</th>
     <th align="left">What it does</th>
+  </tr>
+  <tr>
+    <td><strong>Home</strong></td>
+    <td>Recently played songs, recently added music, albums, and playlists, each one tap away.</td>
   </tr>
   <tr>
     <td><strong>Library</strong></td>
@@ -67,12 +75,59 @@
     <td>15 bands from 25 Hz to 16 kHz, &plusmn;15 dB, with a preamp and twelve presets. Boosts lower the overall level instead of clipping. Requires Android 9 or newer.</td>
   </tr>
   <tr>
-    <td><strong>Streaming mode</strong></td>
-    <td>An extra, not a main feature: open it from the &#8942; menu on the Search tab (<em>Enter streaming mode</em>), and leave it with the back arrow; it stays on while you switch tabs. Before a search it reads like Home: recently played, albums you opened, and your playlists. A search shows songs and albums together, or albums only. Search YouTube Music for songs and albums, open albums and artists, and stream them through MusicBay's own player, with no ads and with the equalizer. Nothing is downloaded. Optionally sign in to see your YouTube Music playlists and Liked Music. Use a spare Google account for this, not your main one: Google does not allow third-party apps to use YouTube Music this way and may suspend the account. The session is stored encrypted on the phone.</td>
-  </tr>
-  <tr>
     <td><strong>Bit-perfect</strong></td>
     <td>Sends audio to a USB DAC with no mixing or resampling on Android 14 or newer. Files up to 16-bit only for now. Bluetooth and the phone speaker always use the system mixer.</td>
+  </tr>
+</table>
+
+<h3>Soulseek</h3>
+
+<table>
+  <tr>
+    <th align="left" width="180">Feature</th>
+    <th align="left">What it does</th>
+  </tr>
+  <tr>
+    <td><strong>Search and download</strong></td>
+    <td>Search the Soulseek network with filters and a wishlist, and download songs or whole folders.</td>
+  </tr>
+  <tr>
+    <td><strong>Community</strong></td>
+    <td>Share your music, browse other users, send messages, and join chatrooms. Port forwarding is set up for you where the router allows it.</td>
+  </tr>
+</table>
+
+<h3>Streaming mode (extra)</h3>
+
+<table>
+  <tr>
+    <th align="left" width="180">Feature</th>
+    <th align="left">What it does</th>
+  </tr>
+  <tr>
+    <td><strong>Where to find it</strong></td>
+    <td>Open the &#8942; menu on the Search tab and choose <em>Enter streaming mode</em>. It stays on while you switch tabs; the back arrow returns to Soulseek search.</td>
+  </tr>
+  <tr>
+    <td><strong>Listen</strong></td>
+    <td>Search YouTube Music for songs and albums, open album and artist pages, and play through MusicBay's own player: no ads, with the equalizer, and with the screen off. Nothing is downloaded.</td>
+  </tr>
+  <tr>
+    <td><strong>Start screen</strong></td>
+    <td>Before a search it reads like Home: recently played, albums you opened, and your playlists. A search shows albums and songs together, or albums only.</td>
+  </tr>
+  <tr>
+    <td><strong>Sign-in (optional)</strong></td>
+    <td>Sign in to see your YouTube Music playlists and Liked Music. Use a spare Google account, not your main one: Google does not allow third-party apps to use YouTube Music this way and may suspend the account. The app warns about this before every sign-in. The session is stored encrypted on the phone, and Sign out removes it.</td>
+  </tr>
+</table>
+
+<h3>App</h3>
+
+<table>
+  <tr>
+    <th align="left" width="180">Feature</th>
+    <th align="left">What it does</th>
   </tr>
   <tr>
     <td><strong>First-run tour</strong></td>
@@ -80,11 +135,11 @@
   </tr>
   <tr>
     <td><strong>Updates</strong></td>
-    <td>When a new version is out, the app offers it on launch. You choose Update or Later, and Android asks before installing.</td>
+    <td>When a new version is out, the app offers it on launch with a list of what changed. You choose Update or Later, and Android asks before installing.</td>
   </tr>
   <tr>
-    <td><strong>Soulseek</strong></td>
-    <td>Search with wishlist and filters, download, share, browse users, send messages, join chatrooms, and forward ports.</td>
+    <td><strong>Design</strong></td>
+    <td>Light and dark themes, translucent glass bars, and a single accent color.</td>
   </tr>
 </table>
 
@@ -100,6 +155,11 @@
     <td align="center"><img src="docs/screenshots/songs.png" alt="Library showing songs A to Z" width="240"><br><sub>Songs</sub></td>
     <td align="center"><img src="docs/screenshots/now-playing.png" alt="Now Playing screen" width="240"><br><sub>Now Playing</sub></td>
     <td align="center"><img src="docs/screenshots/sound.png" alt="Sound screen with the equalizer" width="240"><br><sub>Sound</sub></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="docs/screenshots/streaming-mode.png" alt="Dialog explaining streaming mode" width="240"><br><sub>Streaming mode</sub></td>
+    <td align="center"><img src="docs/screenshots/spare-account.png" alt="Warning to use a spare Google account before signing in" width="240"><br><sub>Spare-account warning</sub></td>
+    <td align="center"><img src="docs/screenshots/tour.png" alt="First-run tour highlighting the Search tab" width="240"><br><sub>First-run tour</sub></td>
   </tr>
 </table>
 
@@ -131,6 +191,14 @@ dotnet build Seeker/Seeker.csproj -c Release -f net10.0-android36.0 -t:SignAndro
 <p>
   To work without a Soulseek account, build with <code>-c "Debug Mock"</code>. This configuration uses a simulated
   Soulseek server and adds no real network traffic. See <a href="DEVELOPMENT.md">DEVELOPMENT.md</a> for more.
+</p>
+
+<h2 id="contributing">Contributing</h2>
+
+<p>
+  Contributions go through pull requests. Read <a href="CONTRIBUTING.md">CONTRIBUTING.md</a> first: it covers the
+  workflow that avoids conflicts, how to build and test, and the license rules. If you use an AI assistant, point it
+  at <a href="AGENTS.md">AGENTS.md</a>.
 </p>
 
 <h2 id="credits">Credits</h2>
